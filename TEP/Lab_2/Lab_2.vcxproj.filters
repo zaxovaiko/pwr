@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\Volodymyr\Desktop\labs\lab_2\CTable.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Volodymyr\Desktop\labs\lab_2\Main.cpp">
+    <ClCompile Include="CTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\Volodymyr\Desktop\labs\lab_2\CTable.h">
+    <ClInclude Include="CTable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
