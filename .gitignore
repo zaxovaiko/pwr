@@ -1,2 +1,9 @@
+# Debug
 Debug/
 .vs/
+project/
+target/
+
+# IDEs
+.idea/
+.vscode/
