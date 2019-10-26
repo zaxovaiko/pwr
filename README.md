@@ -2,5 +2,5 @@
 All tasks from Wroclaw University of Science and Technologies 👨‍🎓.
 
 #### Content:
- - Paradygmaty Programowania Labs and Ćwiczenia
+ - Paradygmaty Programowania Labolatoria i Ćwiczenia
  - Techniki Efektywnego Programowania Labs
