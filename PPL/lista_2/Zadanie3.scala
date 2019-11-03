@@ -3,7 +3,9 @@ def fib(n: Int): Int = {
       case 0 => a
       case _ => fib_tail(n - 1, b, a + b)
    }
-   return fib_tail(n, 0 , 1)
+   fib_tail(n, 0 , 1)
 }
 
+println(fib(5))
+println(fib(10))
 println(fib(34))

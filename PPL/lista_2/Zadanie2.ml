@@ -7,7 +7,5 @@ let obetnijkrance lista =
     | h::t -> h :: concat t
   in concat lista_without_head;;
 
-let x = [1; 2; 3; 4];;
-let y = obetnijkrance(x);;
-
+let y = obetnijkrance([1; 2; 3]);;
 List.iter print_int y;;
