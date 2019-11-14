@@ -2,7 +2,7 @@
 
 #include "CFileErrCode.h"
 
-CFileErrCode::CFileErrCode() {}
+CFileErrCode::CFileErrCode() { pf_file = NULL; }
 
 CFileErrCode::CFileErrCode(string sFileName)
 {
@@ -26,7 +26,7 @@ bool CFileErrCode::bOpenFile(string sFileName)
 	return true;
 }
 
-bool CFileErrCode::bCloseFile(string sFileName)
+bool CFileErrCode::bCloseFile()
 {
 	if (pf_file == NULL) {
 		return false;

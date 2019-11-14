@@ -16,7 +16,8 @@ public:
 	void vCloseFile();
 	void vPrintLine(string sText);
 	void vPrintManyLines(vector<string> sText);
+	CFileThrowEx& operator=(const string& sFile);
 
 private:
-	FILE *pf_file = NULL;
+	FILE *pf_file;
 };

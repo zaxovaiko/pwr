@@ -1,8 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "CFileThrowEx.h"
+#include <iostream>
 
-CFileThrowEx::CFileThrowEx() {}
+using namespace std;
+
+CFileThrowEx::CFileThrowEx() { pf_file = NULL; }
 
 CFileThrowEx::CFileThrowEx(string sFileName)
 {
@@ -19,7 +22,7 @@ CFileThrowEx::~CFileThrowEx()
 void CFileThrowEx::vOpenFile(string sFileName)
 {
 	if (pf_file != NULL) {
-		throw -1;
+		throw 1;
 	}
 
 	pf_file = fopen(sFileName.c_str(), "a+");
@@ -28,7 +31,7 @@ void CFileThrowEx::vOpenFile(string sFileName)
 void CFileThrowEx::vCloseFile()
 {
 	if (pf_file == NULL) {
-		throw -1;
+		throw 1;
 	}
 
 	fclose(pf_file);
@@ -37,7 +40,7 @@ void CFileThrowEx::vCloseFile()
 void CFileThrowEx::vPrintLine(string sText)
 {
 	if (pf_file == NULL) {
-		throw -1;
+		throw 1;
 	}
 
 	fprintf(pf_file, "%s\n", sText.c_str());
@@ -46,11 +49,17 @@ void CFileThrowEx::vPrintLine(string sText)
 void CFileThrowEx::vPrintManyLines(vector<string> sText)
 {
 	if (pf_file == NULL) {
-		throw -1;
+		throw 1;
 	}
 
 	for (int i = 0; i < sText.size(); i++)
 	{
 		fprintf(pf_file, "%s\n", sText[i].c_str());
 	}
+}
+
+CFileThrowEx& CFileThrowEx::operator=(const string & sFile)
+{
+	vOpenFile(sFile);
+	return *this;
 }

@@ -22,5 +22,5 @@ public:
 	void vPrintManyLines(vector<string> sText);
 
 private:
-	FILE *pf_file = NULL;
+	FILE *pf_file;
 };

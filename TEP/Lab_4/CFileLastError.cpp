@@ -4,7 +4,8 @@
 #include <cstdio>
 
 bool CFileLastError::b_last_error = false;
-CFileLastError::CFileLastError() {}
+
+CFileLastError::CFileLastError() { pf_file = NULL; }
 
 CFileLastError::CFileLastError(string sFileName) {
 	vOpenFile(sFileName);

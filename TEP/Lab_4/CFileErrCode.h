@@ -13,10 +13,10 @@ public:
 	~CFileErrCode();
 
 	bool bOpenFile(string sFileName);
-	bool bCloseFile(string sFileName);
+	bool bCloseFile();
 	bool bPrintLine(string sText);
 	bool bPrintManyLines(vector<string> sText);
 
 private:
-	FILE *pf_file = NULL;
+	FILE *pf_file;
 };
