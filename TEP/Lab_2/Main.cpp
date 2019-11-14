@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	cout << "-- Static initialization (bezp and params):" << endl;
+	/*cout << "-- Static initialization (bezp and params):" << endl;
 	CTable tab_stat_def;
 	CTable tab_stat_cus = CTable("test_stat", 25);
 
@@ -39,12 +39,19 @@ int main()
 	delete p_tab_dyn_def;
 	delete p_tab_dyn_cus;
 	delete[] pc_new_tab_dyn;
-	delete p_tab_dyn_def_copy;
+	delete p_tab_dyn_def_copy;*/
 
 	// Modification TODO
 	CTable *p_tabs = new CTable[2];
-	p_tabs[0] = CTable("F", 2);
-	p_tabs[1] = CTable("S", 3);
+	p_tabs[0] = CTable("A", 2);
+	p_tabs[1] = CTable("B", 3);
+
+	bAcc(p_tabs);
+
+	for (int i = 0; i < p_tabs[0].iGetTableLen(); i++)
+	{
+		cout << p_tabs[0].piGetTable()[i] << " ";
+	}
 
 	cin.get();
 	return 0;

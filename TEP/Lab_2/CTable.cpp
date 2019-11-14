@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include "CTable.h"
 
@@ -17,12 +17,19 @@ CTable::CTable(string sName, int iTableLen) {
 	vSetSize(iTableLen);
 	pi_table = new int[iTableLen];
 
+	// debug
+	for (int i = 0; i < iTableLen; i++)
+	{
+		pi_table[i] = rand();
+	}
+
+	cout << endl;
 	cout << "parametr: '" << s_name << "'" << endl;
 }
 
-CTable::CTable(const CTable &pcOther) : s_name(pcOther.s_name + "_copy"), i_table_size(pcOther.i_table_size) {
-	pi_table = new int[pcOther.i_table_size];
-	for (int i = 0; i < pcOther.i_table_size; i++)
+CTable::CTable(const CTable &pcOther) : s_name(pcOther.s_name + "_copy"), i_table_len(pcOther.i_table_len) {
+	pi_table = new int[pcOther.i_table_len];
+	for (int i = 0; i < pcOther.i_table_len; i++)
 	{
 		pi_table[i] = pcOther.pi_table[i];
 	}
@@ -40,11 +47,11 @@ bool CTable::bSetNewSize(int iTableLen) {
 		return false;
 	}
 
-	i_table_size = iTableLen;
+	i_table_len = iTableLen;
 	int* pi_temp_table = pi_table;
-	pi_table = new int[i_table_size];
+	pi_table = new int[i_table_len];
 
-	for (int i = 0; i < i_table_size; i++)
+	for (int i = 0; i < i_table_len; i++)
 	{
 		pi_table[i] = pi_temp_table[i];
 	}
@@ -53,13 +60,21 @@ bool CTable::bSetNewSize(int iTableLen) {
 	return true;
 }
 
-// TODO
-bool bAcc(CTable **pTabs) {
-	pTabs[0]->vSetSize(pTabs[0]->iGetSize() + pTabs[1]->iGetSize());
+bool bAcc(CTable *pTabs) {
+	int i_size = pTabs[0].iGetSize() + pTabs[1].iGetSize();
+	int* pi_array = new int[i_size];
 
-	for (int i = pTabs[0]->iGetSize(); i < pTabs[1]->iGetSize(); i++)
+	int* p_farr = pTabs[0].piGetTable();
+	for (int i = 0; i < pTabs[0].iGetSize(); i++)
 	{
-		// write new elements to prev_array
+		cout << p_farr[i] << " ";
+		pi_array[i] = p_farr[i];
+	}
+
+	int* p_sarr = pTabs[1].piGetTable();
+	for (int i = pTabs[0].iGetSize(); i < i_size; i++)
+	{
+		pi_array[i] = pTabs[1].piGetTable()[i];
 	}
 
 	return true;
