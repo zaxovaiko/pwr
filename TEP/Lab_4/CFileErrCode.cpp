@@ -23,6 +23,11 @@ bool CFileErrCode::bOpenFile(string sFileName)
 	}
 
 	pf_file = fopen(sFileName.c_str(), "a+");
+
+	if (pf_file == NULL) {
+		return false;
+	}
+
 	return true;
 }
 

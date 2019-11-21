@@ -26,6 +26,10 @@ void CFileThrowEx::vOpenFile(string sFileName)
 	}
 
 	pf_file = fopen(sFileName.c_str(), "a+");
+
+	if (pf_file == NULL) {
+		throw 1;
+	}
 }
 
 void CFileThrowEx::vCloseFile()

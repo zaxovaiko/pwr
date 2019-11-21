@@ -26,6 +26,11 @@ void CFileLastError::vOpenFile(string sFileName) {
 	}
 
 	pf_file = fopen(sFileName.c_str(), "a+");
+
+	if (pf_file == NULL) {
+		b_last_error = true;
+		return;
+	}
 }
 
 void CFileLastError::vCloseFile() {
