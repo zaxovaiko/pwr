@@ -1,34 +1,33 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include <string>
 
 using std::vector;
 using std::cout;
 using std::endl;
-using std::string;
 
 template <typename T>
 class CNodeDynamic
 {
 public:
-	CNodeDynamic() { i_val = 0; pc_parent_node = NULL; };
+	CNodeDynamic() { t_val = 0; pc_parent_node = NULL; };
 	~CNodeDynamic();
-	CNodeDynamic<T> *pcGetChild(int iChildOffset);
-
-	void vSetValue(int iNewVal) { i_val = iNewVal; };
+	CNodeDynamic *pcGetChild(int iChildOffset);
+	void vSetValue(T tNewVal) { t_val = tNewVal; };
+	T * tGetValue() { return &t_val; };
 	int iGetChildrenNumber() { return v_children.size(); };
 	void vAddNewChild();
-	void vAddNewChild(CNodeDynamic<T>* cChild);
-	void vPrint() { cout << " " << i_val; };
+	void vAddNewChild(CNodeDynamic *cChild);
+	void vPrint() { cout << " " << t_val; };
 	void vPrintAllBelow();
 	void vPrint(int iLevel);
 	void vDeleteFromChildren();
+	void vGetMin(T * tMin);
 
 private:
 	vector<CNodeDynamic*> v_children;
 	CNodeDynamic *pc_parent_node;
-	T i_val;
+	T t_val;
 };
 
 template <typename T>
@@ -55,7 +54,7 @@ void CNodeDynamic<T>::vAddNewChild()
 		return;
 	}
 
-	CNodeDynamic<T> *c_child = new CNodeDynamic<T>;
+	CNodeDynamic *c_child = new CNodeDynamic;
 	c_child->pc_parent_node = this;
 
 	v_children.push_back(c_child);
@@ -96,10 +95,10 @@ void CNodeDynamic<T>::vPrint(int iLevel)
 	}
 
 	if (pc_parent_node != NULL) {
-		cout << "|- " << i_val << endl;
+		cout << "|- " << t_val << endl;
 	}
 	else {
-		cout << i_val << endl;
+		cout << t_val << endl;
 	}
 
 	for (int i = 0; i < v_children.size(); i++)
@@ -117,5 +116,18 @@ void CNodeDynamic<T>::vDeleteFromChildren()
 			this->pc_parent_node->v_children.erase(this->pc_parent_node->v_children.begin() + i);
 			return;
 		}
+	}
+}
+
+template<typename T>
+void CNodeDynamic<T>::vGetMin(T * tMin)
+{
+	if (*tMin > t_val) {
+		*tMin = t_val;
+	}
+
+	for (int i = 0; i < v_children.size(); i++)
+	{
+		v_children[i]->vGetMin(tMin);
 	}
 }

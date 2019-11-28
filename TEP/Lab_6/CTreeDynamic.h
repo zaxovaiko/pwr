@@ -10,6 +10,7 @@ public:
 	CNodeDynamic<T>* pcGetRoot() { return pc_root; };
 	bool bMoveSubtree(CNodeDynamic<T> *pcParentNode, CNodeDynamic<T> *pcNewChildNode);
 	void vPrintTree();
+	void vGetMin(T * tMin);
 
 private:
 	CNodeDynamic<T>* pc_root;
@@ -47,4 +48,14 @@ template <typename T>
 void CTreeDynamic<T>::vPrintTree()
 {
 	pc_root->vPrintAllBelow();
+}
+
+template<typename T>
+void CTreeDynamic<T>::vGetMin(T * tMin)
+{
+	if (tMin == NULL) {
+		tMin = pc_root->tGetValue();
+	}
+
+	pc_root->vGetMin(tMin);
 }

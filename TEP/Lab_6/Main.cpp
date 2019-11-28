@@ -1,16 +1,29 @@
 #include <iostream>
 #include "CTreeDynamic.h"
+#include <string>
 
 using namespace std;
 
 int main() {
-	CTreeDynamic<int> * c_root = new CTreeDynamic<int>;
-	c_root->pcGetRoot()->vAddNewChild();
-	c_root->pcGetRoot()->pcGetChild(0)->vSetValue(9);
+	CTreeDynamic<int> * c_root_1 = new CTreeDynamic<int>;
+	c_root_1->pcGetRoot()->vSetValue(10);
+	c_root_1->pcGetRoot()->vAddNewChild();
+	c_root_1->pcGetRoot()->vAddNewChild();
 
-	c_root->vPrintTree();
+	c_root_1->pcGetRoot()->pcGetChild(0)->vSetValue(2);
+	c_root_1->pcGetRoot()->pcGetChild(1)->vSetValue(3);
 
-	delete c_root;
+	c_root_1->pcGetRoot()->pcGetChild(0)->vAddNewChild();
+	c_root_1->pcGetRoot()->pcGetChild(0)->vAddNewChild();
+	c_root_1->pcGetRoot()->pcGetChild(0)->pcGetChild(0)->vSetValue(8);
+	c_root_1->pcGetRoot()->pcGetChild(0)->pcGetChild(1)->vSetValue(0);
 
+	c_root_1->pcGetRoot()->vPrint(0);
+
+	int i_min = 10;
+	c_root_1->vGetMin(&i_min);
+	cout << i_min << endl;
+
+	delete c_root_1;
 	cin.get();
 }
