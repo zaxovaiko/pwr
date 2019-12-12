@@ -18,7 +18,6 @@ void v_test(int* pi_a, int* pi_b) {
 	cout << "pi_d = " << *ps_d.getT() << endl;
 }
 
-/// Task 3
 void v_static_error() {
 	int i = 5;
 	CMySmartPointer<int> ps_stat(&i);
