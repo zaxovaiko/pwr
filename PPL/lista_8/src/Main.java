@@ -35,6 +35,13 @@ public class Main {
         Nokia.addTask(t3);
         Nokia.increaseIncomes(100);
 
+        try {
+            t2.finish();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
         System.out.println(Nokia.filterTasks("", "", null));
         System.out.println(Nokia);
     }
