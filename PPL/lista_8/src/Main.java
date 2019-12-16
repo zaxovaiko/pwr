@@ -33,6 +33,7 @@ public class Main {
         Nokia.addTask(t1);
         Nokia.addTask(t2);
         Nokia.addTask(t3);
+        Nokia.increaseIncomes(100);
 
         System.out.println(Nokia.filterTasks("", "", null));
         System.out.println(Nokia);

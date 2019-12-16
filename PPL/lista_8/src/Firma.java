@@ -20,7 +20,7 @@ public class Firma {
     }
 
     public void increaseIncomes(int percent) {
-        workers.forEach(worker -> worker.setPlaca(worker.getPlaca() + worker.getPlaca() * percent));
+        workers.forEach(worker -> worker.setPlaca(worker.getPlaca() + worker.getPlaca() * percent / 100));
     }
 
     public void increaseForIndividualSp(Specjalista s, int p) {
@@ -38,15 +38,14 @@ public class Firma {
                     } else if (!o1.getTryb().equals("Pilny") && o2.getTryb().equals("Pilny")) {
                         return 1;
                     }
-                        return 0;
+                    return 0;
                 }).collect(Collectors.toList());
     }
 
     @Override
     public String toString() {
-        return "Firma{" +
-                "workers=" + workers +
-                ", tasks=" + tasks +
-                '}';
+        return "Firma\n" +
+                "workers: \n" + workers +
+                "\ntasks:\n" + tasks;
     }
 }
