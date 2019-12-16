@@ -3,6 +3,7 @@ Debug/
 .vs/
 project/
 target/
+out/
 
 # IDEs
 .idea/
