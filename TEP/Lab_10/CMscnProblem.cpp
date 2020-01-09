@@ -3,45 +3,46 @@
 #include <iostream>
 #include <fstream>
 #include "CMscnProblem.h"
+#include "CRandom.h"
 
 using namespace std;
 
 CMscnProblem::CMscnProblem() {
-	i_D = 1; // Amount of items
+	i_D = 1;
 	i_F = 1;
 	i_M = 1;
 	i_S = 1;
 
-	pd_sd = new double[i_D]; // Productive power
+	pd_sd = new double[i_D];
 	pd_sf = new double[i_F];
 	pd_sm = new double[i_M];
 	pd_ss = new double[i_S];
 
-	ppd_cd = new double* [i_D];	// Price of trasportation
-	ppd_cf = new double* [i_F];
-	ppd_cm = new double* [i_M];
+	ppd_cd = new double*[i_D];
+	ppd_cf = new double*[i_F];
+	ppd_cm = new double*[i_M];
 
 	for (int i = 0; i < i_D; i++) ppd_cd[i] = new double[i_F];
 	for (int i = 0; i < i_F; i++) ppd_cf[i] = new double[i_M];
 	for (int i = 0; i < i_M; i++) ppd_cm[i] = new double[i_S];
 
-	pd_ud = new double[i_D]; // Price of deal
+	pd_ud = new double[i_D];
 	pd_uf = new double[i_F];
 	pd_um = new double[i_M];
 
 	pd_p = new double[i_S]; // Income
 
-	ppd_xdminmax = new double* [2 * i_D];
-	ppd_xfminmax = new double* [2 * i_F];
-	ppd_xmminmax = new double* [2 * i_M];
+	ppd_xdminmax = new double*[2 * i_D];
+	ppd_xfminmax = new double*[2 * i_F];
+	ppd_xmminmax = new double*[2 * i_M];
 
 	for (int i = 0; i < 2 * i_D; i++) ppd_xdminmax[i] = new double[i_F];
 	for (int i = 0; i < 2 * i_F; i++) ppd_xfminmax[i] = new double[i_M];
 	for (int i = 0; i < 2 * i_M; i++) ppd_xmminmax[i] = new double[i_S];
 
-	ppd_xd = new double* [i_D];	// Amount of products
-	ppd_xf = new double* [i_F];
-	ppd_xm = new double* [i_M];
+	ppd_xd = new double*[i_D];
+	ppd_xf = new double*[i_F];
+	ppd_xm = new double*[i_M];
 
 	for (int i = 0; i < i_D; i++) ppd_xd[i] = new double[i_F];
 	for (int i = 0; i < i_F; i++) ppd_xf[i] = new double[i_M];
@@ -92,9 +93,9 @@ bool CMscnProblem::bSetD(int iVal) {
 
 	double* pd_new_sd = new double[iVal];
 	double* pd_new_ud = new double[iVal];
-	double** ppd_new_cd = new double* [iVal];
-	double** ppd_new_xd = new double* [iVal];
-	double** ppd_new_xdminmax = new double* [2 * iVal];
+	double** ppd_new_cd = new double*[iVal];
+	double** ppd_new_xd = new double*[iVal];
+	double** ppd_new_xdminmax = new double*[2 * iVal];
 
 	for (int i = 0; i < iVal; i++) {
 		pd_new_sd[i] = pd_sd[i];
@@ -133,7 +134,7 @@ bool CMscnProblem::bSetD(int iVal) {
 	ppd_cd = ppd_new_cd;
 	ppd_xd = ppd_new_xd;
 
-	for (int i = 2 * iVal; i < 2 * i_D; i++) 
+	for (int i = 2 * iVal; i < 2 * i_D; i++)
 		delete[] ppd_xdminmax[i];
 	delete[] ppd_xdminmax;
 
@@ -150,12 +151,12 @@ bool CMscnProblem::bSetF(int iVal) {
 
 	double* pd_new_sf = new double[iVal];
 	double* pd_new_uf = new double[iVal];
-	double** ppd_new_cf = new double* [iVal];
-	double** ppd_new_cd = new double* [i_D];
-	double** ppd_new_xf = new double* [iVal];
-	double** ppd_new_xd = new double* [i_D];
-	double** ppd_new_xdminmax = new double* [2 * i_D];
-	double** ppd_new_xfminmax = new double* [2 * iVal];
+	double** ppd_new_cf = new double*[iVal];
+	double** ppd_new_cd = new double*[i_D];
+	double** ppd_new_xf = new double*[iVal];
+	double** ppd_new_xd = new double*[i_D];
+	double** ppd_new_xdminmax = new double*[2 * i_D];
+	double** ppd_new_xfminmax = new double*[2 * iVal];
 
 	for (int i = 0; i < i_D; i++) {
 		ppd_new_cd[i] = new double[iVal];
@@ -231,7 +232,7 @@ bool CMscnProblem::bSetF(int iVal) {
 		for (int j = iVal; j < i_F; j++)
 			delete[] ppd_xdminmax[i];
 
-	for (int i = 2 * iVal; i < 2 * i_F; i++) 
+	for (int i = 2 * iVal; i < 2 * i_F; i++)
 		delete[] ppd_xfminmax[i];
 
 	delete[] ppd_xfminmax;
@@ -353,9 +354,9 @@ bool CMscnProblem::bSetS(int iVal) {
 
 	double* pd_new_ss = new double[iVal];
 	double* pd_new_p = new double[iVal];
-	double** ppd_new_cm = new double* [i_M];
-	double** ppd_new_xm = new double* [i_M];
-	double** ppd_new_xmminmax = new double* [2 * i_M];
+	double** ppd_new_cm = new double*[i_M];
+	double** ppd_new_xm = new double*[i_M];
+	double** ppd_new_xmminmax = new double*[2 * i_M];
 
 	for (int i = 0; i < i_M; i++) {
 		ppd_new_cm[i] = new double[iVal];
@@ -538,7 +539,7 @@ double CMscnProblem::dGetMin(double * pdSolution, int iId) {
 		return ppd_xmminmax[2 * (iId / i_S)][iId%i_S];
 	}
 
-	return -1; //tu powinna byc referencja bledu zmieniona na false;
+	return -1;
 }
 
 double CMscnProblem::dGetMax(double * pdSolution, int iId) {
@@ -656,7 +657,8 @@ double CMscnProblem::dGetQuality(double * pdSolution, bool &bIsSuccess) {
 			}
 			else {
 				bIsSuccess = false;
-				i = i_D; j = i_F;
+				i = i_D; 
+				j = i_F;
 			}
 		}
 	}
@@ -669,7 +671,8 @@ double CMscnProblem::dGetQuality(double * pdSolution, bool &bIsSuccess) {
 			}
 			else {
 				bIsSuccess = false;
-				i = i_F; j = i_M;
+				i = i_F; 
+				j = i_M;
 			}
 		}
 	}
@@ -682,7 +685,8 @@ double CMscnProblem::dGetQuality(double * pdSolution, bool &bIsSuccess) {
 			}
 			else {
 				bIsSuccess = false;
-				i = i_M; j = i_S;
+				i = i_M; 
+				j = i_S;
 			}
 		}
 	}
@@ -690,88 +694,141 @@ double CMscnProblem::dGetQuality(double * pdSolution, bool &bIsSuccess) {
 	return dCalculateProfit();
 }
 
-bool CMscnProblem::bConstraintsSatisfied(double * pdSolution) {
+bool CMscnProblem::bConstraintsSatisfied(double * pdSolution, string & sErrorCode) {
+	sErrorCode = "";
+
 	if (pdSolution == NULL) {
+		sErrorCode = NULL_ERROR;
 		return false;
 	}
 
-	int count = 0;
-	i_D = pdSolution[count++];
-	i_F = pdSolution[count++];
-	i_M = pdSolution[count++];
-	i_S = pdSolution[count++];
+	int i_counter = 0;
+	if (i_D != pdSolution[i_counter++] ||
+		i_F != pdSolution[i_counter++] ||
+		i_M != pdSolution[i_counter++] ||
+		i_S != pdSolution[i_counter++]) {
+		sErrorCode = LENGTH_ERROR;
+		return false;
+	}
 
-	double d_sum_xd = 0;
-	double d_sum_xf = 0;
-	double d_sum_xm = 0;
+	double d_current_sum_xd = 0;
+	double d_current_sum_xf = 0;
+	double d_current_sum_xm = 0;
+	double d_total_sum_xd = 0;
+	double d_total_sum_xf = 0;
+	double d_total_sum_xm = 0;
 
 	for (int i = 0; i < i_D; i++) {
 		for (int j = 0; j < i_F; j++) {
-			if (pdSolution[count] >= 0) {
-				d_sum_xd += pdSolution[count];
-				count++;
+			if (pdSolution[i_counter] >= 0) {
+				d_current_sum_xd += pdSolution[i_counter];
+				i_counter++;
 			}
 			else {
+				sErrorCode = NEGATIVE_VAL_ERROR;
 				return false;
 			}
 		}
+
+		if (d_current_sum_xd > pd_sd[i]) {
+			sErrorCode = BIGGER_THAN_PRODUCED_ERROR;
+			return false;
+		}
+		d_total_sum_xd += d_current_sum_xd;
+		d_current_sum_xd = 0;
 	}
 
 	for (int i = 0; i < i_F; i++) {
 		for (int j = 0; j < i_M; j++) {
-			if (pdSolution[count] >= 0) {
-				d_sum_xf += pdSolution[count];
-				count++;
+			if (pdSolution[i_counter] >= 0) {
+				d_current_sum_xf += pdSolution[i_counter];
+				i_counter++;
 			}
 			else {
+				sErrorCode = NEGATIVE_VAL_ERROR;
 				return false;
 			}
 		}
+
+		if (d_current_sum_xf > pd_sf[i]) {
+			sErrorCode = BIGGER_THAN_PRODUCED_ERROR;
+			return false;
+		}
+		d_total_sum_xf += d_current_sum_xf;
+		d_current_sum_xf = 0;
 	}
 
 	for (int i = 0; i < i_M; i++) {
 		for (int j = 0; j < i_S; j++) {
-			if (pdSolution[count] >= 0) {
-				d_sum_xm += pdSolution[count];
-				count++;
+			if (pdSolution[i_counter] >= 0) {
+				d_current_sum_xm += pdSolution[i_counter];
+				i_counter++;
 			}
 			else {
+				sErrorCode = NEGATIVE_VAL_ERROR;
 				return false;
 			}
 		}
+
+		if (d_current_sum_xm > pd_sm[i]) {
+			sErrorCode = BIGGER_THAN_PRODUCED_ERROR;
+			return false;
+		}
+		d_total_sum_xm += d_current_sum_xm;
+		d_current_sum_xm = 0;
 	}
 
-	if (d_sum_xd < d_sum_xf || d_sum_xf < d_sum_xm) {
+	d_current_sum_xm = 0;
+	i_counter = INDEX_OF_FIRST_DATA_IN_SOLUTION + i_D * i_F + i_F * i_M;
+
+	for (int i = 0; i < i_S; i++) {
+		for (int j = 0; j < i_M; j++) {
+			d_current_sum_xm += pdSolution[i_counter + i_M * j]; 
+		}
+
+		if (d_current_sum_xm > pd_ss[i]) {
+			sErrorCode = BIGGER_THAN_PRODUCED_ERROR;
+			return false;
+		}
+
+		d_current_sum_xm = 0;
+		i_counter++;
+	}
+
+	if (d_total_sum_xd < d_total_sum_xf || d_total_sum_xf < d_total_sum_xm) {
+		sErrorCode = SUM_ERROR;
 		return false;
 	}
 
-	count = 4;
-	for (int i = 0; i < 2 * i_D; i = +2) {
+
+	i_counter = 0;
+	for (int i = 0; i < 2 * i_D; i += 2) {
 		for (int j = 0; j < i_F; j++) {
-			if (pdSolution[count] < ppd_xdminmax[i][j] || pdSolution[count] > ppd_xdminmax[i + 1][j]) {
+			if (pdSolution[i_counter] < ppd_xdminmax[i][j] || pdSolution[i_counter] > ppd_xdminmax[i + 1][j]) {
+				sErrorCode = MIN_MAX_ERROR;
 				return false;
 			}
-			count++;
+			i_counter++;
 		}
 	}
 
-	for (int i = 0; i < 2 * i_F; i = +2) {
+	for (int i = 0; i < 2 * i_F; i += 2) {
 		for (int j = 0; j < i_M; j++) {
-			if (pdSolution[count] < ppd_xfminmax[i][j] || pdSolution[count] > ppd_xfminmax[i + 1][j]) {
+			if (pdSolution[i_counter] < ppd_xfminmax[i][j] || pdSolution[i_counter] > ppd_xfminmax[i + 1][j]) {
+				sErrorCode = MIN_MAX_ERROR;
 				return false;
 			}
-			count++;
+			i_counter++;
 		}
 	}
-	for (int i = 0; i < 2 * i_M; i = +2) {
+
+	for (int i = 0; i < 2 * i_M; i += 2) {
 		for (int j = 0; j < i_S; j++) {
-			if (pdSolution[count] < ppd_xmminmax[i][j] || pdSolution[count] > ppd_xmminmax[i + 1][j]) {
-				cout << pdSolution[count] << endl;
-				cout << ppd_xmminmax[i][j] << endl;
-				cout << ppd_xmminmax[i + 1][j] << endl;
+			if (pdSolution[i_counter] < ppd_xmminmax[i][j] || pdSolution[i_counter] > ppd_xmminmax[i + 1][j]) {
+				sErrorCode = MIN_MAX_ERROR;
 				return false;
 			}
-			count++;
+			i_counter++;
 		}
 	}
 
@@ -979,56 +1036,56 @@ bool CMscnProblem::bSaveObject(string sFileName) {
 		fprintf(pfFile, "%s %d\n", "S", i_S);
 
 		fprintf(pfFile, "sd\n");
-		for (int i = 0; i < i_D; i++) 
+		for (int i = 0; i < i_D; i++)
 			fprintf(pfFile, "%g ", pd_sd[i]);
 
 		fprintf(pfFile, "\nsf\n");
-		for (int i = 0; i < i_F; i++) 
+		for (int i = 0; i < i_F; i++)
 			fprintf(pfFile, "%g ", pd_sf[i]);
 
 		fprintf(pfFile, "\nsm\n");
-		for (int i = 0; i < i_M; i++) 
+		for (int i = 0; i < i_M; i++)
 			fprintf(pfFile, "%g ", pd_sm[i]);
 
 		fprintf(pfFile, "\nss\n");
-		for (int i = 0; i < i_S; i++) 
+		for (int i = 0; i < i_S; i++)
 			fprintf(pfFile, "%g ", pd_ss[i]);
 
 		fprintf(pfFile, "\ncd\n");
 		for (int i = 0; i < i_D; i++) {
-			for (int j = 0; j < i_F; j++) 
+			for (int j = 0; j < i_F; j++)
 				fprintf(pfFile, "%g ", ppd_cd[i][j]);
 			fprintf(pfFile, "\n");
 		}
 
 		fprintf(pfFile, "cf\n");
 		for (int i = 0; i < i_F; i++) {
-			for (int j = 0; j < i_M; j++) 
+			for (int j = 0; j < i_M; j++)
 				fprintf(pfFile, "%g ", ppd_cf[i][j]);
 			fprintf(pfFile, "\n");
 		}
 
 		fprintf(pfFile, "cm\n");
 		for (int ii = 0; ii < i_M; ii++) {
-			for (int ij = 0; ij < i_S; ij++) 
+			for (int ij = 0; ij < i_S; ij++)
 				fprintf(pfFile, "%g ", ppd_cm[ii][ij]);
 			fprintf(pfFile, "\n");
 		}
 
 		fprintf(pfFile, "ud\n");
-		for (int ii = 0; ii < i_D; ii++) 
+		for (int ii = 0; ii < i_D; ii++)
 			fprintf(pfFile, "%g ", pd_ud[ii]);
 
 		fprintf(pfFile, "\nuf\n");
-		for (int ii = 0; ii < i_F; ii++) 
+		for (int ii = 0; ii < i_F; ii++)
 			fprintf(pfFile, "%g ", pd_uf[ii]);
 
 		fprintf(pfFile, "\num\n");
-		for (int ii = 0; ii < i_M; ii++) 
+		for (int ii = 0; ii < i_M; ii++)
 			fprintf(pfFile, "%g ", pd_um[ii]);
 
 		fprintf(pfFile, "\np\n");
-		for (int ii = 0; ii < i_S; ii++) 
+		for (int ii = 0; ii < i_S; ii++)
 			fprintf(pfFile, "%g ", pd_p[ii]);
 
 		fprintf(pfFile, "\nxdminmax\n");
@@ -1049,6 +1106,92 @@ bool CMscnProblem::bSaveObject(string sFileName) {
 		fclose(pfFile);
 		return true;
 	}
-	
+
 	return false;
+}
+
+void CMscnProblem::vGenerateInstance(int iInstanceSeed) {
+	CRandom random(iInstanceSeed);
+	for (int i = 0; i < i_D; i++) {
+		bSetSD(i, random.d_rand(MIN_SD, MAX_SD));
+	}
+
+	for (int i = 0; i < i_F; i++) {
+		bSetSF(i, random.d_rand(MIN_SF, MAX_SF));
+	}
+
+	for (int i = 0; i < i_M; i++) {
+		bSetSM(i, random.d_rand(MIN_SM, MAX_SM));
+	}
+
+	for (int i = 0; i < i_S; i++) {
+		bSetSS(i, random.d_rand(MIN_SS, MAX_SS));
+	}
+
+	for (int i = 0; i < i_D; i++) {
+		for (int j = 0; j < i_F; j++) {
+			bSetCD(i, j, random.d_rand(MIN_CD, MAX_CD));
+		}
+	}
+
+	for (int i = 0; i < i_F; i++) {
+		for (int j = 0; j < i_M; j++) {
+			bSetCF(i, j, random.d_rand(MIN_CF, MAX_CF));
+		}
+	}
+
+	for (int i = 0; i < i_M; i++) {
+		for (int j = 0; j < i_S; j++) {
+			bSetCM(i, j, random.d_rand(MIN_CM, MAX_CM));
+		}
+	}
+
+	for (int i = 0; i < i_D; i++) {
+		bSetUD(i, random.d_rand(MIN_CD, MAX_CD));
+	}
+
+	for (int i = 0; i < i_F; i++) {
+		bSetUF(i, random.d_rand(MIN_UF, MAX_UF));
+	}
+
+	for (int i = 0; i < i_M; i++) {
+		bSetUM(i, random.d_rand(MIN_UM, MAX_UM));
+	}
+
+	for (int i = 0; i < i_S; i++) {
+		bSetP(i, random.d_rand(MIN_P, MAX_P));
+	}
+
+	for (int i = 0; i < 2 * i_D; i += 2) {
+		for (int j = 0; j < i_F; j++) {
+			bSetXDMinMax(i, j, 0);
+			bSetXDMinMax(i + 1, j, min(pd_sd[i / 2], pd_sf[j]));
+		}
+	}
+
+	for (int i = 0; i < 2 * i_F; i += 2) {
+		for (int j = 0; j < i_M; j++) {
+			double d_d_to_f_max = 0;
+			for (int k = 1; k < 2 * i_D; k += 2) {
+				d_d_to_f_max += ppd_xdminmax[k][i / 2];
+			}
+
+			bSetXFMinMax(i, j, 0);
+			double d_max_correct_val = min(pd_sf[i / 2], pd_sm[j]);
+			bSetXFMinMax(i + 1, j, min(d_max_correct_val, d_d_to_f_max));
+		}
+	}
+
+	for (int i = 0; i < 2 * i_M; i += 2) {
+		for (int j = 0; j < i_S; j++) {
+			double d_f_to_m_max = 0;
+			for (int k = 1; k < 2 * i_F; k += 2) {
+				d_f_to_m_max += ppd_xfminmax[k][i / 2];
+			}
+
+			bSetXMMinMax(i, j, 0);
+			double d_max_correct_val = min(pd_sm[i / 2], pd_ss[j]);
+			bSetXMMinMax(i + 1, j, min(d_max_correct_val, d_f_to_m_max));
+		}
+	}
 }

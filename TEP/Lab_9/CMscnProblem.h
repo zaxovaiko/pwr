@@ -42,24 +42,24 @@ public:
 	bool bSetM(int iVal);
 	bool bSetS(int iVal);
 
-	bool bSetValueCD(int iRow, int iColumn, double dVal);
-	bool bSetValueCF(int iRow, int iColumn, double dVal);
-	bool bSetValueCM(int iRow, int iColumn, double dVal);
+	bool bSetCD(int iRow, int iColumn, double dVal);
+	bool bSetCF(int iRow, int iColumn, double dVal);
+	bool bSetCM(int iRow, int iColumn, double dVal);
 
-	bool bSetValueSD(int iIndex, double dVal);
-	bool bSetValueSF(int iIndex, double dVal);
-	bool bSetValueSM(int iIndex, double dVal);
-	bool bSetValueSS(int iIndex, double dVal);
+	bool bSetSD(int iIndex, double dVal);
+	bool bSetSF(int iIndex, double dVal);
+	bool bSetSM(int iIndex, double dVal);
+	bool bSetSS(int iIndex, double dVal);
 
-	bool bSetValueUD(int iIndex, double dVal);
-	bool bSetValueUF(int iIndex, double dVal);
-	bool bSetValueUM(int iIndex, double dVal);
+	bool bSetUD(int iIndex, double dVal);
+	bool bSetUF(int iIndex, double dVal);
+	bool bSetUM(int iIndex, double dVal);
 
-	bool bSetValueP(int iIndex, double dVal);
+	bool bSetP(int iIndex, double dVal);
 
-	bool bSetValueXDMinMax(int iRow, int iColumn, double dVal);
-	bool bSetValueXFMinMax(int iRow, int iColumn, double dVal);
-	bool bSetValueXMMinMax(int iRow, int iColumn, double dVal);
+	bool bSetXDMinMax(int iRow, int iColumn, double dVal);
+	bool bSetXFMinMax(int iRow, int iColumn, double dVal);
+	bool bSetXMMinMax(int iRow, int iColumn, double dVal);
 
 	double dGetMin(double* pdSolution, int iId);
 	double dGetMax(double* pdSolution, int iId);
