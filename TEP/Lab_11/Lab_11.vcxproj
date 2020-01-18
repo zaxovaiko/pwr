@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{6DA5D990-D952-432F-8A5F-69444C528804}</ProjectGuid>
-    <RootNamespace>Lab92</RootNamespace>
+    <ProjectGuid>{BECF14D9-8834-4495-8610-FA425CA0EF53}</ProjectGuid>
+    <RootNamespace>Lab11</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,23 +123,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CDiffEvol.cpp" />
     <ClCompile Include="CMatrix.cpp" />
-    <ClCompile Include="CMSCNProblem.cpp" />
-    <ClCompile Include="CRandom.cpp" />
+    <ClCompile Include="CMscnProblem.cpp" />
+    <ClCompile Include="CRandomSearch.cpp" />
     <ClCompile Include="CSolution.cpp" />
     <ClCompile Include="CTable.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CDiffEvol.h" />
     <ClInclude Include="CMatrix.h" />
-    <ClInclude Include="CMSCNProblem.h" />
+    <ClInclude Include="CMscnProblem.h" />
+    <ClInclude Include="CProblem.h" />
     <ClInclude Include="CRandom.h" />
+    <ClInclude Include="CRandomSearch.h" />
     <ClInclude Include="CSolution.h" />
     <ClInclude Include="CTable.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="problem.txt" />
     <Text Include="solution.txt" />
+    <Text Include="test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

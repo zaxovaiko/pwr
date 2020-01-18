@@ -15,48 +15,57 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CTable.cpp">
+    <ClCompile Include="CDiffEvol.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CMatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CMSCNProblem.cpp">
+    <ClCompile Include="CMscnProblem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CRandomSearch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CSolution.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CRandom.cpp">
+    <ClCompile Include="CTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CTable.h">
+    <ClInclude Include="CDiffEvol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CMSCNProblem.h">
+    <ClInclude Include="CMscnProblem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CSolution.h">
+    <ClInclude Include="CProblem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CRandom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CRandomSearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSolution.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="problem.txt">
-      <Filter>Source Files</Filter>
-    </Text>
-    <Text Include="solution.txt">
-      <Filter>Source Files</Filter>
-    </Text>
+    <Text Include="test.txt" />
+    <Text Include="solution.txt" />
+    <Text Include="problem.txt" />
   </ItemGroup>
 </Project>
