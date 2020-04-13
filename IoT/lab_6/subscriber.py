@@ -1,9 +1,11 @@
 import sqlite3
 import sys
 import tkinter as tk
+from tkinter import ttk
 import paho.mqtt.client as mqtt
 from datetime import datetime
 import csv
+import re
 
 # PC (broker + saver to DB) - This is publisher file. Belongs to Raspberry Pi with RFID.
 
@@ -15,12 +17,20 @@ def run():
         terminal_label.config(text=mqtt.connack_string(rc))
 
     def on_message(client, ud, m):
-        # here we get message from publisher
         card_id = m.payload.decode("utf-8")
-        user = con.cursor().execute(f'SELECT * FROM workers WHERE card_id = {card_id}').fetchall()[0]
-        con.execute(f'INSERT INTO records (CARD_ID, USER_ID) VALUES ({card_id}, {user[0]})')
+        user = None
+       # user = con.cursor().execute(f'SELECT * FROM workers WHERE card_id = {card_id}').fetchall()
+        
+
+        if not user:
+            user = [-1]
+        try:
+            con.execute(f'INSERT INTO records (card_id, worker_id) VALUES ({card_id}, {user[0]})')
+            con.commit()
+        except sqlite3.Error as er:
+            print(er)
+        print(user)
         print('Card ID_' + m.payload.decode('utf-8') + ' time: ' + datetime.now().strftime("%d.%m.%Y %H:%M:%S"))
-        con.commit()
 
     window = tk.Tk()
     window.title('Subscriber')
@@ -30,16 +40,72 @@ def run():
     terminal_label.grid(column=0, row=0, columnspan=6, padx=15, sticky='nsew', pady=15)
 
     def add_worker():
-        pass
+        subwindow = tk.Tk()
+        subwindow.title('Add worker')
+        subwindow.resizable(False, False)
+
+        worker_name_textfield = tk.Entry(subwindow)
+        worker_name_textfield.grid(column=3, row=1, columnspan=3, padx=(0, 15), pady=(15, 5), sticky='news')
+        tk.Label(subwindow, text='Worker Name').grid(column=1, row=1, columnspan=1, padx=(15, 5), pady=(15, 5))
+
+        def check_fields():
+            worker_name = worker_name_textfield.get()
+            if worker_name != '':
+                con.execute(f'INSERT INTO workers (name) VALUES ("{worker_name}")')
+                con.commit()
+                terminal_label.config(text='Worker was added.')
+            else:
+                terminal_label.config(text='Name can not be empty.')
+            subwindow.destroy()
+
+        tk.Button(subwindow, text='Add worker', command=check_fields).grid(column=3, row=4, columnspan=5, pady=(5, 15))
+        subwindow.mainloop()
 
     def remove_worker():
-        pass
+        subwindow = tk.Tk()
+        subwindow.title('Remove worker')
+        subwindow.resizable(False, False)
+
+        workers = list(map(lambda x: f'ID={x[0]}, {x[1]}', con.execute('SELECT * FROM workers ORDER BY name').fetchall()))
+        workers_combobox = ttk.Combobox(subwindow, values=workers)
+        workers_combobox.grid(column=3, row=1, columnspan=3, padx=(0, 15), pady=(15, 5), sticky='news')
+
+        tk.Label(subwindow, text='Worker').grid(column=1, row=1, columnspan=1, padx=(15, 5), pady=(15, 5))
+
+        def check_field():
+            worker_id = list(map(int, re.findall(r'\d+', workers_combobox.get().split(',')[0])))[0]
+            con.execute(f'DELETE FROM workers WHERE id = {worker_id}')
+            con.commit()
+            terminal_label.config(text='Worker was removed.')
+            subwindow.destroy()
+
+        tk.Button(subwindow, text='Remove worker', command=check_field).grid(column=4, row=4, pady=(5, 15))
+        subwindow.mainloop()
 
     def pin_card():
         pass
 
     def unpin_card():
-        pass
+        subwindow = tk.Tk()
+        subwindow.title('Unpin card')
+        subwindow.resizable(False, False)
+
+        workers = list(
+            map(lambda x: f'ID={x[0]}, {x[1]}', con.execute('SELECT * FROM workers ORDER BY name').fetchall()))
+        workers_combobox = ttk.Combobox(subwindow, values=workers)
+        workers_combobox.grid(column=3, row=1, columnspan=3, padx=(0, 15), pady=(15, 5), sticky='news')
+
+        tk.Label(subwindow, text='Worker').grid(column=1, row=1, columnspan=1, padx=(15, 5), pady=(15, 5))
+
+        def check_field():
+            worker_id = list(map(int, re.findall(r'\d+', workers_combobox.get().split(',')[0])))[0]
+            con.execute(f'UPDATE workers SET card_id = NULL WHERE id = {worker_id}')
+            con.commit()
+            terminal_label.config(text='Card was unpinned.')
+            subwindow.destroy()
+
+        tk.Button(subwindow, text='Unpin card', command=check_field).grid(column=4, row=4, pady=(5, 15))
+        subwindow.mainloop()
 
     def make_report():
         records = con.cursor().execute('SELECT * FROM records').fetchall()

@@ -1,0 +1,10 @@
+# IDEs
+/.vscode
+/.idea
+
+# env
+/__pycache__
+
+# Local resources
+*.db
+*.csv

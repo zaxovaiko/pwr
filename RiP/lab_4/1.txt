@@ -1,0 +1,233 @@
+_______________________________________________________________________
+|                                                                     |
+|............................... ZADANIE 1 ...........................|
+|_____________________________________________________________________|
+
+
+9 ............................................................................
+S_6#show spanning-tree 
+VLAN0001
+Fa0/5            Altn BLK 19        128.5    P2p
+Fa0/3            Root FWD 19        128.3    P2p
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/7            Altn BLK 19        128.7    P2p
+Fa0/11           Desg FWD 19        128.11   P2p
+
+S_7#show spanning-tree 
+VLAN0001
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/5            Desg BKN*19        128.5    P2p *TYPE_Inc
+Fa0/7            Desg BKN*19        128.7    P2p *TYPE_Inc
+Fa0/3            Desg BKN*19        128.3    P2p *TYPE_Inc
+Fa0/11           Desg FWD 19        128.11   P2p
+
+
+11 ...........................................................................
+
+S_6#ping 192.168.0.79
+Success rate is 60 percent (3/5), round-trip min/avg/max = 0/0/0 ms
+
+PC_61:
+C:\>ping 192.168.0.79
+Ping statistics for 192.168.0.79:
+    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),
+    Minimum = 0ms, Maximum = 6ms, Average = 2ms
+
+PC_61:
+C:\>ping 192.168.0.71
+Ping statistics for 192.168.0.71:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Minimum = 0ms, Maximum = 3ms, Average = 1ms
+
+PC_62:
+C:\>ping 192.168.0.79
+Ping statistics for 192.168.0.79:
+    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),
+    Minimum = 0ms, Maximum = 4ms, Average = 1ms
+
+PC_62:
+C:\>ping 192.168.0.72
+Ping statistics for 192.168.0.72:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Minimum = 0ms, Maximum = 3ms, Average = 1ms
+
+12 ..............................................................................
+
+S_6#show etherchannel summary 
+1      Po1(SU)           LACP   Fa0/3(P) Fa0/5(P) Fa0/7(P)
+
+S_6#show etherchannel port-channel 
+
+Logical slot/port   = 2/1       
+Number of ports     = 3 
+Port state          = Port-channel 
+Protocol            = LACP
+
+Index   Load   Port     EC state        No of bits
+------+------+------+------------------+-----------
+  0     00     Fa0/3    Active             0
+  0     00     Fa0/5    Active             0
+  0     00     Fa0/7    Active             0
+Time since last port bundled:    00d:00h:08m:41s    Fa0/7
+
+
+13 ...............................................................................
+
+S_6#show spanning-tree 
+VLAN0001
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/11           Desg FWD 19        128.11   P2p
+Po1              Root FWD 8         128.27   Shr
+
+S_7#show spanning-tree 
+VLAN0001
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/11           Desg FWD 19        128.11   P2p
+Po1              Desg FWD 8         128.27   Shr
+
+16 ...............................................................................
+
+S_L -> S_M     - powodzenie
+PC_L1 -> PC_M1 - powodzenie
+PC_L2 -> PC_M2 - NIEPOWODZENIE
+
+18 ...............................................................................
+
+S_L –> S_M     - powodzenie
+PC_L1 –> S_M   - powodzenie
+PC_L2 –> S_M   - NIEPOWODZENIE
+PC_L1 -> PC_M1 - powodzenie
+PC_L2 –> PC_M2 - powodzenie
+
+19 ................................................................................
+
+S_6#show etherchannel summary
+1      Po1(SU)           LACP   Fa0/3(P) Fa0/5(P) Fa0/7(P) 
+
+S_6#show etherchannel port-channel 
+Logical slot/port   = 2/1       
+Number of ports     = 3
+Port state          = Port-channel 
+Protocol            = LACP
+
+Index   Load   Port     EC state        No of bits
+------+------+------+------------------+-----------
+  0     00     Fa0/3    Active             0
+  0     00     Fa0/5    Active             0
+  0     00     Fa0/7    Active             0
+Time since last port bundled:    00d:00h:18m:28s    Fa0/7
+
+20 ................................................................................
+
+S_6# show spanning-tree 
+VLAN0001
+Fa0/1            Desg FWD 19        128.1    P2p
+Po1              Root FWD 8         128.27   Shr
+
+VLAN0020
+Fa0/11           Desg FWD 19        128.11   P2p
+
+----------------------  
+S_7#show spanning-tree 
+VLAN0001
+Fa0/1            Desg FWD 19        128.1    P2p
+Po1              Desg FWD 8         128.27   Shr
+
+VLAN0020
+Fa0/11           Desg FWD 19        128.11   P2p
+
+22 .................................................................................
+
+S_6#show etherchannel port-channel 
+
+Logical slot/port   = 2/1       
+Number of ports     = 2   
+Port state          = Port-channel 
+Protocol            = LACP
+
+Index   Load   Port     EC state        No of bits
+------+------+------+------------------+-----------
+  0     00     Fa0/3    Active             0
+  0     00     Fa0/5    Active             0
+Time since last port bundled:    00d:00h:00m:43s    Fa0/5
+
+
+S_6#show etherchannel summary 
+1      Po1(SU)           LACP   Fa0/3(P) Fa0/5(P) Fa0/7(D) 
+
+
+23 ...................................................................................
+
+S_6>show etherchannel port-channel 
+Logical slot/port   = 2/1       
+Number of ports     = 2
+Port state          = Port-channel 
+Protocol            = LACP
+
+  0     00     Fa0/3    Active             0
+  0     00     Fa0/5    Active             0
+Time since last port bundled:    00d:00h:26m:46s    Fa0/5
+
+
+S_7#show etherchannel port-channel 
+Age of the Port-channel   = 00d:00h:06m:03s
+Logical slot/port   = 2/1       
+Number of ports     = 2
+Port state          = Port-channel 
+Protocol            = LACP
+
+Index   Load   Port     EC state        No of bits
+------+------+------+------------------+-----------
+  0     00     Fa0/3    Passive            0
+  0     00     Fa0/5    Passive            0
+Time since last port bundled:    00d:00h:06m:03s    Fa0/5
+
+24 ...................................................................................
+
+29 sekund na ponownie połączenie.
+
+25 ....................................................................................
+
+S_6#show etherchannel port-channel 
+Age of the Port-channel   = 00d:00h:09m:39s
+Logical slot/port   = 2/1       
+Number of ports     = 0
+Port state          = Port-channel 
+Protocol            = LACP
+
+S_6#show etherchannel summary 
+1      Po1(SD)           LACP   Fa0/3(I) Fa0/5(I) Fa0/7(D) 
+
+
+S_6#show spanning-tree 
+VLAN0001
+Fa0/5            Altn BLK 19        128.5    P2p
+Fa0/3            Root FWD 19        128.3    P2p
+Fa0/1            Desg FWD 19        128.1    P2p
+
+VLAN0010
+Fa0/5            Altn BLK 19        128.5    P2p
+Fa0/3            Root FWD 19        128.3    P2p
+
+VLAN0020
+Fa0/5            Altn BLK 19        128.5    P2p
+Fa0/11           Desg FWD 19        128.11   P2p
+Fa0/3            Root FWD 19        128.3    P2p
+
+
+S_7#show spanning-tree 
+VLAN0001
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/4            Desg FWD 19        128.4    P2p
+Fa0/6            Desg FWD 19        128.6    P2p
+
+VLAN0010
+Fa0/4            Desg FWD 19        128.4    P2p
+Fa0/6            Desg FWD 19        128.6    P2p
+
+VLAN0020
+Fa0/4            Desg FWD 19        128.4    P2p
+Fa0/6            Desg FWD 19        128.6    P2p
+Fa0/11           Desg FWD 19        128.11   P2p
+
+Koszt "popsutego" kanału nie zmienił się.

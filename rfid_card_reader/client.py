@@ -1,30 +1,25 @@
-"""
-RPi (publisher) -> PC
-This is publisher file. Belongs to Raspberry Pi with connected RFID.
-"""
-import time
 import sys
+import time
 import paho.mqtt.client as mqtt
 import tkinter as tk
+from config import CONFIG
 
 
 def run():
-    broker = 'localhost'
-    terminal = 'Terminal 1'
+    broker = CONFIG['BROKER']
+    terminal = 'Terminal_1'
 
     window = tk.Tk()
-    window.title('Publisher')
+    window.title('Client')
     window.resizable(False, False)
 
     terminal_label = tk.Label(window, text='Terminal is not connected yet.')
     terminal_label.grid(column=0, row=0, columnspan=6, pady=(15, 5), padx=15)
 
-    card_id_textfield = tk.Entry(window)
-    card_id_textfield.grid(column=1, row=1, columnspan=5, pady=(5, 10), padx=(0, 15))
+    card_id_textfield = tk.Entry(window).grid(column=1, row=1, columnspan=5, pady=(5, 10), padx=(0, 15))
 
     def publish():
         card_id = card_id_textfield.get()
-        print(card_id)
         if card_id.isdigit():
             client.publish("worker/test", int(card_id))
 
@@ -43,7 +38,7 @@ def run():
     client = mqtt.Client(terminal)
     client.on_connect = on_connect
 
-    while True:  # Check for connection every 3 seconds until success
+    while True:
         try:
             client.connect(broker)
             break

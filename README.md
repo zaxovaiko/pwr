@@ -8,3 +8,4 @@ All tasks from Wroclaw University of Science and Technologies 👨‍🎓.
  - 4 semestr
     - Metody Systemowe i Decyzyjne
     - Router i Przełączniki
+    - Internet of Things

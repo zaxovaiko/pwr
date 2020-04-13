@@ -1,0 +1,185 @@
+Wersja: rip_lab04_200325
+251526@student.pwr.edu.pl Volodymyr Zakhovaiko
+251527@student.pwr.edu.pl Illia Hrebenko
+
+12 --------------------------------------------------------
+
+C:\>tracert 192.168.7.254
+
+Tracing route to 192.168.7.254 over a maximum of 30 hops: 
+
+  1   5 ms      0 ms      1 ms      192.168.0.60
+  2   0 ms      0 ms      0 ms      192.168.7.254
+
+Trace complete.
+
+C:\>tracert 1.2.3.4
+
+Tracing route to 1.2.3.4 over a maximum of 30 hops: 
+
+  1   1 ms      3 ms      0 ms      192.168.0.60
+  2   4 ms      0 ms      0 ms      192.168.0.70
+  3   0 ms      *         0 ms      192.168.0.70
+  4   *         1 ms      *         Request timed out.
+  5   1 ms      *         
+  ...
+
+C:\>arp -a
+  Internet Address      Physical Address      Type
+  192.168.0.60          0030.a3d6.be30        dynamic
+  192.168.0.70          0040.0b23.077e        dynamic
+
+
+13 --------------------------------------------------------
+
+S_6#show mac address-table 
+   1    0003.e498.1115    DYNAMIC     Fa0/21
+   1    0030.a3d6.be30    DYNAMIC     Fa0/23
+   1    0040.0b23.077e    DYNAMIC     Fa0/21
+   1    00e0.f73d.9d11    DYNAMIC     Fa0/1
+
+15 --------------------------------------------------------
+
+R_6#show standby 
+FastEthernet0/0 - Group 1
+  State is Active
+    5 state changes, last state change 01:12:48
+  Virtual IP address is 192.168.0.254
+  Active virtual MAC address is 0000.0C07.AC01
+    Local virtual MAC address is 0000.0C07.AC01 (v1 default)
+  Hello time 3 sec, hold time 10 sec
+    Next hello sent in 2.371 secs
+  Preemption enabled
+  Active router is local
+  Standby router is 192.168.0.70
+  Priority 110 (configured 110)
+  Group name is hsrp-Fa0/0-1 (default)
+
+R_6#show standby  brief
+Interface   Grp  Pri P State    Active          Standby         Virtual IP
+Fa0/0       1    110 P Active   local           192.168.0.70    192.168.0.254  
+
+16 --------------------------------------------------------
+
+PC_61 C:\>tracert 192.168.7.254
+
+Tracing route to 192.168.7.254 over a maximum of 30 hops: 
+  1   1 ms      0 ms      0 ms      192.168.0.60
+  2   0 ms      1 ms      0 ms      192.168.7.254
+Trace complete.
+
+C:\>tracert 1.2.3.4
+
+Tracing route to 1.2.3.4 over a maximum of 30 hops: 
+
+  1   0 ms      0 ms      1 ms      192.168.0.60
+  2   0 ms      2 ms      4 ms      192.168.0.70
+  3   3 ms      *         0 ms      192.168.0.70
+  4   *         13 ms     *         Request timed out.
+  5   0 ms     
+
+C:\>arp -a
+  Internet Address      Physical Address      Type
+  192.168.0.60          0030.a3d6.be30        dynamic
+  192.168.0.70          0040.0b23.077e        dynamic
+
+18 --------------------------------------------------------
+
+C:\>tracert 192.168.7.254
+
+Tracing route to 192.168.7.254 over a maximum of 30 hops: 
+  1   0 ms      1 ms      0 ms      192.168.0.60
+  2   1 ms      1 ms      1 ms      192.168.7.254
+Trace complete.
+
+C:\>tracert 1.2.3.4
+
+Tracing route to 1.2.3.4 over a maximum of 30 hops: 
+  1   1 ms      0 ms      1 ms      192.168.0.60
+  2   3 ms      0 ms      1 ms      192.168.0.70
+  3   4 ms      *         0 ms      192.168.0.70
+  4   *         3 ms      *         Request timed out.
+  5   10 ms    
+
+
+19 --------------------------------------------------------
+
+S_6#show mac address-table 
+   1    0000.0c07.ac01    DYNAMIC     Fa0/23
+   1    0003.e498.1115    DYNAMIC     Fa0/21
+   1    0030.a3d6.be30    DYNAMIC     Fa0/23
+   1    0040.0b23.077e    DYNAMIC     Fa0/21
+   1    00e0.f73d.9d11    DYNAMIC     Fa0/1
+
+
+21 --------------------------------------------------------
+
+Na ponowne połączenie potrzebno 10 ms.
+
+22 --------------------------------------------------------
+
+R_6#show standby 
+FastEthernet0/0 - Group 1
+  State is Active
+    10 state changes, last state change 01:19:55
+  Virtual IP address is 192.168.0.254
+  Active virtual MAC address is 0000.0C07.AC01
+    Local virtual MAC address is 0000.0C07.AC01 (v1 default)
+  Hello time 3 sec, hold time 10 sec
+    Next hello sent in 1.412 secs
+  Preemption enabled
+  Active router is local
+  Standby router is 192.168.0.70, priority 100 (expires in 8 sec)
+  Priority 110 (configured 110)
+  Group name is hsrp-Fa0/0-1 (default)
+
+R_6#show standby brief
+Interface   Grp  Pri P State    Active          Standby         Virtual IP
+Fa0/0       1    110 P Active   local           192.168.0.70    192.168.0.254 
+
+23 --------------------------------------------------------
+
+C:\>tracert 192.168.7.254
+
+Tracing route to 192.168.7.254 over a maximum of 30 hops: 
+  1   *         0 ms      0 ms      192.168.0.60
+  2   0 ms      1 ms      2 ms      192.168.7.254
+Trace complete.
+
+C:\>tracert 1.2.3.4
+
+Tracing route to 1.2.3.4 over a maximum of 30 hops: 
+
+  1   0 ms      4294967295 ms1 ms      192.168.0.60
+  2   1 ms      0 ms      12 ms     192.168.0.70
+  3   2 ms      *         4294967295 ms192.168.0.70
+  4   *         2 ms      *         Request timed out.
+
+C:\>arp -a
+  Internet Address      Physical Address      Type
+  192.168.0.60          0030.a3d6.be30        dynamic
+  192.168.0.70          0040.0b23.077e        dynamic
+  192.168.0.254         0000.0c07.ac01        dynamic
+
+24 -------------------------------------------------------
+
+S_6#show mac address-table 
+   1    0003.e498.1115    DYNAMIC     Fa0/21
+   1    0030.a3d6.be30    DYNAMIC     Fa0/23
+   1    0040.0b23.077e    DYNAMIC     Fa0/21
+   1    00e0.f73d.9d11    DYNAMIC     Fa0/1
+
+25-26 ----------------------------------------------------
+
+R_6#show standby  brief
+Interface   Grp  Pri P State    Active          Standby         Virtual IP
+Fa0/0       1    110 P Active   local           192.168.0.70    192.168.0.254 
+
+28 -------------------------------------------------------
+
+W moment aktywowania bram następuje zakłocenie łączności ping na kilka sekund.
+
+29 -------------------------------------------------------
+
+
+

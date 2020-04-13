@@ -1,0 +1,133 @@
+_______________________________________________________________________
+|                                                                     |
+|............................... ZADANIE 2 ...........................|
+|_____________________________________________________________________|
+
+
+8 ...................................................................
+
+S_6#ping 192.168.0.79
+Success rate is 60 percent (3/5), round-trip min/avg/max = 0/0/1 ms
+
+C:\>ping 192.168.0.89
+    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),
+    Minimum = 0ms, Maximum = 3ms, Average = 1ms
+
+C:\>ping 192.168.0.81
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Minimum = 0ms, Maximum = 3ms, Average = 1ms
+
+
+C:\>ping 192.168.0.82
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Minimum = 0ms, Maximum = 2ms, Average = 0ms
+
+9 ......................................................................
+
+S_7#show etherchannel summary 
+2      Po2(SU)           PAgP   Fa0/3(P) Fa0/5(P) Fa0/7(P) 
+
+S_7#show etherchannel port-channel 
+
+Age of the Port-channel   = 00d:00h:13m:51s
+Logical slot/port   = 2/2       
+Number of ports     = 3
+Port state          = Port-channel 
+Protocol            =   PAGP
+
+  0     00     Fa0/3    Desirable-Sl       0
+  0     00     Fa0/5    Desirable-Sl       0
+  0     00     Fa0/7    Desirable-Sl       0
+Time since last port bundled:    00d:00h:11m:58s    Fa0/7
+
+10 ..........................................................................
+S_7#show spanning-tree 
+VLAN0001
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/11           Desg FWD 19        128.11   P2p
+Fa0/13           Desg FWD 19        128.13   P2p
+Fa0/17           Desg FWD 19        128.17   P2p
+Fa0/15           Desg FWD 19        128.15   P2p
+Po2              Desg FWD 8         128.27   Shr
+
+14 ..........................................................................
+
+S_X –> S_Y - powodzenie
+PC_X1 –> S_Y - powodzenie
+PC_X2 –> S_Y - NIEPOWODZENIE
+PC_X1 -> PC_Y1 - powodzenie
+PC_X2 –> PC_Y2 - powodzenie
+
+15-16 ..........................................................................
+
+5 sekund potrzebne są na to, żeby naprawić połączenie.
+
+17 .............................................................................
+
+Przy takim ustawieniu kanał nie będzie działał.
+S_7#show etherchannel port-channel 
+
+Age of the Port-channel   = 00d:00h:31m:28s
+Logical slot/port   = 2/2       Number of ports = 3
+Port state          = Port-channel 
+Protocol            = PAGP
+  0     00     Fa0/3    Desirable-Sl       0
+  0     00     Fa0/5    Desirable-Sl       0
+  0     00     Fa0/7    Desirable-Sl       0
+Time since last port bundled:    00d:00h:29m:35s    Fa0/7
+
+
+S_7#show etherchannel summary 
+2      Po2(SU)           PAgP   Fa0/3(P) Fa0/5(P) Fa0/7(P) 
+
+
+S_7#show spanning-tree 
+VLAN0001
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/3            Desg FWD 19        128.3    P2p
+Fa0/5            Desg FWD 19        128.5    P2p
+Fa0/7            Desg FWD 19        128.7    P2p
+Fa0/13           Desg FWD 19        128.13   P2p
+Fa0/17           Desg FWD 19        128.17   P2p
+Fa0/15           Desg FWD 19        128.15   P2p
+Po2              Desg FWD 8         128.27   Shr
+
+VLAN0010
+Fa0/3            Desg FWD 19        128.3    P2p
+Fa0/5            Desg FWD 19        128.5    P2p
+Fa0/7            Desg FWD 19        128.7    P2p
+
+VLAN0020
+Fa0/3            Desg FWD 19        128.3    P2p
+Fa0/5            Desg FWD 19        128.5    P2p
+Fa0/7            Desg FWD 19        128.7    P2p
+Fa0/11           Desg FWD 19        128.11   P2p
+
+
+S_8#show spanning-tree 
+VLAN0001
+
+Fa0/6            Altn BLK 19        128.6    P2p
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/7            Desg FWD 19        128.7    P2p
+Fa0/4            Altn BLK 19        128.4    P2p
+Fa0/13           Desg FWD 19        128.13   P2p
+Fa0/15           Desg FWD 19        128.15   P2p
+Fa0/17           Desg FWD 19        128.17   P2p
+Po2              Root FWD 8         128.27   Shr
+
+VLAN0010
+Fa0/6            Altn BLK 19        128.6    P2p
+Fa0/7            Desg FWD 19        128.7    P2p
+Fa0/4            Root FWD 19        128.4    P2p
+
+VLAN0020
+Fa0/6            Altn BLK 19        128.6    P2p
+Fa0/11           Desg FWD 19        128.11   P2p
+Fa0/7            Desg FWD 19        128.7    P2p
+Fa0/4            Root FWD 19        128.4    P2p
+
+18 ..................................................................
+
+S_L -> S_M - powodzenie przy auto
+S_L -> S_M - powodzenie przy desirable
