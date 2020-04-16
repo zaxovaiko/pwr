@@ -3,12 +3,18 @@ from faker import Faker
 
 
 def seed_database():
-    fake = Faker()
+    """
+    Use this method to fill database with fake data.
+    Faker lib is used to add worker's and card's name.
 
+    :return: None
+    """
+    fake = Faker()
     con = sqlite3.connect('records.db')
 
-    for i in range(1000):
+    for _ in range(1000):
         con.execute(f'INSERT INTO workers (name) VALUES ("{fake.name()}")')
+        con.execute(f'INSERT INTO cards (name) VALUES ("Card {fake.word()}")')
 
     con.commit()
     print('Tables was seeded successfully.')

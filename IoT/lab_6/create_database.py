@@ -3,7 +3,13 @@ import os
 
 
 def create_database():
-    # Remove previous database
+    """
+    Removes previously created database if it exists.
+    Creates three tables (records, workers, cards).
+
+    :return: None
+    """
+
     if os.path.exists('records.db'):
         os.remove('records.db')
 
@@ -13,7 +19,7 @@ def create_database():
         CREATE TABLE records (
             id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
             card_id INT NOT NULL,
-            worker_id INT NOT NULL,
+            worker_id INT,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
         '''
@@ -33,12 +39,13 @@ def create_database():
         CREATE TABLE cards (
             id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
             name TEXT NOT NULL,
+            worker_id INT,
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )
         '''
     )
     con.commit()
-    print('Tables records and workers were created successfully.')
+    print('Tables were created successfully.')
     con.close()
 
 
