@@ -1,6 +1,15 @@
+# Szyfrowana komunikacja
+
+   > Zbudowano na bazie laboratorium 6
+
 ## Instrukcja uruchomienia programu
 
 Aby urochomić ten program, należy:
+  - Utworzyć folder `C:\Program Files\mosquitto\certs`.
+  - Zainstalować OpenSSL na swój system.
+  - W folderzu `certs` zgenerować pliki: `ca.crt`, `server.crt`, `server.key`.
+  - Zmodyfikować `mosquitto.conf` zgodnie z zadaniem.
+  - Dodać plik `ca.crt` w folder projektu.
   - Zresetować poprzednią bazę danych używając komendy `python create_database.py`.
   - Dla testów z gotową BD można użyć `python seeder.py`.
   - Urochomić brokera używając `mosquitto`.

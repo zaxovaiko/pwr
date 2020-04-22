@@ -1,0 +1,120 @@
+Zadanie 2
+---------------------------------------
+
+5. ------------------------------------
+
+PC_62 -> R_6 - powodzenie
+
+C:\>ping 192.168.6.60
+
+Ping statistics for 192.168.6.60:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 3ms, Average = 1ms
+
+
+17. ------------------------------------
+
+R_6:
+	Se2/0 - BW 128 KBit, DLY 20000 usec
+	Fa0/0 - BW 100000 Kbit, DLY 100 usec
+
+
+R_7:
+	Se3/0 - BW 128 KBit, DLY 20000 usec
+	Fa0/0 - BW 100000 Kbit, DLY 100 usec
+	
+18. ------------------------------------
+
+R_6# show ip eigrp topo
+IP-EIGRP Topology Table for AS 10/ID(172.16.62.254)
+
+P 10.0.0.0/8, 1 successors, FD is 20512000 via Summary (20512000/0), Null0
+P 10.6.7.0/30, 1 successors, FD is 20512000 via Connected, Serial2/0
+P 172.16.0.0/16, 1 successors, FD is 128256 via Summary (128256/0), Null0
+P 172.16.60.254/32, 1 successors, FD is 128256 via Connected, Loopback0
+P 172.16.61.0/24, 1 successors, FD is 128256 via Connected, Loopback1
+P 172.16.62.0/24, 1 successors, FD is 128256 via Connected, Loopback2
+P 192.168.6.0/24, 1 successors, FD is 28160 via Connected, FastEthernet0/0
+P 192.168.7.0/24, 1 successors, FD is 20514560 via 10.6.7.2 (20514560/28160), Serial2/0
+
+R_7#show ip eigrp topology 
+IP-EIGRP Topology Table for AS 10/ID(172.16.72.254)
+
+P 10.0.0.0/8, 1 successors, FD is 20512000 via Summary (20512000/0), Null0
+P 10.6.7.0/30, 1 successors, FD is 20512000 via Connected, Serial3/0
+P 172.16.0.0/16, 1 successors, FD is 20640000 via 10.6.7.1 (20640000/128256), Serial3/0
+P 192.168.6.0/24, 1 successors, FD is 20514560 via 10.6.7.1 (20514560/28160), Serial3/0
+P 192.168.7.0/24, 1 successors, FD is 28160 via Connected, FastEthernet0/0
+
+
+20. ---------------------------------------
+R_6:
+	Fa0/0 - BW 10000 Kbit, DLY 100 usec,
+	Se2/0 - BW 128000 Kbit, DLY 20000 usec
+R_7:
+	Fa0/0 - BW 10000 Kbit, DLY 100 usec,
+	Se3/0 - BW 128000 Kbit, DLY 20000 usec
+
+24. ----------------------------------------
+
+R_6#show ip route
+     10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+D       10.0.0.0/8 is a summary, 00:08:32, Null0
+C       10.6.7.0/30 is directly connected, Serial2/0
+     172.16.0.0/16 is variably subnetted, 4 subnets, 3 masks
+D       172.16.0.0/16 is a summary, 00:20:10, Null0
+C       172.16.60.254/32 is directly connected, Loopback0
+C       172.16.61.0/24 is directly connected, Loopback1
+C       172.16.62.0/24 is directly connected, Loopback2
+C    192.168.6.0/24 is directly connected, FastEthernet0/0
+S    192.168.7.0/24 [1/0] via 10.6.7.2
+
+R_7#show ip route
+     10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+D       10.0.0.0/8 is a summary, 00:04:42, Null0
+C       10.6.7.0/30 is directly connected, Serial3/0
+     172.16.0.0/16 is variably subnetted, 4 subnets, 3 masks
+D       172.16.0.0/16 [90/20640000] via 10.6.7.1, 00:20:32, Serial3/0
+C       172.16.70.254/32 is directly connected, Loopback0
+C       172.16.71.0/24 is directly connected, Loopback1
+C       172.16.72.0/24 is directly connected, Loopback2
+S    192.168.6.0/24 [1/0] via 10.6.7.1
+C    192.168.7.0/24 is directly connected, FastEthernet0/0
+
+27. -------------------------------------------
+
+R_6#show ip route
+     10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+D       10.0.0.0/8 is a summary, 00:00:32, Null0
+C       10.6.7.0/30 is directly connected, Serial2/0
+     172.16.0.0/16 is variably subnetted, 4 subnets, 3 masks
+D       172.16.0.0/16 is a summary, 00:26:16, Null0
+C       172.16.60.254/32 is directly connected, Loopback0
+C       172.16.61.0/24 is directly connected, Loopback1
+C       172.16.62.0/24 is directly connected, Loopback2
+C    192.168.6.0/24 is directly connected, FastEthernet0/0
+S    192.168.7.0/24 [1/0] via 10.6.7.2
+
+R_7#show ip route
+     10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+D       10.0.0.0/8 is a summary, 00:00:34, Null0
+C       10.6.7.0/30 is directly connected, Serial3/0
+     172.16.0.0/16 is variably subnetted, 4 subnets, 3 masks
+D       172.16.0.0/16 [90/20130560] via 10.6.7.1, 00:00:34, Serial3/0
+C       172.16.70.254/32 is directly connected, Loopback0
+C       172.16.71.0/24 is directly connected, Loopback1
+C       172.16.72.0/24 is directly connected, Loopback2
+S    192.168.6.0/24 [1/0] via 10.6.7.1
+C    192.168.7.0/24 is directly connected, FastEthernet0/0
+
+28. ------------------------------------------------0
+
+R_6#show ip eigrp interfaces 
+IP-EIGRP interfaces for process 10
+                        Xmit Queue   Mean   Pacing Time   Multicast    Pending
+Interface        Peers  Un/Reliable  SRTT   Un/Reliable   Flow Timer   Routes
+Lo0                0        0/0      1236       0/10           0           0
+Lo1                0        0/0      1236       0/10           0           0
+Lo2                0        0/0      1236       0/10           0           0
+Se2/0              1        0/0      1236       0/10           0           0

@@ -1,0 +1,168 @@
+Zadanie 1
+---------------------------------------------
+
+10.      
+
+	10.0.0.0/30 is subnetted, 2 subnets
+C       10.5.6.0 is directly connected, Serial3/0
+C       10.6.7.0 is directly connected, Serial2/0
+     172.16.0.0/26 is subnetted, 2 subnets
+C       172.16.6.0 is directly connected, Loopback1
+C       172.16.6.128 is directly connected, Loopback3
+C    192.168.6.0/24 is directly connected, FastEthernet0/0
+S    192.168.7.0/24 [1/0] via 10.6.7.2
+
+12.
+
+R_6
+H   Address         Interface      Hold Uptime    SRTT   RTO   Q   Seq
+                                   (sec)          (ms)        Cnt  Num
+0   10.6.7.2        Se2/0          13   00:02:16  40     1000  0   12
+
+R_7
+H   Address         Interface      Hold Uptime    SRTT   RTO   Q   Seq
+                                   (sec)          (ms)        Cnt  Num
+0   10.6.7.1        Se3/0          13   00:01:14  40     1000  0   7
+
+14.
+18. Protokół routingu nie używa odpowiedniej drogi
+21.
+R_7:
+D EX    10.108.128.0/22 [170/20537600] via 10.6.7.1, 00:04:04, Serial3/0
+D EX    172.16.6.64 [170/21792000] via 10.6.7.1, 00:04:04, Serial3/0
+D EX    172.16.6.192 [170/21792000] via 10.6.7.1, 00:04:04, Serial3/0
+D*EX 0.0.0.0/0 [170/25632000] via 10.6.7.1, 00:04:04, Serial3/0
+
+Użyliśmy rozpropagowanie tras przy wykorzystaniu wpisu redistribute static
+
+22.
+R_6
+     10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+C       10.5.6.0/30 is directly connected, Serial3/0
+C       10.6.7.0/30 is directly connected, Serial2/0
+D       10.7.8.0/30 [90/21024000] via 10.6.7.2, 02:07:00, Serial2/0
+S       10.108.128.0/22 [1/0] via 192.168.6.61
+                        [1/0] via 192.168.6.62
+     172.16.0.0/26 is subnetted, 6 subnets
+C       172.16.6.0 is directly connected, Loopback1
+S       172.16.6.64 is directly connected, Loopback1
+C       172.16.6.128 is directly connected, Loopback3
+S       172.16.6.192 is directly connected, Loopback3
+D       172.16.7.0 [90/20640000] via 10.6.7.2, 02:07:00, Serial2/0
+D       172.16.7.128 [90/20640000] via 10.6.7.2, 01:10:27, Serial2/0
+C    192.168.6.0/24 is directly connected, FastEthernet0/0
+S    192.168.7.0/24 [1/0] via 10.6.7.2
+S*   0.0.0.0/0 is directly connected, Serial2/0
+
+R_7
+     10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+D       10.5.6.0/30 [90/21024000] via 10.6.7.1, 02:07:39, Serial3/0
+C       10.6.7.0/30 is directly connected, Serial3/0
+C       10.7.8.0/30 is directly connected, Serial2/0
+D EX    10.108.128.0/22 [170/20537600] via 10.6.7.1, 00:22:40, Serial3/0
+     172.16.0.0/26 is subnetted, 6 subnets
+D       172.16.6.0 [90/20640000] via 10.6.7.1, 02:07:39, Serial3/0
+D EX    172.16.6.64 [170/21792000] via 10.6.7.1, 00:22:40, Serial3/0
+D       172.16.6.128 [90/20640000] via 10.6.7.1, 01:12:04, Serial3/0
+D EX    172.16.6.192 [170/21792000] via 10.6.7.1, 00:22:40, Serial3/0
+C       172.16.7.0 is directly connected, Loopback1
+C       172.16.7.128 is directly connected, Loopback3
+S    192.168.6.0/24 [1/0] via 10.6.7.1
+C    192.168.7.0/24 is directly connected, FastEthernet0/0
+D*EX 0.0.0.0/0 [170/25632000] via 10.6.7.1, 00:22:40, Serial3/0
+
+22. 
+R_6
+     10.0.0.0/8 is variably subnetted, 5 subnets, 3 masks
+D       10.0.0.0/8 is a summary, 00:00:45, Null0
+C       10.5.6.0/30 is directly connected, Serial3/0
+C       10.6.7.0/30 is directly connected, Serial2/0
+D       10.7.8.0/30 [90/21024000] via 10.6.7.2, 00:00:24, Serial2/0
+S       10.108.128.0/22 [1/0] via 192.168.6.61
+                        [1/0] via 192.168.6.62
+     172.16.0.0/16 is variably subnetted, 5 subnets, 2 masks
+D       172.16.0.0/16 is a summary, 00:00:45, Null0
+C       172.16.6.0/26 is directly connected, Loopback1
+S       172.16.6.64/26 is directly connected, Loopback1
+C       172.16.6.128/26 is directly connected, Loopback3
+S       172.16.6.192/26 is directly connected, Loopback3
+C    192.168.6.0/24 is directly connected, FastEthernet0/0
+S    192.168.7.0/24 [1/0] via 10.6.7.2
+S*   0.0.0.0/0 is directly connected, Serial2/0
+               [1/0] via 10.1.2.2
+
+
+R_7
+     10.0.0.0/8 is variably subnetted, 5 subnets, 3 masks
+D       10.0.0.0/8 is a summary, 00:01:08, Null0
+D       10.5.6.0/30 [90/21024000] via 10.6.7.1, 00:01:07, Serial3/0
+C       10.6.7.0/30 is directly connected, Serial3/0
+C       10.7.8.0/30 is directly connected, Serial2/0
+D EX    10.108.128.0/22 [170/20537600] via 10.6.7.1, 00:01:07, Serial3/0
+     172.16.0.0/16 is variably subnetted, 5 subnets, 2 masks
+D       172.16.0.0/16 is a summary, 00:01:08, Null0
+D EX    172.16.6.64/26 [170/21792000] via 10.6.7.1, 00:01:07, Serial3/0
+D EX    172.16.6.192/26 [170/21792000] via 10.6.7.1, 00:01:07, Serial3/0
+C       172.16.7.0/26 is directly connected, Loopback1
+C       172.16.7.128/26 is directly connected, Loopback3
+S    192.168.6.0/24 [1/0] via 10.6.7.1
+C    192.168.7.0/24 is directly connected, FastEthernet0/0
+
+Zniknela siec
+D*EX 0.0.0.0/0 [170/25632000] via 10.6.7.1, 00:22:40, Serial3/0
+Automatyczna sumaryzacja ma następujące zalety:
+- zmniejsza wielkość tablicy routing
+- zmniejsza wielkość ruch EIGRP w sieci;
+- zmniejsza obciążenie systemu (ilość operacji na tablicy routingu jest mniejsza).
+
+25.
+R_6
+172.16.6.0 
+172.16.6.64
+Częścią wspólną będzie adres:
+172.16.6.0/25
+
+172.16.6.128
+172.16.6.192
+10101100.00010000.00000110.10000000
+10101100.00010000.00000110.11000000
+Częścią wspólną będzie adres:
+172.16.6.128/25
+
+R_6
+     10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+C       10.5.6.0/30 is directly connected, Serial3/0
+C       10.6.7.0/30 is directly connected, Serial2/0
+D       10.7.8.0/30 [90/21024000] via 10.6.7.2, 00:37:31, Serial2/0
+S       10.108.128.0/22 [1/0] via 192.168.6.61
+                        [1/0] via 192.168.6.62
+     172.16.0.0/26 is subnetted, 6 subnets
+C       172.16.6.0 is directly connected, Loopback1
+S       172.16.6.64 is directly connected, Loopback1
+C       172.16.6.128 is directly connected, Loopback3
+S       172.16.6.192 is directly connected, Loopback3
+D       172.16.7.0 [90/20640000] via 10.6.7.2, 00:37:31, Serial2/0
+D       172.16.7.128 [90/20640000] via 10.6.7.2, 00:37:31, Serial2/0
+C    192.168.6.0/24 is directly connected, FastEthernet0/0
+S    192.168.7.0/24 [1/0] via 10.6.7.2
+S*   0.0.0.0/0 is directly connected, Serial2/0
+
+R_7
+     10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+D       10.5.6.0/30 [90/21024000] via 10.6.7.1, 00:29:13, Serial3/0
+C       10.6.7.0/30 is directly connected, Serial3/0
+C       10.7.8.0/30 is directly connected, Serial2/0
+D EX    10.108.128.0/22 [170/20537600] via 10.6.7.1, 00:29:13, Serial3/0
+     172.16.0.0/26 is subnetted, 6 subnets
+D       172.16.6.0 [90/20640000] via 10.6.7.1, 00:29:13, Serial3/0
+D EX    172.16.6.64 [170/21792000] via 10.6.7.1, 00:29:13, Serial3/0
+D       172.16.6.128 [90/20640000] via 10.6.7.1, 00:29:13, Serial3/0
+D EX    172.16.6.192 [170/21792000] via 10.6.7.1, 00:29:13, Serial3/0
+C       172.16.7.0 is directly connected, Loopback1
+C       172.16.7.128 is directly connected, Loopback3
+S    192.168.6.0/24 [1/0] via 10.6.7.1
+C    192.168.7.0/24 is directly connected, FastEthernet0/0
+Autosumowanie niesie jednak ze sobą poważne zagrożenia. Część z sieci może nie zostać rozpropagowana poprawnie
+
+Dlatego lepiej stosować jest
+sumaryzację manualną
