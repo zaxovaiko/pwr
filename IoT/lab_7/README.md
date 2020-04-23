@@ -20,6 +20,7 @@ Aby urochomić ten program, należy:
 
 ```text
 .
+├── ca.crt
 ├── report.csv
 ├── records.db
 ├── publisher.py
