@@ -1,6 +1,3 @@
-# PC (broker + saver to DB)
-# This is publisher file. Belongs to Raspberry Pi with RFID.
-
 import sqlite3
 import sys
 import tkinter as tk
@@ -10,21 +7,22 @@ from datetime import datetime
 import csv
 import time
 import re
+import os
+from dotenv import load_dotenv
 
 
-def run():
-    broker = 'lenovo320s'
-    port = 8883
+def run_server():
+    load_dotenv()
 
-    def on_message(client, ud, m):
-        card_id = m.payload.decode("utf-8")
-        user = con.cursor().execute(f'SELECT * FROM workers WHERE card_id = {card_id}').fetchall()
-        con.execute(f'INSERT INTO records (card_id, worker_id) VALUES ({card_id}, {user[0][0] if len(user) != 0 else "NULL"})')
+    def on_message(client, userdata, message):
+        msg = message.payload.decode("utf-8")
+        user = con.cursor().execute(f'SELECT * FROM workers WHERE card_id = {msg}').fetchall()
+        con.execute(f'INSERT INTO records (card_id, worker_id) VALUES ({msg}, {user[0][0] if len(user) != 0 else "NULL"})')
         con.commit()
-        print('Card ID_' + card_id + ' time: ' + datetime.now().strftime("%d.%m.%Y %H:%M:%S"))
+        print('Card ID_' + msg + ' time: ' + datetime.now().strftime("%d.%m.%Y %H:%M:%S"))
 
     window = tk.Tk()
-    window.title('Subscriber')
+    window.title('Server')
     window.resizable(False, False)
 
     terminal_label = tk.Label(window, text='Terminal is not connected yet.')
@@ -175,26 +173,26 @@ def run():
             make_report_btn.config(state='disabled')
 
     client = mqtt.Client()
-    client.tls_set('ca.crt')
-    client.username_pw_set(username='server', password='ioft')
+    client.tls_set(os.getenv('CERTIFICATE'))
+    client.username_pw_set(username=os.getenv('SERVER_USER'), password=os.getenv('SERVER_PASS'))
     client.on_connect = on_connect
     client.on_message = on_message
 
-    con = sqlite3.connect('records.db', check_same_thread=False)
+    con = sqlite3.connect(os.getenv('DB_NAME'), check_same_thread=False)
 
     while True:
         try:
-            client.connect(broker, port)
+            client.connect(os.getenv('BROKER'), int(os.getenv('PORT')))
             break
         except ConnectionRefusedError:
             print('Connection error.')
         time.sleep(1)
 
     client.loop_start()
-    client.subscribe("worker/name")
+    client.subscribe(os.getenv('TOPIC_CARD'))
 
     window.mainloop()
 
 
 if __name__ == '__main__':
-    run()
+    run_server()
