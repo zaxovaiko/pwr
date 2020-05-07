@@ -38,7 +38,7 @@ def run_client():
 
     def show_client_window():
         window = tk.Tk()
-        window.title('Publisher')
+        window.title('Client')
         window.resizable(False, False)
 
         terminal_label = tk.Label(window, text=f'{os.getenv("TERMINAL")} is connected.')

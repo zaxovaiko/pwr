@@ -1,35 +1,48 @@
-# Szyfrowana komunikacja z autoryzacją
+# RFID card reader z szyfrowaną komunikacją i autoryzacją
 
-   > Zbudowano na bazie laboratorium 7
+   > Zbudowano na bazie laboratorium 8
 
-## Instrukcja uruchomienia programu
+## Instrukcja uruchomienia
 
 Aby urochomić ten program, należy:
   - Utworzyć folder `C:\Program Files\mosquitto\certs`.
+  - Pobrać certyfikaty z folderu `certs` i wkleić do folderu z kroku 1.
   - Zainstalować OpenSSL na swój system.
-  - W folderzu `certs` zgenerować pliki: `ca.crt`, `server.crt`, `server.key`.
   - Zmodyfikować `mosquitto.conf` zgodnie z instrukcją lab 8.
   - Dodać plik `ca.crt` w folder projektu.
   - Zresetować poprzednią bazę danych używając komendy `python create_database.py`.
-  - Dla testów z gotową BD można użyć `python seeder.py`.
-  - Urochomić brokera używając `mosquitto`.
-  - Uruchomić scrypt `publisher.py` na urządzeniu Raspberry Pi lub Virtual Machine (z Debianem).
-  - Uruchomić scrypt `subscriber.py` na serwerze (PC lub to samo urządzenie Raspberry Pi)
+  - Urochomić brokera używając `mosquitto -c "C:\Program Files\mosquitto\mosquitto.conf" -v`.
+  - Uruchomić scrypt `client.py` na urządzeniu Raspberry Pi lub Virtual Machine (z Debianem).
+  - Uruchomić scrypt `server.py` na serwerze (PC lub to samo urządzenie Raspberry Pi)
   
 ## Struktura
 
 ```text
 .
+├── certs
+│   ├── ca.crt
+│   ├── server.crt
+│   └── server.key
+├── .env
 ├── ca.crt
 ├── report.csv
 ├── records.db
-├── publisher.py
-├── subscriber.py
+├── client.py
+├── server.py
 ├── create_database.py
 └── seeder.py
 ```
 
 ## Opis składowych i działania aplikacji
+
+**`.env`**
+
+Plik z konfiguracją brokera i inną. Zmień hasło i nazwę użytkownika, żeby zalogować się do systemu.
+
+```text
+USER=admin
+PASS=admin
+```
 
 **`create_database.py`**
 
@@ -39,17 +52,28 @@ Tworzy bazę danych i usuwa poprzednią.
 
 Generuje 1000 fejków w tablicah `workers` i `cards` dla sprawdzenia działalności programu.
 
-**`publisher.py`**
+**`client.py`**
 
 Podłączamy się do Brokera i odsyłujemy Card ID do brokera (topic=`worker/test`).
 Sprawdzamy poprawność Card ID (ID może być tylko liczbą). Ten plik będzie używany na
 urządzeniu Raspberry Pi (lub na Virtual Machine).
 
-**`subscriber.py`**
+**`server.py`**
 
 Podłączamy się do Brokera, otrzymujemy message w potrzebnym topiku. Używamy ten plik na serwerze, czyli na 
 PC lub innym urządzeniu (w tym i Raspberry Pi). Przy uruchomieniu plika mamy utworzony GUI z 
 różnymi przyciskami (symulowany system urządzający - admin panel).
+
+**`aclfile.conf`**
+
+Zapisz poniższy kod do pliku:
+```text
+user server
+topic read card/id
+
+user client
+topic write card/id
+```
 
 ## Baza danych projektu
 
@@ -89,8 +113,10 @@ records
 
 ## Screenshots
 
-![alt first](https://imgur.com/vngDjtB.png])
+![alt zero](https://imgur.com/H6sRVQY.png)
 
-![alt second](https://imgur.com/IY9fQ2z.png])
+![alt first](https://imgur.com/vngDjtB.png)
 
-![alt third](https://imgur.com/9vnHAbh.png])
+![alt second](https://imgur.com/IY9fQ2z.png)
+
+![alt third](https://imgur.com/9vnHAbh.png)
