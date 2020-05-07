@@ -1,0 +1,273 @@
+Zadanie 1
+
+R_6
+     10.0.0.0/30 is subnetted, 3 subnets
+C       10.5.6.0 is directly connected, Serial3/0
+C       10.6.7.0 is directly connected, Serial2/0
+O       10.7.8.0 [110/128] via 10.6.7.2, 00:01:14, Serial2/0
+     172.16.0.0/24 is subnetted, 3 subnets
+C       172.16.6.0 is directly connected, FastEthernet0/0
+O       172.16.7.0 [110/65] via 10.6.7.2, 00:01:14, Serial2/0
+O       172.16.8.0 [110/129] via 10.6.7.2, 00:01:14, Serial2/0
+
+R_7
+     10.0.0.0/30 is subnetted, 3 subnets
+O       10.5.6.0 [110/128] via 10.6.7.1, 00:01:52, Serial3/0
+C       10.6.7.0 is directly connected, Serial3/0
+C       10.7.8.0 is directly connected, Serial2/0
+     172.16.0.0/24 is subnetted, 3 subnets
+O       172.16.6.0 [110/65] via 10.6.7.1, 00:01:52, Serial3/0
+C       172.16.7.0 is directly connected, FastEthernet0/0
+O       172.16.8.0 [110/65] via 10.7.8.2, 00:19:34, Serial2/0
+
+R_8
+     10.0.0.0/30 is subnetted, 3 subnets
+O       10.5.6.0 [110/192] via 10.7.8.1, 00:02:09, Serial3/0
+O       10.6.7.0 [110/128] via 10.7.8.1, 00:19:47, Serial3/0
+C       10.7.8.0 is directly connected, Serial3/0
+     172.16.0.0/24 is subnetted, 3 subnets
+O       172.16.6.0 [110/129] via 10.7.8.1, 00:02:09, Serial3/0
+O       172.16.7.0 [110/65] via 10.7.8.1, 00:19:47, Serial3/0
+C       172.16.8.0 is directly connected, FastEthernet0/0
+
+12.
+R_6#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+172.16.7.70       0   FULL/  -        00:00:39    10.6.7.2        Serial2/0
+
+R_7#show ip ospf neighbor 
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+192.168.6.60      0   FULL/  -        00:00:35    10.6.7.1        Serial3/0
+172.16.8.80       0   FULL/  -        00:00:31    10.7.8.2        Serial2/0
+
+R_8#show ip ospf neighbor 
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+172.16.7.70       0   FULL/  -        00:00:30    10.7.8.1        Serial3/0
+
+14.
+Wszystkie są dostępne
+
+17.
+R_6#sh ip protocols 
+ Router ID 192.168.6.60
+R_7#show ip protocols 
+  Router ID 172.16.7.70
+R_8#show ip protocols 
+  Router ID 172.16.8.80
+Zastosowaliśmy konfigurację protokołu OSPF
+19.
+Router ID 192.168.6.60
+Router ID 192.168.7.70
+Router ID 192.168.8.80
+20.
+Routing Process "ospf 6" with ID 192.168.60.60
+Routing Process "ospf 7" with ID 192.168.70.70
+Routing Process "ospf 8" with ID 192.168.80.80
+21. Routing Protocol is "ospf 6"
+  Router ID 6.6.6.6
+
+23.
+Przed:
+R_6#show ip ospf interface fastEthernet 0/0
+Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    Hello due in 00:00:05
+  Index 1/1, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 0, Adjacent neighbor count is 0
+  Suppress hello for 0 neighbor(s)
+
+
+
+
+Po:
+R_6#show ip ospf interface fastEthernet 0/0
+
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    No Hellos (Passive interface)
+  Index 1/1, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 0, Adjacent neighbor count is 0
+  Suppress hello for 0 neighbor(s)
+
+R_6#sh ip protocols 
+  Passive Interface(s): 
+    FastEthernet0/0
+25. 
+Zniknęły sieci OSPF.
+30.
+     10.0.0.0/30 is subnetted, 3 subnets
+O       10.5.6.0 [110/128] via 10.6.7.1, 00:00:05, Serial3/0
+C       10.6.7.0 is directly connected, Serial3/0
+C       10.7.8.0 is directly connected, Serial2/0
+     172.16.0.0/24 is subnetted, 3 subnets
+O       172.16.6.0 [110/65] via 10.6.7.1, 00:00:05, Serial3/0
+C       172.16.7.0 is directly connected, FastEthernet0/0
+O       172.16.8.0 [110/65] via 10.7.8.2, 00:24:41, Serial2/0
+     192.168.6.0/32 is subnetted, 2 subnets
+O       192.168.6.1 [110/65] via 10.6.7.1, 00:00:05, Serial3/0
+O       192.168.6.129 [110/65] via 10.6.7.1, 00:00:05, Serial3/0
+     192.168.60.0/32 is subnetted, 1 subnets
+O       192.168.60.60 [110/65] via 10.6.7.1, 00:00:05, Serial3/0
+     192.168.70.0/32 is subnetted, 1 subnets
+C       192.168.70.70 is directly connected, Loopback0
+Trasy dodane statyczne przez administratora mogą być rozpropagowane przy użyciu protokołu routingu. W opcjach routingu należy dodać
+następujący wpis:
+Router(config-router)#redistribute static subnet
+
+32
+     10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+O       10.5.6.0/30 [110/128] via 10.6.7.1, 00:12:02, Serial3/0
+C       10.6.7.0/30 is directly connected, Serial3/0
+C       10.7.8.0/30 is directly connected, Serial2/0
+O E2    10.108.128.0/22 [110/20] via 10.6.7.1, 00:01:30, Serial3/0
+     172.16.0.0/24 is subnetted, 3 subnets
+O       172.16.6.0 [110/65] via 10.6.7.1, 00:12:02, Serial3/0
+C       172.16.7.0 is directly connected, FastEthernet0/0
+O       172.16.8.0 [110/65] via 10.7.8.2, 00:36:38, Serial2/0
+     192.168.6.0/24 is variably subnetted, 4 subnets, 2 masks
+O       192.168.6.1/32 [110/65] via 10.6.7.1, 00:12:02, Serial3/0
+O E2    192.168.6.64/26 [110/20] via 10.6.7.1, 00:01:30, Serial3/0
+O       192.168.6.129/32 [110/65] via 10.6.7.1, 00:12:02, Serial3/0
+O E2    192.168.6.192/26 [110/20] via 10.6.7.1, 00:01:30, Serial3/0
+     192.168.60.0/32 is subnetted, 1 subnets
+O       192.168.60.60 [110/65] via 10.6.7.1, 00:12:02, Serial3/0
+     192.168.70.0/32 is subnetted, 1 subnets
+C       192.168.70.70 is directly connected, Loopback0
+Nie. Dla tras statycznych domyślna metryka wynosi 20
+33.
+     10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+O       10.5.6.0/30 [110/128] via 10.6.7.1, 00:16:17, Serial3/0
+C       10.6.7.0/30 is directly connected, Serial3/0
+C       10.7.8.0/30 is directly connected, Serial2/0
+O E2    10.108.128.0/22 [110/20] via 10.6.7.1, 00:05:45, Serial3/0
+     172.16.0.0/24 is subnetted, 3 subnets
+O       172.16.6.0 [110/65] via 10.6.7.1, 00:16:17, Serial3/0
+C       172.16.7.0 is directly connected, FastEthernet0/0
+O       172.16.8.0 [110/65] via 10.7.8.2, 00:40:53, Serial2/0
+     192.168.6.0/24 is variably subnetted, 4 subnets, 2 masks
+O       192.168.6.1/32 [110/65] via 10.6.7.1, 00:16:17, Serial3/0
+O E2    192.168.6.64/26 [110/20] via 10.6.7.1, 00:05:45, Serial3/0
+O       192.168.6.129/32 [110/65] via 10.6.7.1, 00:16:17, Serial3/0
+O E2    192.168.6.192/26 [110/20] via 10.6.7.1, 00:05:45, Serial3/0
+     192.168.60.0/32 is subnetted, 1 subnets
+O       192.168.60.60 [110/65] via 10.6.7.1, 00:16:17, Serial3/0
+     192.168.70.0/32 is subnetted, 1 subnets
+C       192.168.70.70 is directly connected, Loopback0
+O*E2 0.0.0.0/0 [110/1] via 10.6.7.1, 00:01:53, Serial3/0
+
+34.
+R_6#show ip protocols 
+
+Routing Protocol is "ospf 6"
+  Outgoing update filter list for all interfaces is not set 
+  Incoming update filter list for all interfaces is not set 
+  Router ID 172.16.6.60
+  It is an autonomous system boundary router
+  Redistributing External Routes from,
+    static 
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    172.16.6.0 0.0.0.255 area 0
+    10.5.6.0 0.0.0.3 area 0
+    10.6.7.0 0.0.0.3 area 0
+    192.168.60.60 0.0.0.0 area 0
+    192.168.6.0 0.0.0.63 area 0
+    192.168.6.128 0.0.0.63 area 0
+  Routing Information Sources:  
+    Gateway         Distance      Last Update 
+    6.6.6.6              110      00:59:09
+    172.16.6.60          110      00:06:55
+    192.168.70.70        110      00:17:26
+    192.168.80.80        110      00:11:56
+  Distance: (default is 110)
+
+R_6#show ip ospf 
+ Routing Process "ospf 6" with ID 172.16.6.60
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ It is an autonomous system boundary router
+ SPF schedule delay 5 secs, Hold time between two SPFs 10 secs
+ Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs
+ Number of external LSA 5. Checksum Sum 0x03414c
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+ External flood list length 0
+    Area BACKBONE(0)
+        Number of interfaces in this area is 6
+        Area has no authentication
+        SPF algorithm executed 16 times
+        Area ranges are
+        Number of LSA 3. Checksum Sum 0x0196f1
+        Number of opaque link LSA 0. Checksum Sum 0x000000
+        Number of DCbitless LSA 0
+        Number of indication LSA 0
+        Number of DoNotAge LSA 0
+        Flood list length 0
+
+R_6#show ip ospf interface 
+
+FastEthernet0/0 is up, line protocol is up
+  Internet address is 172.16.6.60/24, Area 0
+  Process ID 6, Router ID 172.16.6.60, Network Type BROADCAST, Cost: 1
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 172.16.6.60, Interface address 172.16.6.60
+  No backup designated router on this network
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    Hello due in 00:00:04
+  Index 1/1, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 0, Adjacent neighbor count is 0
+  Suppress hello for 0 neighbor(s)
+Serial3/0 is up, line protocol is up
+  Internet address is 10.5.6.2/30, Area 0
+  Process ID 6, Router ID 172.16.6.60, Network Type POINT-TO-POINT, Cost: 64
+  Transmit Delay is 1 sec, State POINT-TO-POINT,
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    Hello due in 00:00:04
+  Index 2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Suppress hello for 0 neighbor(s)
+Loopback0 is up, line protocol is up
+  Internet address is 192.168.60.60/32, Area 0
+  Process ID 6, Router ID 172.16.6.60, Network Type LOOPBACK, Cost: 1
+  Loopback interface is treated as a stub Host
+Loopback1 is up, line protocol is up
+  Internet address is 192.168.6.1/26, Area 0
+  Process ID 6, Router ID 172.16.6.60, Network Type LOOPBACK, Cost: 1
+  Loopback interface is treated as a stub Host
+Loopback3 is up, line protocol is up
+  Internet address is 192.168.6.129/26, Area 0
+  Process ID 6, Router ID 172.16.6.60, Network Type LOOPBACK, Cost: 1
+  Loopback interface is treated as a stub Host
+Serial2/0 is up, line protocol is up
+  Internet address is 10.6.7.1/30, Area 0
+  Process ID 6, Router ID 172.16.6.60, Network Type POINT-TO-POINT, Cost: 64
+  Transmit Delay is 1 sec, State POINT-TO-POINT,
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    Hello due in 00:00:04
+  Index 6/6, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 1 , Adjacent neighbor count is 1
+    Adjacent with neighbor 192.168.70.70
+  Suppress hello for 0 neighbor(s)
+
+35. Dane topologii sieci

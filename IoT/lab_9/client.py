@@ -15,8 +15,10 @@ def run_client():
                 nonlocal window, has_access
                 window.destroy()
                 has_access = True
+                client.publish('auth/login', f'Autoryzowano klienta {os.getenv("TERMINAL")}')
             else:
                 placeholder.config(text='Invalid password or name.')
+                client.publish('auth/login', f'Błąd autoryzacji klienta {os.getenv("TERMINAL")}')
 
         window = tk.Tk()
         window.title('Log in')

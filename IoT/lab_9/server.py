@@ -16,10 +16,13 @@ def run_server():
 
     def on_message(client, userdata, message):
         msg = message.payload.decode("utf-8")
-        user = con.cursor().execute(f'SELECT * FROM workers WHERE card_id = {msg}').fetchall()
-        con.execute(f'INSERT INTO records (card_id, worker_id) VALUES ({msg}, {user[0][0] if len(user) != 0 else "NULL"})')
-        con.commit()
-        print('Card ID_' + msg + ' time: ' + datetime.now().strftime("%d.%m.%Y %H:%M:%S"))
+        if msg.isdigit():
+            user = con.cursor().execute(f'SELECT * FROM workers WHERE card_id = {msg}').fetchall()
+            con.execute(f'INSERT INTO records (card_id, worker_id) VALUES ({msg}, {user[0][0] if len(user) != 0 else "NULL"})')
+            con.commit()
+            print('Card ID_' + msg + ' time: ' + datetime.now().strftime("%d.%m.%Y %H:%M:%S"))
+        else:
+            print(msg)
 
     window = tk.Tk()
     window.title('Server')
@@ -190,6 +193,7 @@ def run_server():
 
     client.loop_start()
     client.subscribe(os.getenv('TOPIC_CARD'))
+    client.subscribe('auth/login')
 
     window.mainloop()
 
