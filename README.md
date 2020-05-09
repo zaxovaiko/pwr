@@ -1,5 +1,5 @@
-# PWr
-All tasks from Wroclaw University of Science and Technologies 👨‍🎓.
+# 👨‍🎓 PWr
+All labs from Wroclaw University of Science and Technologies.
 
 #### Content:
  - 2 semestr
@@ -15,3 +15,4 @@ All tasks from Wroclaw University of Science and Technologies 👨‍🎓.
     - Metody Systemowe i Decyzyjne
     - Router i Przełączniki
     - Internet of Things
+    - Bazy Danych Lab
