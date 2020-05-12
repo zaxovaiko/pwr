@@ -10,7 +10,8 @@ def seed_database():
     :return: None
     """
 
-    fake = Faker()
+    fake = Faker('pl_PL')
+    Faker.seed(0)
     con = sqlite3.connect('records.db')
 
     for _ in range(1000):

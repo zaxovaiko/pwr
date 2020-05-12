@@ -10,6 +10,7 @@ Aby urochomić ten program, należy:
   - Zainstalować OpenSSL na swój system.
   - Zmodyfikować `mosquitto.conf` zgodnie z instrukcją lab 9.
   - Dodać plik `ca.crt` w folder projektu.
+  - Uruchomić `pip install -r requirements.txt`.
   - Zresetować poprzednią bazę danych używając komendy `python create_database.py`.
   - Urochomić brokera używając `mosquitto -c "C:\Program Files\mosquitto\mosquitto.conf" -v`.
   - Uruchomić scrypt `client.py` na urządzeniu Raspberry Pi lub Virtual Machine (z Debianem).
