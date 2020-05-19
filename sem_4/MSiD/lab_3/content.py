@@ -88,7 +88,7 @@ def stochastic_gradient_descent(obj_fun, x_train, y_train, w0, epochs, eta, mini
     # :param mini_batch: rozmiar paczki danych / mini-batcha
     # :return: krotka (w, log_values), gdzie *w* to znaleziony optymalny
     #     punkt *w*, a *log_values* to lista wartości funkcji celu dla całego
-    #     zbioru treningowego w każdej epoce (lista o długości *epochs*)
+    #     zbioru treningowego w każdej epoce (lista o długości *epochs*)    
     """
     w = w0
     log_values = np.zeros(epochs)
