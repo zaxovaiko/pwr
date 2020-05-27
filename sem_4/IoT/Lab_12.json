@@ -14,7 +14,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "repeat": "5",
+        "repeat": "1",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -45,7 +45,8 @@
             ],
             [
                 "50595e48.a4a4e",
-                "94b4c24c.43b1e"
+                "94b4c24c.43b1e",
+                "553a02c9.aeefbc"
             ]
         ]
     },
@@ -142,7 +143,7 @@
         "height": 0,
         "name": "",
         "label": "Temperature: ",
-        "format": "{{msg.f}}",
+        "format": "{{msg.payload}}",
         "layout": "row-left",
         "x": 470,
         "y": 380,
@@ -291,6 +292,81 @@
         "wires": [
             [
                 "2382c3b6.f5d8fc"
+            ]
+        ]
+    },
+    {
+        "id": "553a02c9.aeefbc",
+        "type": "join",
+        "z": "315b021b.6358ee",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "20",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 450,
+        "y": 420,
+        "wires": [
+            [
+                "a82d6c21.3b257",
+                "bedd7742.998c88"
+            ]
+        ]
+    },
+    {
+        "id": "a82d6c21.3b257",
+        "type": "debug",
+        "z": "315b021b.6358ee",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 610,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "77d933c7.9c99ac",
+        "type": "ui_text",
+        "z": "315b021b.6358ee",
+        "group": "8250a7b.1479f58",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Average temperature in F:",
+        "format": "{{msg.average}}",
+        "layout": "row-left",
+        "x": 810,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "bedd7742.998c88",
+        "type": "function",
+        "z": "315b021b.6358ee",
+        "name": "get_average",
+        "func": "msg.average = msg.payload.reduce(function(a, c) {\n    return a + c;    \n}) / msg.payload.length;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 610,
+        "y": 420,
+        "wires": [
+            [
+                "77d933c7.9c99ac"
             ]
         ]
     },
