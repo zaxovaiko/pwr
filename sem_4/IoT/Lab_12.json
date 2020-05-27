@@ -1,0 +1,328 @@
+[
+    {
+        "id": "315b021b.6358ee",
+        "type": "tab",
+        "label": "Lab_12",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "18a840c9.a079df",
+        "type": "inject",
+        "z": "315b021b.6358ee",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "a07d55d.0fec0a8"
+            ]
+        ]
+    },
+    {
+        "id": "a07d55d.0fec0a8",
+        "type": "function",
+        "z": "315b021b.6358ee",
+        "name": "Random number",
+        "func": "var msg1 = {}, msg2 = {}, msg3 = {};\n\nmsg1 = {\n    'topic': 'temperature', \n    'payload': msg.payload = Math.round(Math.random() * 100)\n};\n\nmsg2 = {\n    'payload': msg1.payload * 9/5 + 32\n};\n\nreturn [msg1, msg2];",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "6bae7ef2.9815e",
+                "94b4c24c.43b1e",
+                "53338238.64bd4c",
+                "f65b6586.05f938"
+            ],
+            [
+                "50595e48.a4a4e",
+                "94b4c24c.43b1e"
+            ]
+        ]
+    },
+    {
+        "id": "6bae7ef2.9815e",
+        "type": "debug",
+        "z": "315b021b.6358ee",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 510,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "94b4c24c.43b1e",
+        "type": "ui_chart",
+        "z": "315b021b.6358ee",
+        "name": "",
+        "group": "3423c8ac.1ec2d8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature graph",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 490,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53338238.64bd4c",
+        "type": "ui_gauge",
+        "z": "315b021b.6358ee",
+        "name": "",
+        "group": "3423c8ac.1ec2d8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature in C",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 530,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "50595e48.a4a4e",
+        "type": "ui_text",
+        "z": "315b021b.6358ee",
+        "group": "8250a7b.1479f58",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperature: ",
+        "format": "{{msg.f}}",
+        "layout": "row-left",
+        "x": 470,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "2382c3b6.f5d8fc",
+        "type": "ui_toast",
+        "z": "315b021b.6358ee",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": false,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "Too high",
+        "x": 860,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "afd30d8.f9af1f",
+        "type": "switch",
+        "z": "315b021b.6358ee",
+        "name": "condition",
+        "property": "payload.temperature",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "payload.limit",
+                "vt": "msg"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 140,
+        "wires": [
+            [
+                "72ddd9b9.df2778"
+            ]
+        ]
+    },
+    {
+        "id": "f65b6586.05f938",
+        "type": "join",
+        "z": "315b021b.6358ee",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 510,
+        "y": 140,
+        "wires": [
+            [
+                "afd30d8.f9af1f",
+                "60fb458e.facc9c"
+            ]
+        ]
+    },
+    {
+        "id": "60fb458e.facc9c",
+        "type": "debug",
+        "z": "315b021b.6358ee",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 670,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "189f91c0.b867ee",
+        "type": "ui_slider",
+        "z": "315b021b.6358ee",
+        "name": "",
+        "label": "Set limit in C",
+        "tooltip": "Change limit temperature",
+        "group": "8250a7b.1479f58",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "limit",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "f65b6586.05f938"
+            ]
+        ]
+    },
+    {
+        "id": "72ddd9b9.df2778",
+        "type": "change",
+        "z": "315b021b.6358ee",
+        "name": "set msg",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Temperature is too high.",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Notification",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 100,
+        "wires": [
+            [
+                "2382c3b6.f5d8fc"
+            ]
+        ]
+    },
+    {
+        "id": "3423c8ac.1ec2d8",
+        "type": "ui_group",
+        "z": "",
+        "name": "in Celsius",
+        "tab": "d16225c5.59dbf8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "8250a7b.1479f58",
+        "type": "ui_group",
+        "z": "",
+        "name": "in Fahrenheit",
+        "tab": "d16225c5.59dbf8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d16225c5.59dbf8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
