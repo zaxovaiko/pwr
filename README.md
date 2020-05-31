@@ -8,11 +8,11 @@ All labs from Wroclaw University of Science and Technologies.
     - Algorytmy i Struktury Danych
 
  - 3 semestr
-    - Paradygmaty Programowania Labolatoria i Ćwiczenia
-    - Techniki Efektywnego Programowania Labs
+    - Paradygmaty Programowania
+    - Techniki Efektywnego Programowania
     
  - 4 semestr
     - Metody Systemowe i Decyzyjne
     - Router i Przełączniki
     - Internet of Things
-    - Bazy Danych Lab
+    - Bazy Danych
