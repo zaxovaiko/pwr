@@ -1,0 +1,464 @@
+[
+    {
+        "id": "607bdfd7.86ecd",
+        "type": "tab",
+        "label": "Lab_13",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "162d6774.549579",
+        "type": "ui_text",
+        "z": "607bdfd7.86ecd",
+        "group": "4573f92f.6078f8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperature:",
+        "format": "{{msg.payload.consolidated_weather[0].the_temp}}℃",
+        "layout": "row-center",
+        "x": 490,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "962339d9.5aacc8",
+        "type": "comment",
+        "z": "607bdfd7.86ecd",
+        "name": "Warszawa - 523920",
+        "info": "",
+        "x": 130,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "dc20f42.6731f08",
+        "type": "http request",
+        "z": "607bdfd7.86ecd",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": false,
+        "url": "https://www.metaweather.com/api/location/523920/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "162d6774.549579",
+                "6a349ec8.22be7",
+                "35499197.f9995e",
+                "f09cb4c9.29cb28",
+                "6c79f163.1f769",
+                "729add9f.1010c4",
+                "933acd02.9a45a"
+            ]
+        ]
+    },
+    {
+        "id": "5725c528.57787c",
+        "type": "inject",
+        "z": "607bdfd7.86ecd",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "dc20f42.6731f08"
+            ]
+        ]
+    },
+    {
+        "id": "6c79f163.1f769",
+        "type": "ui_text",
+        "z": "607bdfd7.86ecd",
+        "group": "dcbdaff7.d59bb",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperature:",
+        "format": "{{msg.payload.consolidated_weather[1].the_temp}}℃",
+        "layout": "row-center",
+        "x": 490,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "6a349ec8.22be7",
+        "type": "ui_text",
+        "z": "607bdfd7.86ecd",
+        "group": "4573f92f.6078f8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Humidity:",
+        "format": "{{msg.payload.consolidated_weather[0].humidity}}%",
+        "layout": "row-center",
+        "x": 480,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "729add9f.1010c4",
+        "type": "ui_text",
+        "z": "607bdfd7.86ecd",
+        "group": "dcbdaff7.d59bb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Humidity:",
+        "format": "{{msg.payload.consolidated_weather[1].humidity}}%",
+        "layout": "row-center",
+        "x": 480,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "35499197.f9995e",
+        "type": "ui_template",
+        "z": "607bdfd7.86ecd",
+        "group": "4573f92f.6078f8",
+        "name": "Weather image",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<div height=\"80\" style=\"height: 80px; margin: 0 auto;\">\n    <img width=\"50\" src=\"https://www.metaweather.com/static/img/weather/{{msg.payload.consolidated_weather[0].weather_state_abbr}}.svg\" alt=\"Weather\">\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 500,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f09cb4c9.29cb28",
+        "type": "ui_template",
+        "z": "607bdfd7.86ecd",
+        "group": "dcbdaff7.d59bb",
+        "name": "Weather image",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<div height=\"80\" style=\"height: 80px; margin: 0 auto;\">\n    <img width=\"50\" src=\"https://www.metaweather.com/static/img/weather/{{msg.payload.consolidated_weather[0].weather_state_abbr}}.svg\" alt=\"Weather\">\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 500,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e7cc23ce.53314",
+        "type": "ui_chart",
+        "z": "607bdfd7.86ecd",
+        "name": "",
+        "group": "2660d142.23663e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "monotone",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "5",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 670,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "933acd02.9a45a",
+        "type": "function",
+        "z": "607bdfd7.86ecd",
+        "name": "collect data",
+        "func": "var data = [];\n\nfor (i = 0; i < msg.payload.consolidated_weather.length; i++) {\n    data.push({\n        'x': msg.payload.consolidated_weather[i].applicable_date,\n        'y': msg.payload.consolidated_weather[i].the_temp\n    })\n}\n\nmsg.payload = [{\n    \"series\": [\"Temperature\"],\n    \"data\": [data],\n    \"labels\": msg.payload.consolidated_weather.map(x => x.applicable_date)\n}];\n\nmsg.topic = \"Weekly temperature\"; \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 180,
+        "wires": [
+            [
+                "e7cc23ce.53314",
+                "b0ea8163.c7732"
+            ]
+        ]
+    },
+    {
+        "id": "3cbe7938.be09a6",
+        "type": "debug",
+        "z": "607bdfd7.86ecd",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 250,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "18ce0a4a.3491d6",
+        "type": "mqtt in",
+        "z": "607bdfd7.86ecd",
+        "name": "",
+        "topic": "cpuload",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "a4a53e3c.b889c",
+        "x": 90,
+        "y": 340,
+        "wires": [
+            [
+                "3cbe7938.be09a6",
+                "d283b007.e8a8c"
+            ]
+        ]
+    },
+    {
+        "id": "8a0224f9.bf22b8",
+        "type": "exec",
+        "z": "607bdfd7.86ecd",
+        "command": "wmic cpu get loadpercentage ",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "0",
+        "oldrc": false,
+        "name": "",
+        "x": 340,
+        "y": 460,
+        "wires": [
+            [
+                "50b3aa00.70f6d8"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b58d3954.519138",
+        "type": "debug",
+        "z": "607bdfd7.86ecd",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 730,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "80c879cf.d697c8",
+        "type": "inject",
+        "z": "607bdfd7.86ecd",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 460,
+        "wires": [
+            [
+                "8a0224f9.bf22b8"
+            ]
+        ]
+    },
+    {
+        "id": "65db85b2.e3903c",
+        "type": "mqtt out",
+        "z": "607bdfd7.86ecd",
+        "name": "",
+        "topic": "cpuload",
+        "qos": "",
+        "retain": "true",
+        "broker": "a4a53e3c.b889c",
+        "x": 720,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "50b3aa00.70f6d8",
+        "type": "function",
+        "z": "607bdfd7.86ecd",
+        "name": "parseInt",
+        "func": "msg.payload = parseInt(msg.payload.replace(/[^\\d]+/, ''));\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 460,
+        "wires": [
+            [
+                "65db85b2.e3903c",
+                "b58d3954.519138"
+            ]
+        ]
+    },
+    {
+        "id": "d283b007.e8a8c",
+        "type": "ui_gauge",
+        "z": "607bdfd7.86ecd",
+        "name": "Percentage cpu load",
+        "group": "4a9e00a3.15bc2",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "gtype": "wave",
+        "title": "",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 280,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b0ea8163.c7732",
+        "type": "debug",
+        "z": "607bdfd7.86ecd",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 670,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4573f92f.6078f8",
+        "type": "ui_group",
+        "z": "607bdfd7.86ecd",
+        "name": "Today",
+        "tab": "91c6149a.f9ad28",
+        "order": 1,
+        "disp": true,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "dcbdaff7.d59bb",
+        "type": "ui_group",
+        "z": "607bdfd7.86ecd",
+        "name": "Tomorrow",
+        "tab": "91c6149a.f9ad28",
+        "order": 2,
+        "disp": true,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "2660d142.23663e",
+        "type": "ui_group",
+        "z": "607bdfd7.86ecd",
+        "name": "Weekly weather chart",
+        "tab": "91c6149a.f9ad28",
+        "order": 4,
+        "disp": true,
+        "width": "22",
+        "collapse": false
+    },
+    {
+        "id": "a4a53e3c.b889c",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "localhost",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "4a9e00a3.15bc2",
+        "type": "ui_group",
+        "z": "607bdfd7.86ecd",
+        "name": "CPU Load",
+        "tab": "91c6149a.f9ad28",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "91c6149a.f9ad28",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Lab_13",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
