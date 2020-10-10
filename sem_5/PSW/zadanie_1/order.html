@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko">
+		<meta name="description" content="Order confirmation page">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ecom - Zamówienie</title>
+		<link rel="stylesheet" href="main.css" />
+	</head>
+	<body>
+		<header>
+			<a class="sitename" href="./home.html">Ecom</a>
+			<ul>
+				<li><a href="#">Products</a></li>
+				<li><a href="#">Categories</a></li>
+				<li><a href="#">Home</a></li>
+			</ul>
+			<p class="user-cart">You have <a href="#">1 item in cart</a></p>
+		</header>
+
+		<main>
+			<aside>
+				<nav>
+					<p>Categories</p>
+					<ul>
+						<li><a href="#">Electronics</a></li>
+						<li><a href="#">Computers</a></li>
+						<li><a href="#">Smart Home</a></li>
+						<li><a href="#">Women's Fashion</a></li>
+						<li><a href="#">Men's Fashion</a></li>
+					</ul>
+				</nav>
+			</aside>
+			<div class="content content-order">
+				<section class="order">
+					<h1>Order</h1>
+					<form action="/" id="order-form">
+						<div class="form-input">
+							<label for="name">Name:</label>
+							<input autofocus type="text" placeholder="Name" name="name" id="name" required />
+						</div>
+
+						<div class="form-input">
+							<label for="male">Gender:</label>
+							<input name="gender" id="male" value="male" type="radio" required />
+							<label for="male">Male</label>
+							<input name="gender" id="female" value="female" type="radio" required />
+							<label for="female">Female</label>
+						</div>
+
+						<div class="form-input">
+							<label for="address">Address:</label>
+							<input type="text" placeholder="Address" name="address" id="address" required />
+						</div>
+
+						<div class="form-input select-input">
+							<label for="color">Color:</label>
+							<select name="color" id="color" required>
+								<option value="" selected hidden disabled>Choose color</option>
+								<optgroup label="Light colors">
+									<option value="pink">Pink</option>
+									<option value="White">White</option>
+								</optgroup>
+								<optgroup label="Dark colors">
+									<option value="blue">Blue</option>
+									<option value="black">Black</option>
+								</optgroup>
+							</select>
+						</div>
+
+						<div class="form-input">
+							<label for="number">Number of items:</label>
+							<input type="number" min="1" max="100" placeholder="Number of items" name="number" id="number" value="1" required />
+						</div>
+
+						<div class="form-input select-input">
+							<label for="comment">Comment from customer:</label>
+							<textarea placeholder="Your comment" maxlength="200" name="comment" id="comment" rows="3"></textarea>
+						</div>
+
+						<div class="form-input">
+							<input name="terms" id="terms" value="yes" type="radio" required />
+							<label for="terms">I agree with terms and privacy</label>
+						</div>
+
+						<div class="form-buttons">
+							<button type="reset">Reset</button>
+							<button>Buy</button>
+						</div>
+					</form>
+
+					<section class="suggested-products">
+						<h3>Suggested products</h3>
+						<div class="products">
+							<div class="product">
+								<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
+								<a href="#">Product name</a>
+							</div>
+							<div class="product">
+								<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
+								<a href="#">Product name</a>
+							</div>
+							<div class="product">
+								<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
+								<a href="#">Product name</a>
+							</div>
+							<div class="product">
+								<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
+								<a href="#">Product name</a>
+							</div>
+							<div class="product">
+								<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
+								<a href="#">Product name</a>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<div class="product-order">
+					<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
+					<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
+					<h2>Product name</h2>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<nav>
+				<ul>
+					<li><p>Support</p></li>
+					<li><a href="#">Credit</a></li>
+					<li><a href="#">Order</a></li>
+				</ul>
+				<ul>
+					<li><p>Information</p></li>
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Contacts</a></li>
+				</ul>
+				<ul>
+					<li><p>Services</p></li>
+					<li><a href="#">Bonus balance</a></li>
+					<li><a href="#">Certificates</a></li>
+				</ul>
+			</nav>
+		</footer>
+
+		<script>
+			document.getElementById("order-form").onsubmit = function (e) {
+				e.preventDefault();
+				console.log("Submitted");
+			};
+		</script>
+	</body>
+</html>

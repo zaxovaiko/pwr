@@ -1,0 +1,63 @@
+td {
+	padding: 10px;
+}
+
+thead td > ul {
+	list-style: none;
+	padding: 0;
+}
+
+table {
+    width: 100%;
+}
+
+#z4 ~ table {
+    border: solid 1px #aaa;
+}
+
+#z4 ~ table th:hover, #z4 ~ table td:hover {
+    background: #f1f1f1;
+}
+
+th, td {
+    border: 1px solid #aaa;
+}
+
+thead td > ul > li {
+	display: inline-block;
+	padding: 0 10px;
+}
+
+form > * {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.form-input > * {
+	display: block;
+}
+
+.form-input > *:first-child {
+	margin-bottom: 5px;
+}
+
+textarea {
+	resize: vertical;
+}
+
+tbody ul {
+	list-style: none;
+	display: block;
+	padding: 0;
+}
+
+tbody ul li {
+	text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.galery > * {
+    vertical-align: middle;
+    display: inline-block;
+}
