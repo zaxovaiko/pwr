@@ -1,0 +1,11 @@
+doctype html
+include ../includes/head.pug
+body
+    h1 login
+
+    form(action="/login" method="POST")
+        input(name="email" type="text" placeholder="Email")
+        input(name="password" type="password" placeholder="Password")
+        button Log in
+        p
+            a(href="/register") Register

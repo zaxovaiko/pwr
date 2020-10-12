@@ -9,6 +9,9 @@ Project build with framework Express (Node.js) with MongoDB database.
  - Run `npm install` to install all dependencies.
  - Run `npn start` to run a local server.
 
+##### Seeders
+
+To work with fake data write your own seeder in `seeds` folder.
 
 ##### Mongo Schemas
 

@@ -1,22 +1,14 @@
 const mongoose = require('mongoose');
 
 module.exports = mongoose.model(
-	'Transaction',
+	'Category',
 	new mongoose.Schema(
 		{
-			user_id: {
-				type: mongoose.SchemaTypes.ObjectId,
-				ref: 'User',
-			},
-			product_id: {
-				type: mongoose.SchemaTypes.ObjectId,
-				ref: 'Product',
-			},
-			count: {
-				type: Number,
+			name: {
+				type: String,
 				required: true,
 			},
-			status: {
+			description: {
 				type: String,
 				required: true,
 			},
