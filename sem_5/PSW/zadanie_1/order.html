@@ -2,61 +2,74 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko">
-		<meta name="description" content="Order confirmation page">
+		<meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko" />
+		<meta name="designer" content="Volodymyr Zakhovaiko" />
+		<meta name="description" content="Order page" />
+		<meta name="keywords" content="shop,e-commerce" />
+		<meta name="title" content="Ecom - Strona zamówienia" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ecom - Zamówienie</title>
-		<link rel="stylesheet" href="main.css" />
+		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<header>
-			<a class="sitename" href="./home.html">Ecom</a>
-			<ul>
-				<li><a href="#">Products</a></li>
-				<li><a href="#">Categories</a></li>
-				<li><a href="#">Home</a></li>
+		<header class="header d-flex">
+			<a class="header__sitename" href="index.html">Ecom</a>
+			<ul class="header__nav list-style-none">
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
 			</ul>
-			<p class="user-cart">You have <a href="#">1 item in cart</a></p>
+			<p class="header__user">Hi, <a href="order.html">John Doe</a></p>
 		</header>
 
-		<main>
-			<aside>
-				<nav>
-					<p>Categories</p>
-					<ul>
-						<li><a href="#">Electronics</a></li>
-						<li><a href="#">Computers</a></li>
-						<li><a href="#">Smart Home</a></li>
-						<li><a href="#">Women's Fashion</a></li>
-						<li><a href="#">Men's Fashion</a></li>
-					</ul>
-				</nav>
+		<main class="d-flex">
+			<!-- Leftside navigation panel -->
+			<aside class="aside">
+				<h4 class="aside__title">Categories</h4>
+				<ul class="aside__nav list-style-none">
+					<li><a href="#">Laptops</a></li>
+					<li><a href="#">Personal Care</a></li>
+					<li><a href="#">Media</a></li>
+					<li><a href="#">Cosmetics</a></li>
+					<li><a href="#">Tablets</a></li>
+				</ul>
 			</aside>
-			<div class="content content-order">
-				<section class="order">
-					<h1>Order</h1>
+
+			<!-- Rightside content part -->
+			<div class="content d-flex">
+				<!-- Order form -->
+				<div class="order-form">
+					<h1 class="h1">Order Confirmation</h1>
+
 					<form action="/" id="order-form">
-						<div class="form-input">
-							<label for="name">Name:</label>
-							<input autofocus type="text" placeholder="Name" name="name" id="name" required />
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input class="form-input" autofocus type="text" placeholder="Name" name="name" id="name" required />
 						</div>
 
-						<div class="form-input">
-							<label for="male">Gender:</label>
-							<input name="gender" id="male" value="male" type="radio" required />
-							<label for="male">Male</label>
-							<input name="gender" id="female" value="female" type="radio" required />
-							<label for="female">Female</label>
+						<div class="form-group">
+							<label for="male">Gender</label>
+							<div class="form-check-inline">
+								<input class="form-check-input" name="gender" id="male" value="male" type="radio" required />
+								<label class="form-check-label" for="male">Male</label>
+							</div>
+							<div class="form-check-inline">
+								<input class="form-check-input" name="gender" id="female" value="female" type="radio" required />
+								<label class="form-check-label" for="female">Female</label>
+							</div>
+							<div class="form-check-inline">
+								<input class="form-check-input" name="gender" id="other" value="other" type="radio" required disabled />
+								<label class="form-check-label" for="other">Other</label>
+							</div>
 						</div>
 
-						<div class="form-input">
-							<label for="address">Address:</label>
-							<input type="text" placeholder="Address" name="address" id="address" required />
+						<div class="form-group">
+							<label for="address">Address</label>
+							<input class="form-input" type="text" placeholder="Address" name="address" id="address" required />
 						</div>
 
-						<div class="form-input select-input">
-							<label for="color">Color:</label>
-							<select name="color" id="color" required>
+						<div class="form-group">
+							<label for="color">Color</label>
+							<select class="form-input" name="color" id="color" required>
 								<option value="" selected hidden disabled>Choose color</option>
 								<optgroup label="Light colors">
 									<option value="pink">Pink</option>
@@ -69,87 +82,73 @@
 							</select>
 						</div>
 
-						<div class="form-input">
-							<label for="number">Number of items:</label>
-							<input type="number" min="1" max="100" placeholder="Number of items" name="number" id="number" value="1" required />
+						<div class="form-group">
+							<label for="number">Number of items</label>
+							<input class="form-input" type="number" min="1" max="100" placeholder="Number of items" name="number" id="number" value="1" required />
 						</div>
 
-						<div class="form-input select-input">
-							<label for="comment">Comment from customer:</label>
-							<textarea placeholder="Your comment" maxlength="200" name="comment" id="comment" rows="3"></textarea>
+						<div class="form-group">
+							<label for="comment">Comment from customer</label>
+							<textarea class="form-input" placeholder="Your comment" maxlength="200" name="comment" id="comment" rows="3"></textarea>
 						</div>
 
-						<div class="form-input">
-							<input name="terms" id="terms" value="yes" type="radio" required />
-							<label for="terms">I agree with terms and privacy</label>
+						<div class="form-group">
+							<input class="form-check-input" name="terms" id="terms" value="yes" type="radio" required />
+							<label class="form-check-label" for="terms">I agree with terms and privacy</label>
 						</div>
 
 						<div class="form-buttons">
-							<button type="reset">Reset</button>
-							<button>Buy</button>
+							<button class="btn" type="reset">Reset</button>
+							<button class="btn">Buy</button>
 						</div>
 					</form>
 
-					<section class="suggested-products">
-						<h3>Suggested products</h3>
-						<div class="products">
-							<div class="product">
-								<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
-								<a href="#">Product name</a>
-							</div>
-							<div class="product">
-								<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
-								<a href="#">Product name</a>
-							</div>
-							<div class="product">
-								<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
-								<a href="#">Product name</a>
-							</div>
-							<div class="product">
-								<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
-								<a href="#">Product name</a>
-							</div>
-							<div class="product">
-								<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
-								<a href="#">Product name</a>
-							</div>
+					<!-- Suggested products panel -->
+					<h3 class="order-form__suggested-products__title">Suggested Products</h3>
+					<div class="products d-flex">
+						<div class="product">
+							<img class="product__img" src="https://via.placeholder.com/720x1280" alt="Product image" />
+							<a class="product__title" href="product.html">Product name</a>
+							<h3 class="product__price">1200 zł</h3>
 						</div>
-					</section>
-				</section>
 
-				<div class="product-order">
-					<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
-					<img src="https://via.placeholder.com/600x400?text=Product" alt="Small product image" />
-					<h2>Product name</h2>
+						<div class="product">
+							<img class="product__img" src="https://via.placeholder.com/720x1280" alt="Product image" />
+							<a class="product__title" href="product.html">Product name</a>
+							<h3 class="product__price">1200 zł</h3>
+						</div>
+
+						<div class="product">
+							<img class="product__img" src="https://via.placeholder.com/720x1280" alt="Product image" />
+							<a class="product__title" href="product.html">Product name</a>
+							<h3 class="product__price">1200 zł</h3>
+						</div>
+
+						<div class="product">
+							<img class="product__img" src="https://via.placeholder.com/720x1280" alt="Product image" />
+							<a class="product__title" href="product.html">Product name</a>
+							<h3 class="product__price">1200 zł</h3>
+						</div>
+					</div>
+				</div>
+
+				<!-- Rightside with product description -->
+				<div class="order-product">
+					<div class="product-desc-sm">
+						<img class="product-desc-sm__img" src="https://via.placeholder.com/720x900" alt="Product small image" />
+						<h3 class="product-desc-sm__title">Product Name</h3>
+						<p class="product-desc-sm__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, reprehenderit!</p>
+					</div>
 				</div>
 			</div>
 		</main>
 
-		<footer>
-			<nav>
-				<ul>
-					<li><p>Support</p></li>
-					<li><a href="#">Credit</a></li>
-					<li><a href="#">Order</a></li>
-				</ul>
-				<ul>
-					<li><p>Information</p></li>
-					<li><a href="#">About us</a></li>
-					<li><a href="#">Contacts</a></li>
-				</ul>
-				<ul>
-					<li><p>Services</p></li>
-					<li><a href="#">Bonus balance</a></li>
-					<li><a href="#">Certificates</a></li>
-				</ul>
-			</nav>
+		<footer class="footer">
+			<ul class="footer__nav list-style-none text-center">
+				<li><a href="tel:+496170961709">Contacts</a></li>
+				<li><a href="about.html">Abouts Us</a></li>
+				<li><a href="#">Terms</a></li>
+			</ul>
 		</footer>
-
-		<script>
-			document.getElementById("order-form").onsubmit = function (e) {
-				e.preventDefault();
-				console.log("Submitted");
-			};
-		</script>
 	</body>
 </html>
