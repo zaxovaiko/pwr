@@ -2,7 +2,7 @@
 
 read -p "Enter parameters: " ARG
 
-#cmake-build-debug/kp.exe ${ARG/\//\/\/} optional silent mode
+# ${ARG/\//\/\/} optional silent mode
 cmake-build-debug/kp.exe "//s" "${ARG}"
 
 case "$?" in

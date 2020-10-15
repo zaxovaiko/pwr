@@ -9,11 +9,6 @@ using namespace std;
 int main(int argc, char *argv[], char *env[]) {
     bool silent = argc > 1 && (!strcmp(argv[1], "/s") || !strcmp(argv[1], "/S"));
 
-    cout << endl << "Program arguments: " << endl;
-    for (int i = 0; i < argc; ++i) {
-        cout << argv[i] << endl;
-    }
-
     cout << endl << "Environment variables: " << endl;
     for (int i = 1 + silent; i < argc; i++) {
         char **env_l = env;
@@ -44,7 +39,6 @@ int main(int argc, char *argv[], char *env[]) {
                     cout << item << endl;
                 cout << endl;
             }
-
             env_l++;
         }
 

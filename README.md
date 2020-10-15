@@ -18,4 +18,7 @@ All labs from Wroclaw University of Science and Technologies.
     - Bazy Danych
 
  - 5 semestr
-    - Programowanie System Webowych
+    - Programowanie Systemów Webowych
+    - Języki skryptowe
+    - Projektowanie Baz Danych
+    - Cyberbiezpieczeństwo
