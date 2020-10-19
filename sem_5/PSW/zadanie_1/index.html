@@ -12,13 +12,15 @@
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<header class="header d-flex">
-			<a class="header__sitename" href="index.html">Ecom</a>
-			<ul class="header__nav list-style-none">
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-			</ul>
-			<p class="header__user">Hi, <a href="order.html">John Doe</a></p>
+		<header class="header">
+			<nav class="d-flex">
+				<a class="header__sitename" href="../zadanie_1/index.html">Ecom</a>
+				<ul class="header__nav list-style-none">
+					<li><a href="../zadanie_2/info.html">Information</a></li>
+					<li><a href="#">Link 2</a></li>
+				</ul>
+				<p class="header__user">Hi, <a href="../zadanie_1/order.html">John Doe</a></p>
+			</nav>
 		</header>
 
 		<main class="d-flex">
@@ -38,47 +40,46 @@
 			<div class="content content-main">
 				<!-- Ads section -->
 				<div class="content-main__ads mb-15">
-					<img src="https://via.placeholder.com/1280x420" alt="Content ads picture" />
+					<h1>RABATY</h1>
 				</div>
 
 				<!-- List of products -->
-				<div class="content-main__products products d-flex">
-					<div class="product">
-						<a href="product.html"><img class="product__img" width="720" src="https://via.placeholder.com/720x1280" alt="Product image" /></a>
-						<a class="product__title" href="product.html">Product name</a>
-						<h3 class="product__price">1200 zł</h3>
-					</div>
+				<article class="content-main__products products">
+					<h2>Resent Products</h2>
+					<div class="d-flex">
+						<article class="product">
+							<a href="product.html"><img class="product__img" src="images/product1.jpg" alt="Mi Band 5" /></a>
+							<div>
+								<a class="product__title" href="product.html">Mi Band 5</a>
+								<h3 class="product__price">230 zł</h3>
+							</div>
+						</article>
 
-					<div class="product">
-						<a href="product.html"><img class="product__img" width="720" src="https://via.placeholder.com/720x1280" alt="Product image" /></a>
-						<a class="product__title" href="product.html">Product name</a>
-						<h3 class="product__price">1200 zł</h3>
-					</div>
+						<article class="product">
+							<a href="product.html"><img class="product__img" src="images/product2.jpg" alt="Coffee machine" /></a>
+							<div>
+								<a class="product__title" href="product.html">Coffee machine</a>
+								<h3 class="product__price">700 zł</h3>
+							</div>
+						</article>
 
-					<div class="product">
-						<a href="product.html"><img class="product__img" width="720" src="https://via.placeholder.com/720x1280" alt="Product image" /></a>
-						<a class="product__title" href="product.html">Product name</a>
-						<h3 class="product__price">1200 zł</h3>
-					</div>
+						<article class="product">
+							<a href="product.html"><img class="product__img" src="images/product3.jpg" alt="UltraComfort Sit" /></a>
+							<div>
+								<a class="product__title" href="product.html">UltraComfort Sit</a>
+								<h3 class="product__price">400 zł</h3>
+							</div>
+						</article>
 
-					<div class="product">
-						<a href="product.html"><img class="product__img" width="720" src="https://via.placeholder.com/720x1280" alt="Product image" /></a>
-						<a class="product__title" href="product.html">Product name</a>
-						<h3 class="product__price">1200 zł</h3>
+						<article class="product">
+							<a href="product.html"><img class="product__img" src="images/product4.jpg" alt="Phone" /></a>
+							<div>
+								<a class="product__title" href="product.html">Huawei</a>
+								<h3 class="product__price">1200 zł</h3>
+							</div>
+						</article>
 					</div>
-
-					<div class="product">
-						<a href="product.html"><img class="product__img" width="720" src="https://via.placeholder.com/720x1280" alt="Product image" /></a>
-						<a class="product__title" href="product.html">Product name</a>
-						<h3 class="product__price">1200 zł</h3>
-					</div>
-
-					<div class="product">
-						<a href="product.html"><img class="product__img" width="720" src="https://via.placeholder.com/720x1280" alt="Product image" /></a>
-						<a class="product__title" href="product.html">Product name</a>
-						<h3 class="product__price">1200 zł</h3>
-					</div>
-				</div>
+				</article>
 			</div>
 		</main>
 
@@ -86,7 +87,7 @@
 			<ul class="footer__nav list-style-none text-center">
 				<li><a href="tel:+496170961709">Contacts</a></li>
 				<li><a href="about.html">Abouts Us</a></li>
-				<li><a href="#">Terms</a></li>
+				<li><a href="../zadanie_2/terms.html">Terms</a></li>
 			</ul>
 		</footer>
 	</body>

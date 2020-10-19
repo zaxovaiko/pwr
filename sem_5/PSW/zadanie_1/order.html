@@ -12,13 +12,15 @@
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<header class="header d-flex">
-			<a class="header__sitename" href="index.html">Ecom</a>
-			<ul class="header__nav list-style-none">
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-			</ul>
-			<p class="header__user">Hi, <a href="order.html">John Doe</a></p>
+		<header class="header">
+			<nav class="d-flex">
+				<a class="header__sitename" href="../zadanie_1/index.html">Ecom</a>
+				<ul class="header__nav list-style-none">
+					<li><a href="../zadanie_2/info.html">Information</a></li>
+					<li><a href="#">Link 2</a></li>
+				</ul>
+				<p class="header__user">Hi, <a href="../zadanie_1/order.html">John Doe</a></p>
+			</nav>
 		</header>
 
 		<main class="d-flex">
@@ -116,41 +118,51 @@
 					</form>
 
 					<!-- Suggested products panel -->
-					<h3 class="order-form__suggested-products__title">Suggested Products</h3>
-					<div class="products d-flex">
-						<div class="product">
-							<img class="product__img" src="https://via.placeholder.com/720x1280" alt="Product image" />
-							<a class="product__title" href="product.html">Product name</a>
-							<h3 class="product__price">1200 zł</h3>
-						</div>
+					<article>
+						<h3 class="order-form__suggested-products__title">Suggested Products</h3>
+						<div class="products d-flex">
+							<article class="product">
+								<img class="product__img" src="images/product1.jpg" alt="Product image" />
+								<div>
+									<a class="product__title" href="product.html">Product name</a>
+									<h3 class="product__price">1200 zł</h3>
+								</div>
+							</article>
 
-						<div class="product">
-							<img class="product__img" src="https://via.placeholder.com/720x1280" alt="Product image" />
-							<a class="product__title" href="product.html">Product name</a>
-							<h3 class="product__price">1200 zł</h3>
-						</div>
+							<article class="product">
+								<img class="product__img" src="images/product2.jpg" alt="Product image" />
+								<div>
+									<a class="product__title" href="product.html">Product name</a>
+									<h3 class="product__price">1200 zł</h3>
+								</div>
+							</article>
 
-						<div class="product">
-							<img class="product__img" src="https://via.placeholder.com/720x1280" alt="Product image" />
-							<a class="product__title" href="product.html">Product name</a>
-							<h3 class="product__price">1200 zł</h3>
-						</div>
+							<article class="product">
+								<img class="product__img" src="images/product4.jpg" alt="Product image" />
+								<div>
+									<a class="product__title" href="product.html">Product name</a>
+									<h3 class="product__price">1200 zł</h3>
+								</div>
+							</article>
 
-						<div class="product">
-							<img class="product__img" src="https://via.placeholder.com/720x1280" alt="Product image" />
-							<a class="product__title" href="product.html">Product name</a>
-							<h3 class="product__price">1200 zł</h3>
+							<article class="product">
+								<img class="product__img" src="images/product3.jpg" alt="Product image" />
+								<div>
+									<a class="product__title" href="product.html">Product name</a>
+									<h3 class="product__price">1200 zł</h3>
+								</div>
+							</article>
 						</div>
-					</div>
+					</article>
 				</div>
 
 				<!-- Rightside with product description -->
 				<div class="order-product">
-					<div class="product-desc-sm">
-						<img class="product-desc-sm__img" src="https://via.placeholder.com/720x900" alt="Product small image" />
-						<h3 class="product-desc-sm__title">Product Name</h3>
+					<article class="product-desc-sm">
+						<img class="product-desc-sm__img" src="images/product4.jpg" alt="Product small image" />
+						<h3 class="product-desc-sm__title">IPhone 12</h3>
 						<p class="product-desc-sm__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, reprehenderit!</p>
-					</div>
+					</article>
 				</div>
 			</div>
 		</main>
@@ -159,7 +171,7 @@
 			<ul class="footer__nav list-style-none text-center">
 				<li><a href="tel:+496170961709">Contacts</a></li>
 				<li><a href="about.html">Abouts Us</a></li>
-				<li><a href="#">Terms</a></li>
+				<li><a href="../zadanie_2/terms.html">Terms</a></li>
 			</ul>
 		</footer>
 	</body>
