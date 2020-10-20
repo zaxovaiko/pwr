@@ -9,17 +9,17 @@
 		<meta name="title" content="Ecom - Strona informatcji" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ecom - Informacja</title>
-		<link rel="stylesheet" href="../zadanie_1/style.css" />
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<header class="header">
 			<nav class="d-flex">
-				<a class="header__sitename" href="../zadanie_1/index.html">Ecom</a>
+				<a class="header__sitename" href="index.html">Ecom</a>
 				<ul class="header__nav list-style-none">
 					<li><a href="info.html">Information</a></li>
-					<li><a href="#">Link 2</a></li>
+					<li><a href="additional.html">Additional information</a></li>
 				</ul>
-				<p class="header__user">Hi, <a href="../zadanie_1/order.html">John Doe</a></p>
+				<p class="header__user">Hi, <a href="order.html">John Doe</a></p>
 			</nav>
 		</header>
 
@@ -44,39 +44,50 @@
 
 					<form action="/" id="order-form" autocomplete="on">
 						<div class="form-group">
-							<label for="name">Name</label>
-							<input class="form-input mb-15" autofocus type="text" placeholder="Name" name="name" id="name" />
+							<label for="name">
+								<input autofocus type="text" name="name" id="name" />
+								(First name)
+							</label>
 
-							<label for="surname">Surname</label>
-							<input class="form-input mb-15" type="text" placeholder="Surname" name="surname" id="surname" required />
+							<label for="surname">
+								<input type="text" name="surname" id="surname" required />
+								(Last name)
+							</label>
 
-							<label for="txtList">Birth Month:</label>
-							<datalist id="months">
-								<option value="January"></option>
-								<option value="February"></option>
-								<option value="March"></option>
-								<option value="April"></option>
-								<option value="May"></option>
-								<option value="June"></option>
-								<option value="July"></option>
-								<option value="August"></option>
-								<option value="September"></option>
-								<option value="October"></option>
-								<option value="November"></option>
-								<option value="December"></option>
-							</datalist>
-							<input class="form-input mb-15" type="text" id="txtList" placeholder="Select a month" list="months" />
+							<label for="txtList">
+								<input type="text" id="txtList" list="months" />
+								<datalist id="months">
+									<option value="January"></option>
+									<option value="February"></option>
+									<option value="March"></option>
+									<option value="April"></option>
+									<option value="May"></option>
+									<option value="June"></option>
+									<option value="July"></option>
+									<option value="August"></option>
+									<option value="September"></option>
+									<option value="October"></option>
+									<option value="November"></option>
+									<option value="December"></option>
+								</datalist>
 
-							<label for="email">Email</label>
-							<input class="form-input mb-15" type="email" placeholder="name@domain.com" name="email" id="email" required />
+								(mm)
+							</label>
 
-							<label for="tel">Phone</label>
-							<input class="form-input mb-15" type="tel" placeholder="(###) ###-####" pattern="\([0-9]{3}\) \+[0-9]{3}-[0-9]{4}" name="tel" id="tel" />
+							<label for="email">
+								<input type="email" name="email" id="email" required />
+								(name@domain.com)
+							</label>
+
+							<label for="tel">
+								<input type="tel" pattern="\(\d{3}\) +\d{3}-\d{4}" name="tel" id="tel" />
+								(###) ###-####
+							</label>
 						</div>
 
-						<div class="form-buttons">
-							<button class="btn" type="reset">Reset</button>
-							<button class="btn">Send</button>
+						<div>
+							<input type="reset" value="Reset" />
+							<input type="submit" value="Submit" />
 						</div>
 					</form>
 				</div>
@@ -86,7 +97,7 @@
 		<footer class="footer">
 			<ul class="footer__nav list-style-none text-center">
 				<li><a href="tel:+496170961709">Contacts</a></li>
-				<li><a href="../zadanie_1/about.html">Abouts Us</a></li>
+				<li><a href="about.html">Abouts Us</a></li>
 				<li><a href="terms.html">Terms</a></li>
 			</ul>
 		</footer>
