@@ -1,0 +1,4 @@
+sw=type Zakupy.txt | sj $1 | sk 3 | sn
+sw_two=type Zakupy.txt | sj $* | sk 3 | sn
+d_sl=type Zakupy.txt | sj $1
+d_sl_p=type Zakupy.txt | sj $1 | sk 4 | sn

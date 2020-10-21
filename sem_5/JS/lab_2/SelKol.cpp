@@ -1,26 +1,23 @@
 #include <iostream>
-#include <fstream>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 
-int main(int argc, char* argv[]) {
-    ifstream input( "../Zakup.txt" );
-
-    for (string line; getline(input, line); ) {
-        string s;
+int main(int argc, char *argv[]) {
+    for (string line, col; getline(cin, line); ) {
         istringstream iss(line);
-        int j = 0;
-        while (getline(iss, s, ' ')) {
-            for (int i = 1; i < argc; ++i) {
-                if (j == stoi(argv[i]) - 1) {
-                    cout << s << "\t";
-                }
-            }
-            j++;
-        }
-        cout << endl;
-    }
+        vector<string> product;
 
-    return 0;
+        while (getline(iss, col, '\t'))
+            product.push_back(col);
+
+        for (int i = 1; i < argc; ++i) {
+            int index = stoi(argv[i]);
+            if (index < 5) {
+                cout << product[index - 1] << "\t";
+                if (i == argc - 1) cout << endl;
+            }
+        }
+    }
 }

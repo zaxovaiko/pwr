@@ -1,0 +1,6 @@
+01.09.2020	MiBend3	2	3.4
+02.09.2020	MiBend4	3	4.5
+03.09.2020	Mobile_Lenovo	3	9
+02.09.2020	Laptop_Asus	3	9
+02.09.2020	Laptop_Lenovo	3	9
+03.09.2020	Mobile_Asus	3	9

@@ -4,18 +4,12 @@
 using namespace std;
 
 int main() {
-    string str, s;
-    char *p;
-    int sum = 0;
-
-    getline(cin, str);
-    istringstream iss(str);
-
-    while (getline(iss, s, ' ')) {
-        strtol(s.c_str(), &p, 10);
-        sum += *p == 0 ? stoi(s) : 0;
+    double sum = 0;
+    string str;
+    while (getline(cin, str)) {
+        double num;
+        if ((istringstream(str) >> num >> ws).eof())
+            sum += num;
     }
-
     cout << sum << endl;
-    return 0;
 }
