@@ -8,9 +8,11 @@
  */
 module.exports = function (req, res, next) {
 	if (req.session.isLoggedIn) {
-		return res.render('components/callback', {
+		return res.render('404', {
 			title: 'Error',
-			text: 'You are already logged in',
+			text: 'Permission denied',
+			desc: 'You are already logged in',
+			user: false,
 		});
 	}
 	next();

@@ -21,6 +21,7 @@ module.exports = function seedUsers(count) {
 					username: faker.internet.userName(),
 					email: faker.internet.email(),
 					password: bcrypt.hashSync('password', 10),
+					role: Math.random() < 0.2 ? 2 : Math.random() < 0.3 ? 1 : 0,
 				}).save();
 				done += Number(!!user);
 			}

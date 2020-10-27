@@ -6,7 +6,6 @@ const path = require('path');
 
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
-const errorRouter = require('./routes/error');
 
 const app = express();
 
@@ -39,6 +38,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/', authRouter);
-app.use('*', errorRouter);
+app.use((req, res) => {
+	res.render('404', { title: 'Error', text: 'Not found', user: req.session.user });
+});
 
 module.exports = app;

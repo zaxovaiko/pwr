@@ -7,11 +7,31 @@ const router = express.Router();
 const User = require('../models/User');
 const authMiddleware = require('../middlewares/auth');
 
-router.get('/login', [authMiddleware], (req, res) => res.render('auth/login', { title: 'Login' }));
+router.get('/login', [authMiddleware], (req, res) =>
+	res.render('auth/login', {
+		title: 'Login',
+		user: req.session.user,
+	})
+);
 
 router.get('/register', [authMiddleware], (req, res) =>
-	res.render('auth/register', { title: 'Register' })
+	res.render('auth/register', {
+		title: 'Register',
+		user: req.session.user,
+	})
 );
+
+router.get('/logout', (req, res) => {
+	req.session.destroy((err) => {
+		if (err) {
+			return res.render('404', {
+				text: 'Bad session',
+				desc: 'Try to relaod page and try again',
+			});
+		}
+		res.redirect('/');
+	});
+});
 
 /**
  * Log into user account.

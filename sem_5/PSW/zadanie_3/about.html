@@ -9,7 +9,20 @@
 		<meta name="title" content="Ecom - O nas" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ecom - O nas</title>
-		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<style>
+			header,
+			.content,
+			footer,
+			aside {
+				background: #fff;
+			}
+			.content {
+				background: url("./images/botpattern.png") repeat-x bottom;
+				background-size: 100% 50%;
+			}
+		</style>
 	</head>
 	<body>
 		<header class="header">
@@ -17,7 +30,8 @@
 				<a class="header__sitename" href="index.html">Ecom</a>
 				<ul class="header__nav list-style-none">
 					<li><a href="info.html">Information</a></li>
-					<li><a href="#">Link 2</a></li>
+					<li><a href="additional.html">Additional information</a></li>
+					<li><a href="table.html">Table</a></li>
 				</ul>
 				<p class="header__user">Hi, <a href="order.html">John Doe</a></p>
 			</nav>
@@ -27,8 +41,35 @@
 			<!-- Leftside navigation panel -->
 			<aside class="aside">
 				<h4 class="aside__title">Categories</h4>
-				<ul class="aside__nav list-style-none">
-					<li><a href="#">Laptops</a></li>
+				<ul class="aside__nav list-style-none" style="position: relative">
+					<li>
+						<a href="#">Subcategory</a>
+						<ul class="list-style-none nested">
+							<li><a href="#">Subcat 1</a></li>
+							<li>
+								<a href="#">Subcats</a>
+								<ul class="list-style-none nested">
+									<li><a href="#">Subcat 2</a></li>
+									<li><a href="#">Subcat 2</a></li>
+									<li><a href="#">Subcat 2</a></li>
+									<li>
+										<a href="#">Subcats</a>
+										<ul class="list-style-none nested">
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Subcat 2</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Subcat 1</a></li>
+							<li><a href="#">Subcat 1</a></li>
+							<li><a href="#">Subcat 1</a></li>
+						</ul>
+					</li>
 					<li><a href="#">Personal Care</a></li>
 					<li><a href="#">Media</a></li>
 					<li><a href="#">Cosmetics</a></li>
@@ -37,10 +78,10 @@
 			</aside>
 
 			<!-- Rightside content part -->
-			<div class="content">
+			<div class="content" style="min-height: 100vh">
 				<h1 class="text-center">About us</h1>
 
-				<h3>Our goal is to be helpful!</h3>
+				<h3 class="floated">Our goal is to be helpful!</h3>
 				<p class="mb-15">
 					We believe that things exist to make life easier, nicer and kinder. Therefore, the search for that very thing should be quick, convenient and enjoyable. We
 					don't just sell home appliances, electronics, jewelry or wine. We help you find exactly what you need, in one place and without unnecessary worries, so that you
@@ -52,12 +93,6 @@
 					And of course, any product can be ordered with delivery. We deliver within Wroclaw within one day, and across Poland for the next day. Everything - without
 					prepayment, if necessary - on credit. Payment in cash or non-cash - whichever is more convenient for you.
 					<a class="d-block" href="https://react.rocks/images/converted/downloadbutton.jpg" download="image.jpg">Prices and delivery terms</a>
-				</p>
-
-				<h3>Communication</h3>
-				<p class="mb-15">
-					To write to <a href="mailto:grebenko.ilya@gmail.com"> Ecom, Inc.</a>, click the link and your default email client will open an email message and address it to
-					us.
 				</p>
 
 				<a class="mb-15 d-block" href="ftp://demo:password@test.rebex.net/NVR_ch7_20201008174835_E.jpg" download>FTP Other information</a>

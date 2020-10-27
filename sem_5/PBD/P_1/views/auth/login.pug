@@ -1,11 +1,14 @@
-doctype html
-include ../includes/head.pug
-body
-    h1 login
+extends ../index
 
-    form(action="/login" method="POST")
-        input(name="email" type="text" placeholder="Email")
-        input(name="password" type="password" placeholder="Password")
-        button Log in
-        p
-            a(href="/register") Register
+block content
+    div(class="mx-auto card my-5" style="width: 350px")
+        div(class="card-body p-4")
+            h1(class="mb-4") Log in
+            form(action="/login" method="POST")
+                div(class="form-group")
+                    label(for="email") Email
+                    input(class="form-control" type="email" id="email" name="email")
+                div(class="form-group")
+                    label(for="password") Password
+                    input(class="form-control" type="password" id="password" name="password")
+                button(class="btn btn-primary" type="submit") Log in

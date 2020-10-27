@@ -1,7 +1,6 @@
-doctype html
-html
-    include includes/head.pug
-    body
-        p Error has occurred
-        h1= text
-        a(href="javascript:history.back()") Back
+extends index
+
+block content
+    h1(class="display-1 font-weight-bold")= text || "Something went wrong"
+    h3(class="font-weight-light")= desc || 'Error has occurred'
+    a(href="javascript:history.back()") Back

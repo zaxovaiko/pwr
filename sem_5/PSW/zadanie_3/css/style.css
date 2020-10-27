@@ -1,0 +1,192 @@
+ul li:hover > ul {
+	display: block;
+}
+
+ul li {
+    font-weight: bold;
+}
+
+.nested {
+	top: -1px;
+	left: 150px;
+	border: solid 1px #ddd;
+}
+
+em {
+    font-weight:  bold;                          
+    color: black; 
+}
+
+.aside__nav ul {
+	display: none;
+	position: absolute;
+	background: #fff;
+	width: 150px;
+}
+
+ul li > ul li > ol li {
+    text-decoration: underline;
+}
+
+#license {
+    color: darkgray;
+}
+.shiftright {
+    position: relative;
+    right: -1ex;
+}
+.inform {
+    font-size: 200%;
+    position: static;
+    font-weight: bolder;
+}
+.these_t {
+	font-size: 1em;
+	box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    width: 300px;
+    border: 3px solid black;
+	font-style: oblique;
+	background: #fff;
+	z-index: 2;
+    
+}
+.by_acc {
+    font-size: 20px;
+    font-variant: small-caps;
+
+}
+.the_following {
+    font-size: 10pt;
+    line-height: 15px;
+    
+}    
+.we_do_not {
+    position: absolute;
+	top: 25px; 
+	width: 50%;
+	left: 0;
+	right: 0;      
+	margin: 0 auto;
+	z-index: 3;   
+	text-align: center;     
+    font-family: Tahoma, sans-serif;
+}
+.floated {
+    float: left;       
+    width: 30%;
+}
+.mb-15 {
+	margin-bottom: 15px;
+	clear: both;
+}
+
+/* Table */
+.product-desc__info__table {
+	border: solid 1px #aaa;
+	width: 100%;
+}
+.product-desc__info__table td,
+.product-desc__info__table th {
+	border: solid 1px #aaa;
+	padding: 10px;
+}
+
+
+
+/* Fonts */
+.content-main__ads {
+	width: 100%;
+	height: 300px;
+}
+.content-main__ads h1 {
+	text-align: center;
+	font-size: 15vw;
+	color: #ccc;
+	line-height: 300px;
+}
+
+/* Order */
+input[name="name"] {
+	color: blue;
+}
+
+input[name="address"] {
+	background: pink;
+}
+
+input[type="number"] {
+	background: green;
+}
+
+input[type="radio"]:disabled + label {
+	color: red;
+}
+
+@page: first{
+	margin-left: 50%;
+	margin-top: 50%;
+};
+
+/* Pseudoclasses */
+input:required {
+	border: solid 2px red;
+}
+
+input:enabled {
+	font-style: oblique;
+}
+
+input:disabled {
+	background: #ddd;
+}
+
+input:focus {
+	color: #fff;
+	background: blue;
+}
+
+input:active {
+	color: #fff;
+	background: red;
+}
+
+/* Links */
+.content a:link {
+	display: block;
+}
+
+.links h3:first-of-type {
+	color: blue;
+}
+
+.links h3:last-of-type {
+	color: peru;
+}
+
+span:only-child {
+	background: pink;
+}
+
+/* Media */
+@media screen and (max-width: 1100px) {
+	.products div {
+		display: block;
+	}
+	.product {
+		text-align: center;
+		margin-bottom: 15px;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	main.d-flex {
+		display: block;
+	}
+	.content {
+		margin-left: 0;
+		box-sizing: border-box;
+	}
+}

@@ -1,13 +1,20 @@
-doctype html
-include ../includes/head.pug
-body
-    h1 register
+extends ../index
 
-    form(action="/register" method="POST")
-        input(name="username" type="text" placeholder="Username")
-        input(name="email" type="text" placeholder="Email")
-        input(name="password" type="password" placeholder="Password")
-        input(name="password_confirmation" type="password" placeholder="Password confirmation")
-        button Create account
-        p
-            a(href="/login") Log in
+block content
+    div(class="mx-auto card my-5" style="width: 400px")
+        div(class="card-body p-4")
+            h1(class="mb-4") Create account
+            form(action="/register" method="POST")
+                div(class="form-group")
+                    label(for="name") Name
+                    input(class="form-control" type="text" id="name" name="name")
+                div(class="form-group")
+                    label(for="email") Email
+                    input(class="form-control" type="email" id="email" name="email")
+                div(class="form-group")
+                    label(for="password") Password
+                    input(class="form-control" type="password" id="password" name="password")
+                div(class="form-group")
+                    label(for="password_confirmation") Password confirmation
+                    input(class="form-control" type="password" id="password_confirmation" name="password_confirmation")
+                button(class="btn btn-primary" type="submit") Sign up

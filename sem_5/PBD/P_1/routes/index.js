@@ -1,16 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
+const Product = require('../models/Product');
+
 /**
  * Root path.
  *
  * @method GET
  * @route /
  */
-router.get('/', (req, res) => {
-	res.render('index', {
+router.get('/', async (req, res) => {
+	res.render('home', {
 		title: 'Main page',
-		name: req.session.user ? req.session.user.username : 'guest',
+		user: req.session.user,
+		products: await Product.find().limit(4),
 	});
 });
 

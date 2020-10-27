@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko" />
+		<meta name="designer" content="Volodymyr Zakhovaiko" />
+		<meta name="description" content="Table page" />
+		<meta name="keywords" content="shop,e-commerce" />
+		<meta name="title" content="Ecom - Table" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ecom - Table</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<style>
+			/* Table */
+			td,
+			th {
+				border: solid 1px #ddd;
+				padding: 10px;
+			}
+			table td {
+				text-align: center;
+			}
+
+			table tr:not(:first-child) td:nth-child(4) {
+				text-align: left;
+			}
+
+			table tr:nth-child(even) {
+				background: #ddd;
+			}
+
+			table > tbody > tr:nth-last-child(3) {
+				background: pink;
+			}
+
+			table > tbody > tr:last-child > td:nth-child(odd) {
+				background: greenyellow;
+			}
+
+			td:empty {
+				background: green;
+			}
+		</style>
+	</head>
+	<body style="position: relative">
+		<div class="wrapper"></div>
+		<header class="header">
+			<nav class="d-flex">
+				<a class="header__sitename" href="index.html">Ecom</a>
+				<ul class="header__nav list-style-none">
+					<li><a href="info.html">Information</a></li>
+					<li><a href="additional.html">Additional information</a></li>
+					<li><a href="table.html">Table</a></li>
+				</ul>
+				<p class="header__user">Hi, <a href="order.html">John Doe</a></p>
+			</nav>
+		</header>
+
+		<main class="d-flex">
+			<!-- Leftside navigation panel -->
+			<aside class="aside">
+				<h4 class="aside__title">Categories</h4>
+				<ul class="aside__nav list-style-none" style="position: relative">
+					<li>
+						<a href="#">Subcategory</a>
+						<ul class="list-style-none nested">
+							<li><a href="#">Subcat 1</a></li>
+							<li>
+								<a href="#">Subcats</a>
+								<ul class="list-style-none nested">
+									<li><a href="#">Subcat 2</a></li>
+									<li><a href="#">Subcat 2</a></li>
+									<li><a href="#">Subcat 2</a></li>
+									<li>
+										<a href="#">Subcats</a>
+										<ul class="list-style-none nested">
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Subcat 2</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Subcat 1</a></li>
+							<li><a href="#">Subcat 1</a></li>
+							<li><a href="#">Subcat 1</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Personal Care</a></li>
+					<li><a href="#">Media</a></li>
+					<li><a href="#">Cosmetics</a></li>
+					<li><a href="#">Tablets</a></li>
+				</ul>
+			</aside>
+
+			<!-- Rightside content part -->
+			<div class="content">
+				<table class="mb-15" style="width: 100%">
+					<tr>
+						<th style="width: 50px">ID</th>
+						<th style="width: 150px">Name</th>
+						<th style="width: 100px">Price</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>IPhone SE</td>
+						<td>234</td>
+						<td>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde doloribus possimus, optio est maiores laboriosam nihil explicabo corporis placeat
+							dicta inventore iure voluptatem? Perferendis distinctio dignissimos sed id autem?
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>IPhone XL</td>
+						<td>399</td>
+						<td>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde doloribus possimus, optio est maiores laboriosam nihil explicabo corporis placeat
+							dicta inventore iure voluptatem? Perferendis distinctio dignissimos sed id autem?
+						</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>IPhone X</td>
+						<td>399</td>
+						<td>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde doloribus possimus, optio est maiores laboriosam nihil explicabo corporis placeat
+							dicta inventore iure voluptatem? Perferendis distinctio dignissimos sed id autem?
+						</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>IPhone 11</td>
+						<td>700</td>
+						<td>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde doloribus possimus, optio est maiores laboriosam nihil explicabo corporis placeat
+							dicta inventore iure voluptatem? Perferendis distinctio dignissimos sed id autem?
+						</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>IPhone 12</td>
+						<td>300</td>
+						<td>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde doloribus possimus, optio est maiores laboriosam nihil explicabo corporis placeat
+							dicta inventore iure voluptatem? Perferendis distinctio dignissimos sed id autem?
+						</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>IPhone 12 mini</td>
+						<td>500</td>
+						<td>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde doloribus possimus, optio est maiores laboriosam nihil explicabo corporis placeat
+							dicta inventore iure voluptatem? Perferendis distinctio dignissimos sed id autem?
+						</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>IPhone 8</td>
+						<td>500</td>
+						<td>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde doloribus possimus, optio est maiores laboriosam nihil explicabo corporis placeat
+							dicta inventore iure voluptatem? Perferendis distinctio dignissimos sed id autem?
+						</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>IPhone 6</td>
+						<td>200</td>
+						<td></td>
+					</tr>
+				</table>
+
+				<section>
+					<h3>Inputs</h3>
+
+					<input class="form-input mb-15" type="text" placeholder="Required" required />
+					<input class="form-input mb-15" type="text" placeholder="Disabled" disabled />
+					<input class="form-input mb-15" type="text" placeholder="Enabled" />
+                </section>
+                
+                <section class="links mb-15">
+                    <h3>Links</h3>
+                    <h3>Links</h3>
+                    <h3>Links</h3>
+
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </section>
+
+                <p>Only <span>child</span></p>
+                <p>Only <span>child</span> <span>with child</span></p>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<ul class="footer__nav list-style-none text-center">
+				<li><a href="tel:+496170961709">Contacts</a></li>
+				<li><a href="about.html">Abouts Us</a></li>
+				<li><a href="terms.html">Terms</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>

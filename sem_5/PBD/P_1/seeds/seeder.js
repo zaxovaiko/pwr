@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 const userSeeder = require('./users');
 const categorySeeder = require('./categories');
+const productSeeder = require('./products');
 
 (async () => {
 	try {
@@ -17,6 +18,7 @@ const categorySeeder = require('./categories');
 
 		console.log((await userSeeder(10)) + ' users were written to db.');
 		console.log((await categorySeeder(10)) + ' categories were written to db.');
+		console.log((await productSeeder(10)) + ' products were written to db.');
 
 		conn.connection.close();
 	} catch (e) {

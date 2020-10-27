@@ -21,6 +21,7 @@ module.exports = mongoose.model(
 				type: mongoose.SchemaTypes.ObjectId,
 				ref: 'Category',
 			},
+			// 	TODO: Add added_by: Moderator_id
 			//    TODO: Add product characteristics
 		},
 		{

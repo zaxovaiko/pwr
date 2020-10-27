@@ -1,4 +1,4 @@
-sw=type Zakupy.txt | sj $1 | sk 3 | sn
-sw_two=type Zakupy.txt | sj $* | sk 3 | sn
-d_sl=type Zakupy.txt | sj $1
-d_sl_p=type Zakupy.txt | sj $1 | sk 4 | sn
+sum_w=sj $1 | sk 3 | sn
+sum_w_two=sj $2 | sk 3 | sn
+d_sl=sj $1
+d_sl_p=sj $1 | sk 4 | su
