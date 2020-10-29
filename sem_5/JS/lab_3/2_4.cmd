@@ -1,0 +1,1 @@
+type Covid.txt | findStr %1 | findStr %2 | sk 5 | sn

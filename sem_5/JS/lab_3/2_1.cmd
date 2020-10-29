@@ -1,0 +1,1 @@
+type Covid.txt | findStr 30.07 | findStr El_Salvador | sk 5

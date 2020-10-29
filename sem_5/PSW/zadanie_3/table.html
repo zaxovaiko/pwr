@@ -41,6 +41,15 @@
 			td:empty {
 				background: green;
 			}
+
+
+			aside, .content {
+				float: left;
+				min-height: 100%
+			}
+			.content {
+				width: calc(100% - 50px - 250px);
+			}
 		</style>
 	</head>
 	<body style="position: relative">
@@ -57,7 +66,7 @@
 			</nav>
 		</header>
 
-		<main class="d-flex">
+		<main class="">
 			<!-- Leftside navigation panel -->
 			<aside class="aside">
 				<h4 class="aside__title">Categories</h4>
@@ -199,6 +208,8 @@
                 <p>Only <span>child</span> <span>with child</span></p>
 			</div>
 		</main>
+
+		<div style="clear: both;"></div>
 
 		<footer class="footer">
 			<ul class="footer__nav list-style-none text-center">

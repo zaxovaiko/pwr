@@ -1,0 +1,1 @@
+PP /N | findStr "Nostromo" | find /c /v ""

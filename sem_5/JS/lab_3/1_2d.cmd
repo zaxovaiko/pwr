@@ -1,0 +1,1 @@
+PP /N | findStr /b "It" | findStr /e "of" | find /c /v ""

@@ -61,7 +61,6 @@ ul li > ul li > ol li {
 .the_following {
     font-size: 10pt;
     line-height: 15px;
-    
 }    
 .we_do_not {
     position: absolute;
@@ -168,6 +167,14 @@ input:active {
 
 span:only-child {
 	background: pink;
+}
+
+.terms__licenses-details {
+	margin-bottom: 15px;
+	border-width: 2px;
+	border-color: blueviolet;
+	border-style: dotted dashed;
+	padding: 15px;
 }
 
 /* Media */

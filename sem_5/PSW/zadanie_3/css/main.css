@@ -276,11 +276,7 @@ label.form-check-label {
 .terms ul {
 	padding: 15px 2rem 0 2rem;
 }
-.terms__licenses-details {
-	margin-bottom: 15px;
-	border: solid 1px #ddd;
-	padding: 15px;
-}
+
 .terms__licenses-details summary {
 	font-weight: bold;
 	color: red;

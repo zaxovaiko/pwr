@@ -1,0 +1,1 @@
+type Nostromo.txt | find /c /v ""

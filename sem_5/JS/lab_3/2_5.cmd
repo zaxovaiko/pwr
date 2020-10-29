@@ -1,0 +1,1 @@
+type Covid.txt | sk 1 6 7 | findStr "\.06\." | findStr Poland | Sort 2 | nLines 3
