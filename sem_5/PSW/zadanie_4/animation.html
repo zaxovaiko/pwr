@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko" />
+		<meta name="designer" content="Volodymyr Zakhovaiko" />
+		<meta name="description" content="Animacja" />
+		<meta name="keywords" content="shop,e-commerce" />
+		<meta name="title" content="Ecom - Animajcja" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ecom - Animacja</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<style>
+			.content {
+				position: relative;
+				min-height: 100vh;
+			}
+
+			/* Animacja */
+
+			#block {
+				left: 200px;
+				top: 50px;
+				width: 100px;
+				height: 100px;
+				position: relative;
+				background: #f1f1f1;
+				animation: move 2s infinite;
+			}
+
+			@keyframes move {
+				0% {
+					border-radius: 0;
+					background: rgb(240, 225, 18);
+				}
+
+				50% {
+					background: rgb(238, 98, 5);
+					border-radius: 100%;
+					transform: scale(2);
+				}
+
+				100% {
+					border-radius: 0;
+					background: rgb(240, 225, 18);
+				}
+			}
+
+			/* Flexbox */
+			.cards {
+				flex-wrap: wrap;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+			}
+
+			.card {
+				border-radius: 10px;
+				border: solid 2px #000;
+				width: 22%;
+				padding: 15px;
+				margin-left: -10px;
+				background: #ddd;
+				box-sizing: border-box;
+				margin-bottom: 15px;
+			}
+
+			.card img {
+				width: 100%;
+				margin-bottom: 15px;
+				max-width: 200px;
+				margin: 0 auto;
+				display: block;
+			}
+
+			.card:hover {
+				width: 30%;
+			}
+
+			.red:hover {
+				background: pink;
+			}
+			.blue:hover {
+				background: lightblue;
+			}
+			.green:hover {
+				background: green;
+			}
+
+			@media screen and (max-width: 1000px) {
+				.card {
+					width: 30%;
+				}
+				.card:hover {
+					width: 40%;
+				}
+			}
+
+			@media screen and (max-width: 800px) {
+				.card {
+					width: 40%;
+				}
+				.card:hover {
+					width: 50%;
+				}
+			}
+
+			@media screen and (max-width: 500px) {
+				.card {
+					width: 80%;
+				}
+				.card:hover {
+					width: 90%;
+				}
+			}
+		</style>
+	</head>
+	<body style="position: relative">
+		<header class="header">
+			<nav class="d-flex">
+				<a class="header__sitename" href="index.html">Ecom</a>
+				<ul class="header__nav list-style-none">
+					<li><a href="info.html">Information</a></li>
+					<li><a href="additional.html">Additional information</a></li>
+					<li><a href="table.html">Table</a></li>
+					<li><a href="animation.html">Animation</a></li>
+				</ul>
+				<p class="header__user">Hi, <a href="order.html">John Doe</a></p>
+			</nav>
+		</header>
+
+		<main class="d-flex">
+			<!-- Leftside navigation panel -->
+			<aside class="aside">
+				<h4 class="aside__title">Categories</h4>
+				<ul class="aside__nav list-style-none" style="position: relative">
+					<li>
+						<a href="#">Subcategory</a>
+						<ul class="list-style-none nested">
+							<li><a href="#">Subcat 1</a></li>
+							<li>
+								<a href="#">Subcats</a>
+								<ul class="list-style-none nested">
+									<li><a href="#">Subcat 2</a></li>
+									<li><a href="#">Subcat 2</a></li>
+									<li><a href="#">Subcat 2</a></li>
+									<li>
+										<a href="#">Subcats</a>
+										<ul class="list-style-none nested">
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+											<li><a href="#">Subcat 3</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Subcat 2</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Subcat 1</a></li>
+							<li><a href="#">Subcat 1</a></li>
+							<li><a href="#">Subcat 1</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Personal Care</a></li>
+					<li><a href="#">Media</a></li>
+					<li><a href="#">Cosmetics</a></li>
+					<li><a href="#">Tablets</a></li>
+				</ul>
+			</aside>
+
+			<!-- Rightside content part -->
+			<div class="content">
+				<section>
+					<div id="block"></div>
+					<p>transform: scale</p>
+					<h3>Animacja</h3>
+				</section>
+
+				<br />
+				<br />
+				<br />
+				<br />
+				<section>
+					<h3>Flexbox</h3>
+					<div class="cards">
+						<div class="card red">
+							<img src="./images/product1.jpg" alt="card image" />
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dignissimos, cumque odio quaerat inventore itaque error. Totam nulla ipsum
+								molestias, autem voluptate quia maiores laudantium ratione impedit quaerat quis enim.
+							</p>
+						</div>
+
+						<div class="card blue">
+							<img src="./images/product1.jpg" alt="card image" />
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dignissimos, cumque odio quaerat inventore itaque error. Totam nulla ipsum
+								molestias, autem voluptate quia maiores laudantium ratione impedit quaerat quis enim.
+							</p>
+						</div>
+
+						<div class="card green">
+							<img src="./images/product1.jpg" alt="card image" />
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dignissimos, cumque odio quaerat inventore itaque error. Totam nulla ipsum
+								molestias, autem voluptate quia maiores laudantium ratione impedit quaerat quis enim.
+							</p>
+						</div>
+
+						<div class="card blue">
+							<img src="./images/product1.jpg" alt="card image" />
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dignissimos, cumque odio quaerat inventore itaque error. Totam nulla ipsum
+								molestias, autem voluptate quia maiores laudantium ratione impedit quaerat quis enim.
+							</p>
+						</div>
+						<div class="card blue">
+							<img src="./images/product1.jpg" alt="card image" />
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dignissimos, cumque odio quaerat inventore itaque error. Totam nulla ipsum
+								molestias, autem voluptate quia maiores laudantium ratione impedit quaerat quis enim.
+							</p>
+						</div>
+
+						<div class="card green">
+							<img src="./images/product1.jpg" alt="card image" />
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dignissimos, cumque odio quaerat inventore itaque error. Totam nulla ipsum
+								molestias, autem voluptate quia maiores laudantium ratione impedit quaerat quis enim.
+							</p>
+						</div>
+
+						<div class="card blue">
+							<img src="./images/product1.jpg" alt="card image" />
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dignissimos, cumque odio quaerat inventore itaque error. Totam nulla ipsum
+								molestias, autem voluptate quia maiores laudantium ratione impedit quaerat quis enim.
+							</p>
+						</div>
+						<div class="card blue">
+							<img src="./images/product1.jpg" alt="card image" />
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dignissimos, cumque odio quaerat inventore itaque error. Totam nulla ipsum
+								molestias, autem voluptate quia maiores laudantium ratione impedit quaerat quis enim.
+							</p>
+						</div>
+
+						<div class="card green">
+							<img src="./images/product1.jpg" alt="card image" />
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dignissimos, cumque odio quaerat inventore itaque error. Totam nulla ipsum
+								molestias, autem voluptate quia maiores laudantium ratione impedit quaerat quis enim.
+							</p>
+						</div>
+
+						<div class="card blue">
+							<img src="./images/product1.jpg" alt="card image" />
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dignissimos, cumque odio quaerat inventore itaque error. Totam nulla ipsum
+								molestias, autem voluptate quia maiores laudantium ratione impedit quaerat quis enim.
+							</p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<ul class="footer__nav list-style-none text-center">
+				<li><a href="tel:+496170961709">Contacts</a></li>
+				<li><a href="about.html">Abouts Us</a></li>
+				<li><a href="terms.html">Terms</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>

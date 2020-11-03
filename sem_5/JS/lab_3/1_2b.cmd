@@ -1,1 +1,1 @@
-PP /N | findStr "Nostromo" | find /c /v ""
+PP /N | findStr "hello" | find /c /v ""

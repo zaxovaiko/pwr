@@ -20,5 +20,6 @@ All labs from Wroclaw University of Science and Technologies.
  - 5 semestr
     - Programowanie Systemów Webowych
     - Języki skryptowe
-    - Projektowanie Baz Danych
     - Cyberbiezpieczeństwo
+    - [Projektowanie Baz Danych](https://github.com/zaxoavoki/next-e-com)
+    - [Aplikacje Mobilne na platformie IOS](https://github.com/zaxoavoki/react-native-dating-app)

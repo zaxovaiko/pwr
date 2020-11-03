@@ -1,4 +1,4 @@
 sum_w=sj $1 | sk 3 | sn
 sum_w_two=sj $2 | sk 3 | sn
-d_sl=sj $1
+d_sl=sj $1 | sk 2
 d_sl_p=sj $1 | sk 4 | su
