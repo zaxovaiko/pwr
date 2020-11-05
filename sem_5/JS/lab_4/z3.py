@@ -1,15 +1,11 @@
 # Zadanie 3
 
-init = int(input('Enter start num: '))
-k = int(input('Enter prime numbers count: '))
+import z2
 
-j = init + 1
-while k != 0:
-    for i in range(2, j):
-        if j % i == 0:
-            j += 1
-            break
-    else:
-        print(j)
-        j += 1
+if __name__ == "__main__":
+    init = int(input('Enter initial value: '))
+    k = int(input('Enter number count (k): '))
+
+    while k != 0:
+        init = z2.next_prime(init) + 1
         k -= 1

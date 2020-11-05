@@ -6,4 +6,5 @@ def moving_average(arr):
             range(1, len(arr) - arr[0] + 1)]
 
 
-print(moving_average([2, 1, 2, 3, 4, 5, 6, 7]))
+if __name__ == '__main__':
+    print(moving_average([5, 1, 2, 3, 4, 5, 6, 7]))

@@ -148,6 +148,7 @@ span:only-child {
 
 #ads {
 	transition: 1s ease;
+	text-shadow: 15px 0px #aaa;
 }
 
 #ads:hover {
