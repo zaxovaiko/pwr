@@ -5,8 +5,6 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    // problem w tym, ze czytalem caly plik
-    // a trzeba bylo tylko pobrac kilka produktow
     for (string line, col; getline(cin, line); ) {
         istringstream iss(line);
         vector<string> product;
