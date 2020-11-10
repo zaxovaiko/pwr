@@ -1,0 +1,275 @@
+@font-face {
+	font-family: "Roboto", sans-serif;
+	src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap");
+}
+
+ul,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+}
+a {
+	text-decoration: none;
+}
+body {
+	font-family: "Roboto", sans-serif;
+	margin: 15px;
+}
+h3,
+h2,
+h1 {
+	margin-bottom: 0.8em;
+}
+
+meter {
+	width: 100%;
+}
+
+/* Universal classes */
+img {
+	max-width: 100%;
+}
+.d-flex {
+	display: flex;
+}
+.d-block {
+	display: block;
+}
+.list-style-none {
+	list-style: none;
+}
+.text-center {
+	text-align: center;
+}
+.btn {
+	padding: 10px 15px;
+}
+.mb-15 {
+	margin-bottom: 15px;
+}
+
+/* Header */
+.header {
+	align-items: baseline;
+}
+.header__nav {
+	padding-left: 230px;
+}
+.header__nav > li {
+	display: inline-block;
+	padding: 0 15px;
+}
+.header__user {
+	margin-left: auto;
+}
+
+/* Aside */
+.aside {
+	min-width: 250px;
+	padding: 0;
+}
+.aside__title {
+	padding: 15px;
+	color: #707070;
+}
+.aside__nav li a {
+	display: block;
+	padding: 15px;
+}
+.aside__nav li a:hover {
+	background: #ddd;
+}
+
+/* Product */
+.products {
+	flex-wrap: wrap;
+}
+
+.product__img {
+	padding: 30px;
+	box-sizing: border-box;
+	display: block;
+	margin: 0 auto 10px auto;
+	max-height: 400px;
+}
+.product__price {
+	color: #707070;
+	margin: 0;
+}
+
+/* Footer */
+.footer__nav li {
+	display: inline;
+	padding: 10px;
+}
+
+/* Order */
+.order-form {
+	min-width: 65%;
+	padding-right: 15px;
+	box-sizing: border-box;
+}
+
+/* Product small description */
+.product-desc-sm__title {
+	margin: 15px 0 10px;
+}
+.product-desc-sm__text {
+	font-size: 90%;
+}
+
+/* Form */
+.form-group {
+	margin-bottom: 15px;
+}
+.form-input {
+	box-sizing: border-box;
+	padding: 15px;
+	width: 100%;
+	border: solid 1px #ccc;
+}
+.form-group label {
+	display: block;
+	margin-bottom: 5px;
+	color: #808080;
+	font-size: 90%;
+}
+.form-check-inline {
+	margin-right: 10px;
+}
+.form-check-inline,
+input.form-check-input,
+label.form-check-label {
+	display: inline-block;
+}
+.form-buttons {
+	text-align: right;
+}
+.form-inside {
+	position: relative;
+	padding: 10px;
+	border: solid 1px #aaa;
+}
+.form-inside:before {
+	content: "Additional options";
+	font-size: 80%;
+	top: -15px;
+	padding: 5px;
+	position: absolute;
+	background: #fff;
+}
+
+/* Comments */
+.content-comments__product {
+	max-width: 30%;
+	min-width: 30%;
+}
+.content__comments {
+	padding-left: 15px;
+}
+.comment {
+	padding: 15px;
+	border: solid 1px #aaa;
+	margin-bottom: 15px;
+}
+.comment__ui {
+	align-items: center;
+	margin-bottom: 10px;
+}
+.comment__ui__img {
+	width: 50px;
+	border-radius: 50%;
+}
+.comment__ui__name {
+	font-weight: bold;
+	padding-left: 15px;
+}
+.comment__ui__time {
+	margin-left: auto;
+}
+.comment__body {
+	font-size: 90%;
+}
+
+/* Product Page */
+.product-desc-sm__img {
+	padding: 20px;
+	box-sizing: border-box;
+}
+.product-desc__info-left {
+	min-width: 30%;
+	max-width: 30%;
+	padding-right: 15px;
+	text-align: center;
+}
+.product-desc__info-left > div {
+	padding-top: 15px;
+	position: sticky;
+	top: 0;
+}
+.product-desc__info-left > div img {
+	padding: 50px;
+	box-sizing: border-box;
+}
+.product-desc__info__price {
+	padding: 15px 0;
+}
+.product-desc__info__buy-btn {
+	width: 100%;
+}
+.product-desc__spec__title,
+.product-desc__info__comments {
+	margin-top: 15px;
+}
+.product-desc__info__comments__link {
+	text-align: center;
+	display: block;
+	margin: 15px 0;
+}
+.product-desc__info__table {
+	border: solid 1px #aaa;
+	width: 100%;
+}
+.product-desc__info__table td,
+.product-desc__info__table th {
+	border: solid 1px #aaa;
+	padding: 10px;
+}
+.product-desc__info ul {
+	padding-left: 2rem;
+}
+.product-desc__info-right ul {
+	font-weight: lighter;
+}
+.product-desc__info-right section {
+	margin-bottom: 20px;
+}
+
+/* Terms */
+.terms {
+	padding: 20px;
+}
+.terms h1 {
+	font-size: 1.5em;
+}
+.terms p {
+	margin-bottom: 20px;
+}
+.terms ul {
+	padding: 15px 2rem 0 2rem;
+}
+.terms__licenses-details {
+	margin-bottom: 15px;
+	border: solid 1px #ddd;
+	padding: 15px;
+}
+.terms__licenses-details summary {
+	font-weight: bold;
+	color: red;
+}

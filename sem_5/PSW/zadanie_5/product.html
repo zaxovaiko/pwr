@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko" />
+        <meta name="designer" content="Volodymyr Zakhovaiko" />
+        <meta name="description" content="Product page" />
+        <meta name="keywords" content="shop,e-commerce" />
+        <meta name="title" content="Ecom - Strona produktu" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ecom - Strona produktu</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header class="header">
+            <nav class="d-flex">
+                <a class="header__sitename" href="index.html">Ecom</a>
+                <ul class="header__nav list-style-none">
+                    <li><a href="comments.html">Comments</a></li>
+                </ul>
+                <p class="header__user">
+                    Hi, <a href="order.html" onclick="pinCode()">John Doe</a>
+                </p>
+            </nav>
+        </header>
+
+        <main class="d-flex">
+            <!-- Leftside navigation panel -->
+            <aside class="aside">
+                <h4 class="aside__title">Categories</h4>
+                <ul
+                    class="aside__nav list-style-none"
+                    style="position: relative"
+                >
+                    <li>
+                        <a href="#">Subcategory</a>
+                        <ul class="list-style-none nested">
+                            <li><a href="#">Subcat 1</a></li>
+                            <li>
+                                <a href="#">Subcats</a>
+                                <ul class="list-style-none nested">
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li>
+                                        <a href="#">Subcats</a>
+                                        <ul class="list-style-none nested">
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Subcat 1</a></li>
+                            <li><a href="#">Subcat 1</a></li>
+                            <li><a href="#">Subcat 1</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Personal Care</a></li>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Cosmetics</a></li>
+                    <li><a href="#">Tablets</a></li>
+                </ul>
+            </aside>
+
+            <!-- Rightside content part -->
+            <div class="content product-desc">
+                <div class="product-desc__info d-flex">
+                    <!-- Product image -->
+                    <div class="product-desc__info-left">
+                        <div>
+                            <img
+                                src="images/product3.jpg"
+                                alt="Product Image"
+                                id="prodimage"
+                            />
+                            <button
+                                class="btn product-desc__info__buy-btn"
+                                id="button_buy"
+                            >
+                                Buy
+                            </button>
+                            <h1 class="product-desc__info__price">400 zł</h1>
+                        </div>
+                    </div>
+
+                    <!-- Product title and description -->
+                    <article class="product-desc__info-right">
+                        <div id="label" class="mb-15"></div>
+
+                        <!-- title and description section -->
+                        <h2>IPhone 11 - Just the right amount of everything</h2>
+                        <p style="text-align: justify">
+                            <strong
+                                >Shoot and edit the highest-quality video in a
+                                smartphone.</strong
+                            >
+                            iPhone 11 shoots beautifully sharp 4K video at 60
+                            fps across all its cameras. The Ultra Wide camera
+                            captures four times more scene, so it’s perfect for
+                            action shots like your dog catching a frisbee. If
+                            you’re recording a performance — say, your kid’s
+                            piano recital — when you zoom in, the audio zooms
+                            too. And now you can edit videos as easily as you do
+                            photos.
+                        </p>
+
+                        <!-- Specifications -->
+                        <section>
+                            <h3 class="product-desc__spec__title">
+                                Technical Specifications
+                            </h3>
+                            <ul>
+                                <li>
+                                    <h4>Communication standard / internet</h4>
+                                    <ul>
+                                        <li>
+                                            <strong
+                                                >Communication standard</strong
+                                            >
+                                            <ol>
+                                                <li>2G (GPRS/EDGE)</li>
+                                                <li>3G (WCDMA/UMTS/HSPA)</li>
+                                                <li>4G (LTE)</li>
+                                            </ol>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <h4>Display</h4>
+                                    <ul>
+                                        <li>
+                                            <strong>Screen diagonal</strong>
+                                            <ul>
+                                                <li>6.1<sup>"</sup></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <strong>Display resolution</strong>
+                                            <ul>
+                                                <li>1792 x 828</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <h4>Main camera</h4>
+                                    <ul>
+                                        <li>
+                                            <strong>Camera</strong>
+                                            <ul>
+                                                <li>
+                                                    Dual 12MP Ultra Wide and
+                                                    Wide cameras
+                                                </li>
+                                                <li>
+                                                    Ultra Wide: ƒ/2.4 aperture
+                                                    and 120<sup>°</sup> field of
+                                                    view
+                                                </li>
+                                                <li>Wide: ƒ/1.8 aperture</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- Comparison -->
+                        <section>
+                            <h3>Comparison</h3>
+                            <div>
+                                <label for="disk_size_lg"
+                                    >iPhone 12 (128-512):</label
+                                >
+                                <meter
+                                    id="disk_size_lg"
+                                    min="128"
+                                    max="512"
+                                    low="200"
+                                    high="450"
+                                    optimum="256"
+                                    value="256"
+                                >
+                                    ssd
+                                </meter>
+                            </div>
+
+                            <div>
+                                <label for="disk_size_sm"
+                                    >iPhone 12 mini (64-256):</label
+                                >
+                                <meter
+                                    id="disk_size_sm"
+                                    min="64"
+                                    max="256"
+                                    low="80"
+                                    high="250"
+                                    optimum="128"
+                                    value="256"
+                                >
+                                    ssd
+                                </meter>
+                            </div>
+                        </section>
+
+                        <section>
+                            <!-- Properties -->
+                            <h3>Properties</h3>
+                            <table class="product-desc__info__table mb-15">
+                                <tr>
+                                    <th rowspan="2">Name</th>
+                                    <th rowspan="2">RAM (GB)</th>
+                                    <th rowspan="2">Storage (GB)</th>
+                                    <th rowspan="2">Color</th>
+                                    <th colspan="2">Additional</th>
+                                </tr>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Announcement Date</th>
+                                </tr>
+                                <tr>
+                                    <td>iPhone 11</td>
+                                    <td>8</td>
+                                    <td>256</td>
+                                    <td>Black</td>
+                                    <td rowspan="2">6"</td>
+                                    <td rowspan="2">September 12, 2021</td>
+                                </tr>
+                                <tr>
+                                    <td>iPhone X</td>
+                                    <td>6</td>
+                                    <td>512</td>
+                                    <td>Grayspace</td>
+                                </tr>
+                            </table>
+                        </section>
+
+                        <!-- Another information -->
+                        <section>
+                            <h3>Other information</h3>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Delectus dolorum debitis incidunt eaque quia
+                            accusantium temporibus laboriosam. Ex iste, quis
+                            cupiditate, dolorem aliquam libero, ducimus hic
+                            officiis doloremque ab nobis. Quaerat quam laborum
+                            itaque non consequuntur nisi error omnis delectus,
+                            rem cupiditate enim optio, repudiandae ex, iusto
+                            perspiciatis ipsa asperiores quod voluptas sequi
+                            quia! Optio adipisci excepturi et dolores officia.
+                            Voluptatem, dolores numquam fuga sapiente optio ipsa
+                            aut nisi voluptas assumenda debitis sunt doloremque!
+                            Iste rerum id voluptas soluta tempore, magni debitis
+                            dolorum quaerat facere cupiditate. Ipsam dolorum
+                            excepturi officia. Itaque, similique. Cumque autem
+                            earum doloremque.
+                            <br />
+                            <br />
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Aut soluta, vel nobis qui dolorum repudiandae
+                            omnis, ad ut repellat ipsa quas harum? Aliquid
+                            dolorem quaerat quasi, eos hic suscipit ex! Sit
+                            suscipit accusantium vel repellat sapiente
+                            voluptatem, ipsum voluptates eligendi accusamus
+                            obcaecati. Beatae aspernatur, cumque magnam soluta
+                            perferendis labore repudiandae adipisci error quae
+                            consequatur.
+                        </section>
+
+                        <!-- Comments section -->
+                        <section class="product-desc__info__comments">
+                            <h3 class="product-desc__info__comments__title">
+                                Latest comments
+                            </h3>
+                            <div class="comments">
+                                <div class="comment">
+                                    <div class="comment__ui d-flex">
+                                        <img
+                                            class="comment__ui__img"
+                                            src="https://via.placeholder.com/400x400"
+                                            alt="User image"
+                                        />
+                                        <p class="comment__ui__name">
+                                            John Doe
+                                        </p>
+                                        <small class="comment__ui__time"
+                                            >2 mins ago</small
+                                        >
+                                    </div>
+                                    <div class="comment__body">
+                                        Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing elit. Ut vel magni enim
+                                        totam ullam corporis ducimus omnis
+                                        dolorum ratione, odit quas nam quia
+                                        sequi est deserunt consequatur,
+                                        consequuntur dolor illo.
+                                    </div>
+                                </div>
+                                <div class="comment">
+                                    <div class="comment__ui d-flex">
+                                        <img
+                                            class="comment__ui__img"
+                                            src="https://via.placeholder.com/400x400"
+                                            alt="User image"
+                                        />
+                                        <p class="comment__ui__name">
+                                            John Doe
+                                        </p>
+                                        <small class="comment__ui__time"
+                                            >2 mins ago</small
+                                        >
+                                    </div>
+                                    <div class="comment__body">
+                                        Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing elit. Ut vel magni enim
+                                        totam ullam corporis ducimus omnis
+                                        dolorum ratione, odit quas nam quia
+                                        sequi est deserunt consequatur,
+                                        consequuntur dolor illo.
+                                    </div>
+                                </div>
+                                <a
+                                    class="product-desc__info__comments__link"
+                                    href="comments.html"
+                                    >All comments</a
+                                >
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <ul class="footer__nav list-style-none text-center">
+                <li><a href="tel:+496170961709">Contacts</a></li>
+                <li><a href="about.html">Abouts Us</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
+</html>
