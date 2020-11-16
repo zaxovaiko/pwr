@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko" />
+        <meta name="designer" content="Volodymyr Zakhovaiko" />
+        <meta name="description" content="Settings page" />
+        <meta name="keywords" content="shop,e-commerce" />
+        <meta name="title" content="Ecom - Strona ustawien" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ecom - Settings</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <style>
+            hr {
+                margin: 40px 0;
+                border: solid 1px #000;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="d-flex">
+                <a class="header__sitename" href="index.html">Ecom</a>
+                <ul class="header__nav list-style-none">
+                    <li><a href="comments.html">Comments</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+                <p class="header__user">Hi, <a href="order.html" onclick="pinCode();">John Doe</a></p>
+            </nav>
+        </header>
+
+        <main class="d-flex">
+            <!-- Leftside navigation panel -->
+            <aside class="aside">
+                <h4 class="aside__title">Categories</h4>
+                <ul class="aside__nav list-style-none" style="position: relative">
+                    <li>
+                        <a href="#">Subcategory</a>
+                        <ul class="list-style-none nested">
+                            <li><a href="#">Subcat 1</a></li>
+                            <li>
+                                <a href="#">Subcats</a>
+                                <ul class="list-style-none nested">
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li>
+                                        <a href="#">Subcats</a>
+                                        <ul class="list-style-none nested">
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Subcat 1</a></li>
+                            <li><a href="#">Subcat 1</a></li>
+                            <li><a href="#">Subcat 1</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Personal Care</a></li>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Cosmetics</a></li>
+                    <li><a href="#">Tablets</a></li>
+                </ul>
+            </aside>
+
+            <!-- Rightside content part -->
+            <div class="content">
+                <h1 class="h1">Settings</h1>
+
+                <label for="bgColor" class="mb-15">Background color:</label>
+                <select name="bgColor" id="bgColor" class="form-input mb-15">
+                    <option value="#fff">White</option>
+                    <option value="#000">Black</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="red">Red</option>
+                </select>
+                <button class="btn" id="chooseColor">Set color</button>
+
+                <hr />
+                <!-- next -->
+
+                <label for="textColor" class="mb-15">Text color:</label>
+                <input class="mb-15 form-input" type="color" name="textColor" id="textColor" />
+                <button class="btn" id="chooseTextColor">Set text color</button>
+
+                <hr />
+                <!-- next -->
+
+                <label for="textWeight" class="mb-15">Text weight:</label>
+                <select name="textWeight" id="textWeight" class="form-input mb-15">
+                    <option value="300">300</option>
+                    <option value="400">400</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                </select>
+                <button class="btn" id="setTextWeight">Set text weight</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <ul class="footer__nav list-style-none text-center">
+                <li><a href="tel:+496170961709">Contacts</a></li>
+                <li><a href="about.html">Abouts Us</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </footer>
+
+        <script src="js/settings.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

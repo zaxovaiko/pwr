@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko" />
+        <meta name="designer" content="Volodymyr Zakhovaiko" />
+        <meta name="description" content="Order page" />
+        <meta name="keywords" content="shop,e-commerce" />
+        <meta name="title" content="Ecom - Strona zamówienia" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ecom - Zamówienie</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <style>
+            #tip {
+                background: #000;
+                opacity: 0.8;
+                position: fixed;
+                right: 15px;
+				bottom: 15px;
+				color: #fff;
+				padding: 15px;
+				display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="d-flex">
+                <a class="header__sitename" href="index.html">Ecom</a>
+                <ul class="header__nav list-style-none">
+                    <li><a href="comments.html">Comments</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+                <p class="header__user">Hi, <a href="order.html" onclick="pinCode();">John Doe</a></p>
+            </nav>
+        </header>
+
+        <main class="d-flex">
+            <!-- tip -->
+            <p id="tip"></p>
+
+            <!-- Leftside navigation panel -->
+            <aside class="aside">
+                <h4 class="aside__title">Categories</h4>
+                <ul class="aside__nav list-style-none" style="position: relative">
+                    <li>
+                        <a href="#">Subcategory</a>
+                        <ul class="list-style-none nested">
+                            <li><a href="#">Subcat 1</a></li>
+                            <li>
+                                <a href="#">Subcats</a>
+                                <ul class="list-style-none nested">
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li>
+                                        <a href="#">Subcats</a>
+                                        <ul class="list-style-none nested">
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Subcat 1</a></li>
+                            <li><a href="#">Subcat 1</a></li>
+                            <li><a href="#">Subcat 1</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Personal Care</a></li>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Cosmetics</a></li>
+                    <li><a href="#">Tablets</a></li>
+                </ul>
+            </aside>
+
+            <!-- Rightside content part -->
+            <div class="content d-flex">
+                <!-- Order form -->
+                <div class="order-form">
+                    <h1 class="h1">Order Confirmation</h1>
+
+                    <form id="order-form" action="/" id="order-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input
+                                class="form-input"
+                                autofocus
+                                type="text"
+                                placeholder="Name"
+                                name="name"
+                                id="name"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="male">Gender</label>
+                            <div class="form-check-inline">
+                                <input
+                                    class="form-check-input"
+                                    name="gender"
+                                    id="male"
+                                    value="male"
+                                    type="radio"
+                                    required
+                                />
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input
+                                    class="form-check-input"
+                                    name="gender"
+                                    id="female"
+                                    value="female"
+                                    type="radio"
+                                    required
+                                />
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input
+                                    class="form-check-input"
+                                    name="gender"
+                                    id="other"
+                                    value="other"
+                                    type="radio"
+                                    required
+                                    disabled
+                                />
+                                <label class="form-check-label" for="other">Other</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input
+                                class="form-input"
+                                type="text"
+                                placeholder="Address"
+                                name="address"
+                                id="address"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="color">Color</label>
+                            <select class="form-input" name="color" id="color" required>
+                                <option value="" selected hidden disabled>Choose color</option>
+                                <optgroup label="Light colors">
+                                    <option value="pink">Pink</option>
+                                    <option value="White">White</option>
+                                </optgroup>
+                                <optgroup label="Dark colors">
+                                    <option value="blue">Blue</option>
+                                    <option value="black">Black</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="number">Number of items</label>
+                            <input
+                                class="form-input"
+                                type="number"
+                                min="1"
+                                max="100"
+                                placeholder="Number of items"
+                                name="number"
+                                id="number"
+                                value="1"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment">Comment from customer</label>
+                            <textarea
+                                class="form-input"
+                                placeholder="Your comment"
+                                maxlength="200"
+                                name="comment"
+                                id="comment"
+                                rows="3"
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group form-inside">
+                            <div class="form-check-inline">
+                                <input
+                                    class="form-check-input"
+                                    name="notify"
+                                    id="notify"
+                                    value="notify"
+                                    type="checkbox"
+                                />
+                                <label class="form-check-label" for="notify"
+                                    >I want to be notified about this product</label
+                                >
+                            </div>
+                            <br />
+                            <div class="form-check-inline">
+                                <input
+                                    class="form-check-input"
+                                    name="delivery"
+                                    id="delivery"
+                                    value="delivery"
+                                    type="checkbox"
+                                />
+                                <label class="form-check-label" for="delivery">Ask for delivery to my house</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-check-input" name="terms" id="terms" value="yes" type="radio" required />
+                            <label class="form-check-label" for="terms">I agree with terms and privacy</label>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button class="btn" type="reset">Reset</button>
+                            <button class="btn">Buy</button>
+                        </div>
+                    </form>
+
+                    <!-- Suggested products panel -->
+                    <article>
+                        <h3 class="order-form__suggested-products__title">Suggested Products</h3>
+                        <div id="resent-products" class="products d-flex"></div>
+                    </article>
+                </div>
+
+                <!-- Rightside with product description -->
+                <div class="order-product">
+                    <article class="product-desc-sm">
+                        <img class="product-desc-sm__img" src="images/product4.jpg" alt="Product small image" />
+                        <h3 class="product-desc-sm__title">IPhone 12</h3>
+                        <p class="product-desc-sm__text">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, reprehenderit!
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <ul class="footer__nav list-style-none text-center">
+                <li><a href="tel:+496170961709">Contacts</a></li>
+                <li><a href="about.html">Abouts Us</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </footer>
+
+        <script src="js/order.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -7,6 +7,3 @@ def LevenshteinDistance(s, t):
             n.append(min(l[x] + 1, n[-1] + 1, l[x-1] + ((t[y-1] != s[x-1]) and 1 or 0)))
 
     return n[-1]
-
-
-print(LevenshteinDistance(input('Enter a: '), input('Enter b: ')))
