@@ -4,25 +4,27 @@
 		<meta charset="UTF-8" />
 		<meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko" />
 		<meta name="designer" content="Volodymyr Zakhovaiko" />
-		<meta name="description" content="Main page of ecom website" />
+		<meta name="description" content="Terms" />
 		<meta name="keywords" content="shop,e-commerce" />
-		<meta name="title" content="Ecom - Strona główna" />
+		<meta name="title" content="Ecom - Terms" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Ecom - Strona główna</title>
+		<title>Ecom - Terms</title>
 		<link rel="stylesheet" href="css/main.css" />
-		<link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        
 	</head>
-	<body>
+	<body style="position: relative">
+		<div class="wrapper"></div>
 		<header class="header">
 			<nav class="d-flex">
 				<a class="header__sitename" href="index.html">Ecom</a>
 				<ul class="header__nav list-style-none">
 					<li><a href="comments.html">Comments</a></li>
-					<li><a href="settings.html">Settings</a></li>
-					<li><a href="links.html">Links</a></li>
-					<li><a href="drawing.html">Drawing</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="links.html">Links</a></li>
 				</ul>
-				<p class="header__user">Hi, <a href="order.html" onclick="pinCode();">John Doe</a></p>
+				<p class="header__user">Hi, <a href="order.html">John Doe</a></p>
 			</nav>
 		</header>
 
@@ -67,23 +69,18 @@
 			</aside>
 
 			<!-- Rightside content part -->
-			<div class="content content-main">
-				<!-- Ads section -->
-				<div class="content-main__ads mb-15">
-					<h1 id="ads">RABATY</h1>
-				</div>
-
-				<!-- List of products -->
-				<article class="content-main__products products">
-					<h2>Resent Products</h2>
-					<div id="resent-products" class="d-flex">
-						<!-- js will insert -->
-					</div>
+			<div class="content">
+				<div class="terms__wrapper"></div>
+				<article class="terms">
+					<p>Links in this page:</p>
+					<div id = "links2"></div>
 				</article>
-				<button onclick="avail_itms()">Available items</button>
-				<p id="its"></p>
+				<button onclick="avail_anchors()">Available anchors</button>
+				<p id="anch"></p>
 			</div>
+			
 		</main>
+		
 
 		<footer class="footer">
 			<ul class="footer__nav list-style-none text-center">
@@ -92,8 +89,11 @@
 				<li><a href="terms.html">Terms</a></li>
 			</ul>
 		</footer>
-
-		<script src="js/main.js"></script>
 		<script src="js/collections.js"></script>
 	</body>
 </html>
+
+
+
+
+

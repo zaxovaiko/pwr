@@ -28,4 +28,4 @@ class Covid_na_dzien:
         return self.__zgony
 
     def __str__(self):
-        return '{}\t{}\t{}'.format(self.__dzien, self.__zachorowania, self.__zgony)
+        return '{}\t{}\t{}'.format(self.__dzien.replace('.', '/'), self.__zachorowania, self.__zgony)

@@ -8,6 +8,6 @@ document.getElementById("chooseTextColor").onclick = function (e) {
     arr.forEach((e) => (e.style.color = document.getElementById("textColor").value));
 };
 
-document.getElementById("chooseColor").onclick = function (e) {
+document.getElementById("chooseColor").addEventListener("click", function (e) {
     document.body.style.background = document.getElementById("bgColor").value;
-};
+});

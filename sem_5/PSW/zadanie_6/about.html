@@ -24,7 +24,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body onmousedown="isKeyPressed(event)">
 		<header class="header">
 			<nav class="d-flex">
 				<a class="header__sitename" href="index.html">Ecom</a>
@@ -94,13 +94,7 @@
 					<a class="d-block" href="https://react.rocks/images/converted/downloadbutton.jpg" download="image.jpg">Prices and delivery terms</a>
 				</p>
 
-				<h3>Communication</h3>
-				<p class="mb-15">
-					To write to <a href="mailto:grebenko.ilya@gmail.com"> Ecom, Inc.</a>, click the link and your default email client will open an email message and address it to
-					us.
-				</p>
 
-				<a class="mb-15 d-block" href="ftp://demo:password@test.rebex.net/NVR_ch7_20201008174835_E.jpg" download>FTP Other information</a>
 				<small class="text-center d-block">All information on this site is <strong>&copy; Ecom, Inc. 2020.</strong></small>
 			</div>
 		</main>
@@ -112,5 +106,6 @@
 				<li><a href="terms.html">Terms</a></li>
 			</ul>
 		</footer>
+		<script src="js/about.js"></script>
 	</body>
 </html>

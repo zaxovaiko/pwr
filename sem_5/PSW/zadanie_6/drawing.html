@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko" />
+        <meta name="designer" content="Volodymyr Zakhovaiko" />
+        <meta name="description" content="Product page" />
+        <meta name="keywords" content="shop,e-commerce" />
+        <meta name="title" content="Ecom - Strona produktu" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            td {
+                height: 10px;
+                width: 10px;
+                border: solid 1px #f1f1f1;
+                box-sizing: border-box;
+            }
+            .blue {
+                background: blue;
+            }
+            .red {
+                background: red;
+            }
+            table {
+                width: 100%;
+            }
+            #coordsS {
+                position: fixed;
+                top: 15px;
+            }
+            #coordsC {
+                position: fixed;
+                top: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="coordsS"></div>
+        <div id="coordsC"></div>
+        <table id="canvas">
+            <caption>
+                Hold
+                <em>Ctrl</em>
+                (or
+                <em>Control</em
+                >) to draw blue. Hold
+                <em>Shift</em>
+                to draw red.
+            </caption>
+            <tbody id="tablebody"></tbody>
+        </table>
+        <script src="js/drawing.js"></script>
+    </body>
+</html>

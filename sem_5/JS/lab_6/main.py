@@ -38,14 +38,14 @@ if __name__ == '__main__':
             for j in i.przypadki:
                 kontynenty[i.kontynent].append(j)
         for k in kontynenty:
-            print('\t{:40s} - {}'.format(k, max(kontynenty[k], key=lambda x: x.zachorowania).dzien))
+            print('\t{:40s} - {}'.format(k, max(kontynenty[k], key=lambda x: x.zachorowania).dzien.replace('.', '/')))
 
 
     def p5():
         print('Najgorszy dzień dla każdego kraju: ')
         for i in ps.kraje.przypadki.values():
             print('\t{:40s} - {}'.format(ps.kraje.getNazwe(i.kodKraju),
-                                       max(i.przypadki, key=lambda x: x.zachorowania).dzien))
+                                       max(i.przypadki, key=lambda x: x.zachorowania).dzien.replace('.', '/')))
 
     p1()
     p2()

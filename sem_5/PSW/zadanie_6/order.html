@@ -32,7 +32,7 @@
                     <li><a href="comments.html">Comments</a></li>
                     <li><a href="settings.html">Settings</a></li>
                 </ul>
-                <p class="header__user">Hi, <a href="order.html" onclick="pinCode();">John Doe</a></p>
+                <p class="header__user" id="thefirst_p">Hi, <a href="order.html" onclick="pinCode();">John Doe</a></p>
             </nav>
         </header>
 
@@ -227,6 +227,12 @@
                             <button class="btn">Buy</button>
                         </div>
                     </form>
+                    <button onclick="avail_forms()">Forms requiring to be filled</button>
+                    <p id="frms"></p>
+                    <button onclick="first_label_element()">First field</button>
+                    <p id="first_p"></p>
+                    <button onclick="alertFirstP()">Alert the first P</button>
+
 
                     <!-- Suggested products panel -->
                     <article>
@@ -258,5 +264,6 @@
 
         <script src="js/order.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/collections.js"></script>
     </body>
 </html>
