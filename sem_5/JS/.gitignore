@@ -1,2 +1,5 @@
 cmake-build-debug/
 __pycache__/
+.dir
+.dat
+.bak
