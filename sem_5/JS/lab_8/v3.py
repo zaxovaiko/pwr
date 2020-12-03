@@ -6,7 +6,7 @@ data = read_data_as_list('Covid_.txt')
 
 def search():
   try:
-    area.config(text=proceed_arguments(search_query.get(), data))
+    area.config(text=proceed_arguments(search_query.get(), data, int(days_input.get()) if days_input.get().isnumeric() else 10))
   except Exception as err:
     area.config(text=err)
 
@@ -19,16 +19,18 @@ font = ('Consolas', 16)
 frame = Frame(root)
 frame.pack(pady=20)
 
-# Search query input
 search_query = StringVar(root)
-inp = Entry(frame, textvariable=search_query, font=font)
+days_input = StringVar(root)
+
+inp = Entry(frame, textvariable=search_query, font=font, width=35)
 inp.pack(side=LEFT, fill='x')
 
-# Search btn
+days = Entry(frame, textvariable=days_input, font=font, width=5)
+days.pack(side=LEFT)
+
 btn = Button(frame, text='Search', command=search, font=font)
 btn.pack(side=LEFT)
 
-# Area to insert result
 area = Label(text='Nothing to show', font=('Arial', 13), justify=LEFT)
 area.pack(fill=Y, expand=1)
 
