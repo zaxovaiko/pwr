@@ -10,7 +10,7 @@
           <ul class="list-style-none nested">
             <li><a href="#">Subcat 2</a></li>
             <li><a href="#">Subcat 2</a></li>
-            <li><a href="#">Subcat 2</a></li>ń
+            <li><a href="#">Subcat 2</a></li>
             <li>
               <a href="#">Subcats</a>
               <ul class="list-style-none nested">

@@ -33,8 +33,6 @@ define('ADS_TEXT', '-20%')
 			<article class="content-main__products products">
 				<h2>Resent Products</h2>
 
-
-
 				<div id="resent-products" class="d-flex">
 					<?php
 
@@ -51,7 +49,7 @@ define('ADS_TEXT', '-20%')
 								<img class="product__img" src="<?= $products[$i][2] ?>" alt="Product image" />
 							</a>
 							<div>
-								<a class="product__title" href="#"><?= $products[$i][0] . ' ' . intval($i) + 1 ?></a>
+								<a class="product__title" href="#"><?= $products[$i][0] . ' ' . (intval($i) + 1) ?></a>
 								<h3 class="product__price"><?= $products[$i][1] ?> zł</h3>
 							</div>
 						</div>

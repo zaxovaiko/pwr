@@ -166,7 +166,6 @@ function validate()
                     </form>
 
                 <?php else : ?>
-
                     <div style="padding: 15px; border: solid 1px #ddd; margin-bottom: 15px;">
                         <?php
                         $errors = validate();
