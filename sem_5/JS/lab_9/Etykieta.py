@@ -29,7 +29,7 @@ class Etykieta:
         return all(list(map(lambda x: x in self.znaczniki.akceptowane, o.znaczniki.akceptowane)))
 
     def __ne__(self, o):
-        return len(list(set(self.znaczniki.akceptowane).intersection(o.znaczniki.akceptowane))) == 0
+        return list(set(self.znaczniki.akceptowane).intersection(o.znaczniki.akceptowane)) == 0
 
     def __str__(self):
-        return '\n'.join(self.znaczniki.akceptowane)
+        return ', '.join(self.znaczniki.akceptowane)

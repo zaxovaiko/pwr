@@ -1,3 +1,4 @@
+import re
 from utils import levenshtein_distance
 
 
@@ -13,7 +14,7 @@ class Znaczniki:
         if ciag in self.akceptowane or ciag in self.odrzucone:
             raise Exception('Ciag juz jest w tabele')
 
-        if ciag.count('_') > 2 or len(ciag) > self.MAX_DL or len(ciag) < self.MIN_DL:
+        if not re.match("^[a-zA-Z0-9_]+$", ciag) or ciag.count('_') > 2 or len(ciag) > self.MAX_DL or len(ciag) < self.MIN_DL:
             self.odrzucone.append(ciag)
             raise Exception('Bledny ciag')
 
@@ -29,4 +30,4 @@ class Znaczniki:
         return list(filter(lambda x: x in self.odrzucone, lista_ciagow))
 
     def __str__(self):
-        return 'znaczniki'
+        return ', '.join(self.akceptowane)
