@@ -1,0 +1,189 @@
+ul li:hover > ul {
+	display: block;
+}
+
+#diagnostic {
+	width: 100%;
+}
+#diagnostic tr, #diagnostic td, #diagnostic th {
+	border: 1px;
+	padding: 10px;
+	border: solid 1px #999;
+}
+
+.aside__nav ul {
+	display: none;
+	position: absolute;
+	background: #fff;
+	width: 150px;
+}
+
+.wrapper {
+	position: relative;
+	left: -15px;
+	right: -15px;
+	top: -15px;
+	width: 100vw;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-image: url("../images/wall.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 500px;
+	margin-bottom: 15px;
+}
+
+.nested {
+	top: -1px;
+	left: 150px;
+	border: solid 1px #ddd;
+}
+
+/* Main blocks */
+.header,
+.aside,
+.footer,
+.content {
+	padding: 15px;
+	margin-bottom: 15px;
+	border: solid 1px #aaa;
+	border-radius: 10px;
+	background: rgba(255, 235, 59, 0.1);
+}
+.aside {
+	background: radial-gradient(circle at 80px 40px, #f9eec7, rgba(255, 235, 59, 0.1), rgba(255, 235, 59, 0.1));
+}
+
+/* Product */
+.product {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	padding: 15px;
+	margin: 0 5px 10px 5px;
+	flex: 0 1 calc(25% - 10px);
+	border: solid 1px #aaa;
+	box-sizing: border-box;
+	background: linear-gradient(to top, #fefcea, hsla(48, 87%, 75%, 1));
+	box-shadow: 25px 25px 50px dimgrey;
+}
+
+.content {
+	width: 100%;
+	margin-left: 15px;
+}
+
+/* Fonts */
+.content-main__ads {
+	width: 100%;
+	height: 300px;
+}
+.content-main__ads h1 {
+	text-align: center;
+	font-size: 15vw;
+	color: #ccc;
+	line-height: 300px;
+}
+
+/* Order */
+/* input[name="name"] {
+	color: blue;
+}
+
+input[name="address"] {
+	background: pink;
+}
+
+input[type="number"] {
+	background: green;
+}
+
+input[type="radio"]:disabled + label {
+	color: red;
+} */
+
+#label {
+	padding: 15px;
+	border: solid 1px #ddd;
+}
+
+#label span {
+	margin: 0 5px;
+}
+
+@page: first {
+	margin-left: 50%;
+	margin-top: 50%;
+}
+
+/* Pseudoclasses */
+/* input:required {
+	border: solid 2px red;
+} */
+
+input:enabled {
+	font-style: oblique;
+}
+
+input:disabled {
+	background: #ddd;
+}
+
+/* input:focus {
+	color: #fff;
+	background: blue;
+} */
+
+/* input:active {
+	color: #fff;
+	background: red;
+} */
+
+/* Links */
+.content a:link {
+	display: block;
+}
+
+.links h3:first-of-type {
+	color: blue;
+}
+
+.links h3:last-of-type {
+	color: peru;
+}
+
+span:only-child {
+	background: pink;
+}
+
+/* Media */
+@media screen and (max-width: 1100px) {
+	.products div {
+		display: block;
+	}
+	.product {
+		text-align: center;
+		margin-bottom: 15px;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	main.d-flex {
+		display: block;
+	}
+	.content {
+		margin-left: 0;
+		box-sizing: border-box;
+	}
+}
+
+/* ZADANIE 3 */
+
+#ads {
+	transition: 1s ease;
+	text-shadow: 15px 0px #aaa;
+}
+
+#ads:hover {
+	transform: rotate(0.01turn)
+}
