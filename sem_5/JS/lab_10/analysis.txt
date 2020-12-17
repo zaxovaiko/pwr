@@ -1,0 +1,26 @@
+Zadanie 3
+
+Należy dokonać analizy i oceny rozwiązań pod kątem:
+
+1. Łatwości użytkowania
+ - Dla mnie jak dla programisty nie jest to trudne użyć programu z poziomu systemu operacyjnego, będzie to nawet szybciej.
+ - Ale dla innyc użytkowników używanie konsolowego widoku jest trudne, dlatego program z GUI jest intuicyjnie zrozumiały dla większości użytkowników
+
+2. Łatwości pisania implementacji.
+ - Najłatwiej było implementować wersję konsolową programu, ponieważ programy z GUI są implementowane na jej bazie.
+ - Nie jest to dość trudne w napisaniu GUI, ale zajmie to więcej czasu niż zwykła praca ze standardowym wejściem i wyjściem.
+
+
+Zadanie 4
+
+Propozycje:
+ - Snake
+ - Sudoku
+ - Tic tac toe
+ - Tetris
+
+Funkcje:
+ - Save current game
+ - Reset game
+ - Print results
+ - Change style for game
