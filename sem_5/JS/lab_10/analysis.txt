@@ -18,6 +18,7 @@ Propozycje:
  - Sudoku
  - Tic tac toe
  - Tetris
+ - Notepad
 
 Funkcje:
  - Save current game

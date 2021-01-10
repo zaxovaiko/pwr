@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: volodymyr
+  Date: 10.01.2021
+  Time: 17:37
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Callback form</title>
+</h:head>
+
+<h:body>
+    <h2>Form submit results:</h2>
+    #{user.validationResult} <br/>
+    Name: #{user.number} <br/>
+    Address: #{user.address} <br/>
+    Comment: #{user.comment} <br/>
+    Color: #{user.color} <br/>
+    Item count: #{user.number}
+</h:body>
+
+</html>
