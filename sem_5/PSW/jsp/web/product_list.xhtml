@@ -1,27 +1,31 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
+        <title>List of products</title>
         <meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko" />
         <meta name="designer" content="Volodymyr Zakhovaiko" />
-        <meta name="description" content="About page" />
+        <meta name="description" content="List of products" />
         <meta name="keywords" content="shop,e-commerce" />
-        <meta name="title" content="Ecom - O nas" />
+        <meta name="title" content="Ecom - Strona główna" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About</title>
-        <h:outputStylesheet name="css/style.css"/>
-        <h:outputStylesheet name="css/main.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="main.css"/>
     </h:head>
     <h:body>
         <header class="header">
             <nav class="d-flex">
-                <a class="header__sitename" href="index.html">Ecom</a>
+                <a class="header__sitename" href="index.xhtml">Ecom</a>
                 <ul class="header__nav list-style-none">
-                    <li><a href="#">Products</a></li>
+                    <li><a href="product_list.xhtml">Products</a></li>
                     <li><a href="#">Settings</a></li>
                 </ul>
                 <p class="header__user">Hi, <a href="order.xhtml" onclick="pinCode();">John Doe</a></p>
+                <p><h:outputLink value="basket.xhtml">Koszyk(#{selectionsBean.numberOfSelections})</h:outputLink></p>
             </nav>
         </header>
 
@@ -66,25 +70,42 @@
             </aside>
 
             <!-- Rightside content part -->
-            <div class="content" style="min-height: 100vh">
-                <h1 class="text-center">About us</h1>
+            <div class="content content-main">
 
-                <h3>Our goal is to be helpful!</h3>
-                <p class="mb-15">
-                    We believe that things exist to make life easier, nicer and kinder. Therefore, the search for that very thing should be quick, convenient and enjoyable. We
-                    don't just sell home appliances, electronics, jewelry or wine. We help you find exactly what you need, in one place and without unnecessary worries, so that you
-                    don't waste your life searching, but just live happily.
-                </p>
+                <!-- List of products -->
+                <article class="content-main__products products">
+                    <h2>List of products</h2>
+                    <h3>Make a Selection and Press Add to basket</h3>
 
-                <h3>Convenient delivery</h3>
-                <p class="mb-15">
-                    And of course, any product can be ordered with delivery. We deliver within Wroclaw within one day, and across Poland for the next day. Everything - without
-                    prepayment, if necessary - on credit. Payment in cash or non-cash - whichever is more convenient for you.
-                    <a class="d-block" href="https://react.rocks/images/converted/downloadbutton.jpg" download="image.jpg">Prices and delivery terms</a>
-                </p>
+                    <h:form>
+                        <h:selectOneRadio styleClass="mb-15" id="topicSelectOneRadio" required="true" requiredMessage="Please choose a category, then press the button"  value="#{categories.category}">
+                            <f:selectItems value="#{categories.categories}" var="category" itemLabel="#{category}" itemValue="#{category}" />
+                        </h:selectOneRadio>
+                        <h:commandButton action="#{categories.setFiltering}" value="Show products in this category" styleClass="mb-15 btn">
+                            <f:ajax execute="@form" render="products" />
+                        </h:commandButton>
+                    </h:form>
 
+                    <h:panelGroup id="products" style="background: none;" styleClass="d-flex" >
+                        <ui:repeat value="#{categories.isFiltering ? categories.showFilteredProducts : products.all}" var="product">
+                            <article class="product">
+                                <a href="#">
+                                    <img class="product__img" src="#{product[2]}" alt="#{product[1]}" />
+                                </a>
+                                <div>
+                                    <a class="product__title" onclick="changePrice(this);" href="#">#{product[1]}</a>
+                                    <h3 class="product__price mb-15">#{products.randomProductPrice}</h3>
+                                    <h:form>
+                                        <h:inputHidden value="#{product[0]}" id="id" />
+                                        <h:commandButton action="#{selectionsBean.setSelection(product[0])}" styleClass="btn" value="Add to cart"/>
+                                    </h:form>
+                                </div>
+                            </article>
+                        </ui:repeat>
+                    </h:panelGroup>
 
-                <small class="text-center d-block">All information on this site is <strong>&copy; Ecom, Inc. 2020.</strong></small>
+                </article>
+                <p id="its"/>
             </div>
         </main>
 

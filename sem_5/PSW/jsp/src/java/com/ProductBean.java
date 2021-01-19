@@ -16,13 +16,17 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class ProductBean {
     public ArrayList<String[]> recentProducts = new ArrayList<>();
-    public String[] orderedProduct = new String[]{"4", "Huawei X65", "One advanced diverted domestic sex repeated bringing you old. Possible procured her trifling laughter thoughts property she met way. Companions shy had solicitude favourable own. Which could saw guest man now heard but. Lasted my coming uneasy marked so should. Gravity letters it amongst herself dearest an windows by. Wooded ladies she basket season age her uneasy saw. Discourse unwilling am no described dejection incommode no listening of. Before nature his parish boy.", "https://via.placeholder.com/250x400"};
+    public String[] orderedProduct = new String[]{"4", "Huawei X65", "One advanced diverted domestic sex repeated bringing you old. Possible procured her trifling laughter thoughts property she met way. Companions shy had solicitude favourable own. Which could saw guest man now heard but. Lasted my coming uneasy marked so should. Gravity letters it amongst herself dearest an windows by. Wooded ladies she basket season age her uneasy saw. Discourse unwilling am no described dejection incommode no listening of. Before nature his parish boy.", "https://via.placeholder.com/250x400", "4"};
 
     public ProductBean() {
-        recentProducts.add(new String[]{"1", "Mi Bend 3", "https://via.placeholder.com/250x550"});
-        recentProducts.add(new String[]{"2", "Lenovo 320s", "https://via.placeholder.com/250x550"});
-        recentProducts.add(new String[]{"3", "Samsung M51", "https://via.placeholder.com/250x550"});
-        recentProducts.add(new String[]{"4", "Huawei X65", "https://via.placeholder.com/250x550"});
+        recentProducts.add(new String[]{"1", "Mi Bend 3", "https://via.placeholder.com/250x550", "gadgets"});
+        recentProducts.add(new String[]{"2", "Lenovo 320s", "https://via.placeholder.com/250x550", "laptops"});
+        recentProducts.add(new String[]{"3", "Samsung M51", "https://via.placeholder.com/250x550", "phones"});
+        recentProducts.add(new String[]{"4", "Huawei X65", "https://via.placeholder.com/250x550", "phones"});
+    }
+
+    public ArrayList<String[]> getAll() {
+        return recentProducts;
     }
 
     public ArrayList<String[]> getRecentProducts() {

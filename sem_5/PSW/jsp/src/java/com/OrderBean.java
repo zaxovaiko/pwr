@@ -10,6 +10,8 @@ public class OrderBean {
     public String name;
     public String color;
     public String comment;
+    public String formDelivery;
+    public String paymentMethod;
     public int number;
     public boolean notify;
     public boolean delivery;
@@ -24,6 +26,22 @@ public class OrderBean {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+    
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+    
+    public String getFormDelivery() {
+        return formDelivery;
+    }
+
+    public void setFormDelivery(String formDelivery) {
+        this.formDelivery = formDelivery;
     }
 
     public boolean getTerms() {

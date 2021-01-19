@@ -19,10 +19,11 @@
             <nav class="d-flex">
                 <a class="header__sitename" href="index.xhtml">Ecom</a>
                 <ul class="header__nav list-style-none">
-                    <li><a href="#">Comments</a></li>
+                    <li><a href="product_list.xhtml">Products</a></li>
                     <li><a href="#">Settings</a></li>
                 </ul>
                 <p class="header__user">Hi, <a href="order.xhtml" onclick="pinCode();">John Doe</a></p>
+                <p><h:outputLink value="basket.xhtml">Koszyk(#{selectionsBean.numberOfSelections})</h:outputLink></p>
             </nav>
         </header>
 
