@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko"/>
+    <meta name="designer" content="Volodymyr Zakhovaiko"/>
+    <meta name="description" content="Order page"/>
+    <meta name="keywords" content="shop,e-commerce"/>
+    <meta name="title" content="Ecom - Strona zamówienia"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ecom - Zamówienie</title>
+    <h:outputStylesheet name="css/style.css"/>
+    <h:outputStylesheet name="css/main.css"/>
+</h:head>
+<h:body>
+    <header class="header">
+        <nav class="d-flex">
+            <a class="header__sitename" href="index.xhtml">Ecom</a>
+            <ul class="header__nav list-style-none">
+                <li><a href="#">Comments</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+            <p class="header__user" id="thefirst_p">Hi, <a href="order.xhtml">John Doe</a></p>
+            <p><h:outputLink value="basket.xhtml">Koszyk(#{selectionsBean.numberOfSelections})</h:outputLink></p>
+        </nav>
+    </header>
+
+    <main class="d-flex">
+        <p id="tip"/>
+
+        <!-- Leftside navigation panel -->
+        <aside class="aside">
+            <h4 class="aside__title">Categories</h4>
+            <ul class="aside__nav list-style-none" style="position: relative">
+                <li>
+                    <a href="#">Subcategory</a>
+                    <ul class="list-style-none nested">
+                        <li><a href="#">Subcat 1</a></li>
+                        <li>
+                            <a href="#">Subcats</a>
+                            <ul class="list-style-none nested">
+                                <li><a href="#">Subcat 2</a></li>
+                                <li><a href="#">Subcat 2</a></li>
+                                <li><a href="#">Subcat 2</a></li>
+                                <li>
+                                    <a href="#">Subcats</a>
+                                    <ul class="list-style-none nested">
+                                        <li><a href="#">Subcat 3</a></li>
+                                        <li><a href="#">Subcat 3</a></li>
+                                        <li><a href="#">Subcat 3</a></li>
+                                        <li><a href="#">Subcat 3</a></li>
+                                        <li><a href="#">Subcat 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Subcat 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Subcat 1</a></li>
+                        <li><a href="#">Subcat 1</a></li>
+                        <li><a href="#">Subcat 1</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Personal Care</a></li>
+                <li><a href="#">Media</a></li>
+                <li><a href="#">Cosmetics</a></li>
+                <li><a href="#">Tablets</a></li>
+            </ul>
+        </aside>
+
+        <!-- Rightside content part -->
+        <div class="content d-flex">
+            <!-- Order form -->
+            <div class="order-form">
+                <h1 class="h1">Order Confirmation</h1>
+
+                <h:form id="order-form" action="/">
+                    <div class="form-group">
+                        <h:outputLabel for="name" value="Name: "/>
+                        <h:inputText autocomplete="true" styleClass="form-input" value="#{user.name}"
+                                     id="name" validator="orderValidator"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="male">Gender</label>
+                        <div class="form-check-inline">
+                            <h:selectOneRadio group="gender" required="true" value="male" styleClass="form-check-input"
+                                              id="male">
+                                <f:selectItem itemValue="male"/>
+                            </h:selectOneRadio>
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <h:selectOneRadio group="gender" required="true" styleClass="form-check-input" id="female">
+                                <f:selectItem itemValue="female"/>
+                            </h:selectOneRadio>
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <h:selectOneRadio group="gender" required="true" styleClass="form-check-input" id="other">
+                                <f:selectItem itemValue="other"/>
+                            </h:selectOneRadio>
+                            <label class="form-check-label" for="other">Other</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel for="address" value="Address: "/>
+                        <h:inputText styleClass="form-input" value="#{user.address}" id="address"
+                                     validator="orderValidator"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color">Color</label>
+                        <h:selectOneMenu value="#{user.color}" styleClass="form-input" id="color"
+                                         requiredMessage="Choose color of item">
+                            <f:selectItem itemValue="pink" itemLabel="Pink"/>
+                            <f:selectItem itemValue="white" itemLabel="White"/>
+                            <f:selectItem itemValue="blue" itemLabel="Blue"/>
+                            <f:selectItem itemValue="black" itemLabel="Black"/>
+                            <f:validateRequired/>
+                        </h:selectOneMenu>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="number">Number of items</label>
+                        <h:inputText styleClass="form-input" value="#{user.number}" maxlength="3" id="number"
+                                     name="number" required="true" validator="#{orderValidator.validateNumber}"
+                                     requiredMessage="Choose number of items"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">Comment from customer</label>
+                        <h:inputTextarea styleClass="form-input" rows="3" value="#{user.comment}" name="comment"
+                                         id="comment"/>
+                    </div>
+
+                    <div class="form-group form-inside">
+                        <div class="form-check-inline">
+                            <h:selectBooleanCheckbox styleClass="form-check-input" value="#{user.notify}" id="notify"/>
+                            <label class="form-check-label"
+                                   for="notify">I want to be notified about this product</label>
+                        </div>
+                        <br/>
+                        <div class="form-check-inline">
+                            <h:selectBooleanCheckbox styleClass="form-check-input" value="#{user.delivery}"
+                                                     id="delivery"/>
+                            <label class="form-check-label" for="delivery">Ask for delivery to my house</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h:selectOneRadio group="terms" value="#{user.terms}" required="true"
+                                          styleClass="form-check-input" id="terms"
+                                          requiredMessage="You need to agree with our terms">
+                            <f:selectItem itemValue="yes"/>
+                        </h:selectOneRadio>
+                        <label class="form-check-label" for="terms">I agree with terms and privacy</label>
+                    </div>
+
+                    <div class="errors" style="color: red">
+                        <h:message for="name" styleClass="d-block"/>
+                        <h:message for="address" styleClass="d-block"/>
+                        <h:message for="number" styleClass="d-block"/>
+                        <h:message for="color" styleClass="d-block"/>
+                        <h:message for="comment" styleClass="d-block"/>
+                        <h:message for="notify" styleClass="d-block"/>
+                        <h:message for="delivery" styleClass="d-block"/>
+                        <h:message for="terms" styleClass="d-block"/>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button class="btn" type="reset">Reset</button>
+                        <h:commandButton value="Buy" styleClass="btn" action="result"/>
+                    </div>
+                </h:form>
+
+                <!-- Suggested products panel -->
+                <article>
+                    <h3 class="order-form__suggested-products__title">Suggested Products</h3>
+                    <div id="resent-products" class="products d-flex">
+                        <ui:repeat value="#{products.recentProducts}" var="product">
+                            <article class="product">
+                                <a href="#">
+                                    <img class="product__img" src="#{product[2]}" alt="#{product[1]}"/>
+                                </a>
+                                <div>
+                                    <a class="product__title" href="#">#{product[1]}</a>
+                                    <h3 class="product__price">#{products.randomProductPrice}</h3>
+                                </div>
+                            </article>
+                        </ui:repeat>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Rightside with product description -->
+            <div class="order-product">
+                <article class="product-desc-sm">
+                    <img class="product-desc-sm__img" src="#{products.orderedProduct[3]}" alt="Product small image"/>
+                    <h3 class="product-desc-sm__title">#{products.orderedProduct[1]}</h3>
+                    <p class="product-desc-sm__text">#{products.orderedProduct[2]}</p>
+                    <h2 style="margin-top: 10px">#{products.randomProductPrice}</h2>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <ul class="footer__nav list-style-none text-center">
+            <li><a href="tel:+496170961709">Contacts</a></li>
+            <li><a href="about.xhtml">Abouts Us</a></li>
+            <li><a href="#">Terms</a></li>
+        </ul>
+    </footer>
+</h:body>
+</html>

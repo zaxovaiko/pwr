@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Ecom</title>
+        <meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko" />
+        <meta name="designer" content="Volodymyr Zakhovaiko" />
+        <meta name="description" content="Main page of ecom website" />
+        <meta name="keywords" content="shop,e-commerce" />
+        <meta name="title" content="Ecom - Strona główna" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="main.css"/>
+    </h:head>
+    <h:body>
+        <header class="header">
+            <nav class="d-flex">
+                <a class="header__sitename" href="index.xhtml">Ecom</a>
+                <ul class="header__nav list-style-none">
+                    <li><a href="product_list.xhtml">Products</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+                <p class="header__user">Hi, <a href="order.xhtml" onclick="pinCode();">John Doe</a></p>
+                <p><h:outputLink value="basket.xhtml">Koszyk(#{selectionsBean.numberOfSelections})</h:outputLink></p>
+            </nav>
+        </header>
+
+        <main class="d-flex">
+            <!-- Leftside navigation panel -->
+            <aside class="aside">
+                <h4 class="aside__title">Categories</h4>
+                <ul class="aside__nav list-style-none" style="position: relative">
+                    <li>
+                        <a href="#">Subcategory</a>
+                        <ul class="list-style-none nested">
+                            <li><a href="#">Subcat 1</a></li>
+                            <li>
+                                <a href="#">Subcats</a>
+                                <ul class="list-style-none nested">
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li>
+                                        <a href="#">Subcats</a>
+                                        <ul class="list-style-none nested">
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Subcat 1</a></li>
+                            <li><a href="#">Subcat 1</a></li>
+                            <li><a href="#">Subcat 1</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Personal Care</a></li>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Cosmetics</a></li>
+                    <li><a href="#">Tablets</a></li>
+                </ul>
+            </aside>
+
+            <div class="content content-main">
+                
+                    <h1>Basket</h1>
+                    <ul>
+                        <ui:repeat value="#{selectionsBean.selections}" var="book">
+                            #{book}
+                        </ui:repeat>
+                    </ul>
+                <p><h:outputLink value="product_list.xhtml">
+                    Click here to choose others products
+                   </h:outputLink></p>
+                <div class="order-form">
+                    <h:form id="order-form" action="/">
+                    <div class="form-group">
+                        <label for="formDelivery">Form of delivery</label>
+                        <h:selectOneMenu value="#{user.formDelivery}" styleClass="form-input" id="formDelivery"
+                                         requiredMessage="Choose form of delivery">
+                            <f:selectItem itemValue="courier" itemLabel="Courier"/>
+                            <f:selectItem itemValue="postoffice" itemLabel="Post Office"/>
+                            <f:selectItem itemValue="pickup" itemLabel="Pickup in person"/>
+                            <f:validateRequired/>
+                        </h:selectOneMenu>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentMethod">Form of delivery</label>
+                        <h:selectOneMenu value="#{user.paymentMethod}" styleClass="form-input" id="paymentMethod"
+                                         requiredMessage="Choose payment method">
+                            <f:selectItem itemValue="card" itemLabel="Card"/>
+                            <f:selectItem itemValue="transfer" itemLabel="Transfer"/>
+                            <f:validateRequired/>
+                        </h:selectOneMenu>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button class="btn" type="reset">Reset</button>
+                        <h:commandButton value="Buy" styleClass="btn" action="result"/>
+                    </div>
+                </h:form>
+
+                <!-- Suggested products panel -->
+                <article>
+                    <h3 class="order-form__suggested-products__title">Suggested Products</h3>
+                    <div id="resent-products" class="products d-flex">
+                        <ui:repeat value="#{products.recentProducts}" var="product">
+                            <article class="product">
+                                <a href="#">
+                                    <img class="product__img" src="#{product[2]}" alt="#{product[1]}"/>
+                                </a>
+                                <div>
+                                    <a class="product__title" href="#">#{product[1]}</a>
+                                    <h3 class="product__price">#{products.randomProductPrice}</h3>
+                                </div>
+                            </article>
+                        </ui:repeat>
+                    </div>
+                </article>
+            </div>
+          </div>
+        </main>
+
+        <footer class="footer">
+            <ul class="footer__nav list-style-none text-center">
+                <li><a href="tel:+496170961709">Contacts</a></li>
+                <li><a href="about.xhtml">Abouts Us</a></li>
+                <li><a href="#">Terms</a></li>
+            </ul>
+        </footer>
+    </h:body>
+</html>
+

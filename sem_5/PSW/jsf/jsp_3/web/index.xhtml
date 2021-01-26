@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:body>
+
+    <ui:composition template="templates/layout.xhtml">
+        <ui:define name="content">
+            <div class="content content-main">
+                <!-- Ads section -->
+                <div class="content-main__ads mb-15">
+                    <h1 id="ads">#{main.rabat}</h1>
+                </div>
+
+                <!-- List of products -->
+                <article class="content-main__products products">
+                    <h2>Resent Products</h2>
+                    <div id="resent-products" class="d-flex">
+                        <ui:repeat value="#{products.recentProducts}" var="product">
+                            <article class="product">
+                                <a href="#">
+                                    <img class="product__img" src="#{product.images}" alt="#{product.title}"/>
+                                </a>
+                                <div>
+                                    <a class="product__title" href="#">#{product.title}</a>
+                                    <h3 class="product__price">#{product.price}</h3>
+                                </div>
+                            </article>
+                        </ui:repeat>
+                    </div>
+                </article>
+                <p id="its"/>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+</html>

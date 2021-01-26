@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+
+    <ui:composition template="templates/layout.xhtml">
+        <ui:define name="content">
+            <f:event type="preRenderView" listener="#{loggedUser.checkIsGuest}" />
+            <div class="content content-main">
+                <h3>All products</h3>
+
+                <div id="resent-products" class="d-flex">
+                    <ui:repeat value="#{products.products}" var="product">
+                        <article class="product">
+                            <a href="#">
+                                <img class="product__img" src="#{product.images}" alt="#{product.title}"/>
+                            </a>
+                            <div>
+                                <a class="product__title" href="#">#{product.title}</a>
+                                <h3 class="product__price">#{product.price}</h3>
+                                <h:form>
+                                    <h:commandButton value="Delete" onclick="return confirm('Are you sure?');" action="#{products.deleteProduct(product.id)}" />
+                                </h:form>
+                            </div>
+                        </article>
+                    </ui:repeat>
+                </div>
+
+                <br/><br/><br/>
+
+                <h3>Add product</h3>
+                <h:form>
+                    <h:inputText value="#{products.title}" styleClass="form-input mb-15" />
+                    <br/>
+                    <h:inputText value="#{products.description}"  styleClass="form-input mb-15"/>
+                    <br/>
+                    <h:inputText value="#{products.price}" id="price"  styleClass="form-input mb-15" validatorMessage="Price must be a number">
+                        <f:validateRegex pattern="^\d*\.?\d{0,2}$" />
+                    </h:inputText>
+                    <br/>
+                    <h:inputText value="#{products.category}"  styleClass="form-input mb-15"/>
+                    <br/>
+                    <h:inputText value="#{products.image}"  styleClass="form-input mb-15"/>
+                    <br/>
+                    <h:commandButton value="Add product" styleClass="btn mb-15" action="#{products.addProduct()}"/>
+                    <h:outputText for="price" />
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: volodymyr
+  Date: 25.01.2021
+  Time: 21:33
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<body>
+<ui:composition>
+    <header class="header">
+        <nav class="d-flex">
+            <a class="header__sitename" href="index.xhtml">Ecom</a>
+            <ul class="header__nav list-style-none">
+                <li><a href="product_list.xhtml">Products</a></li>
+                <li><a href="#">Settings</a></li>
+                <c:choose>
+                    <c:when test="#{loggedUser.isLoggedIn}">
+                        <li><a href="crud.xhtml">CRUD operations</a></li>
+                    </c:when>
+                </c:choose>
+            </ul>
+
+            <p class="header__user">
+                <c:choose>
+                    <c:when test="#{loggedUser.isLoggedIn}">
+                        Hi, <a href="order.xhtml">John Doe</a>
+
+                        <h:form>
+                            <h:commandButton value="Log out" action="#{loggedUser.logout()}" />
+                        </h:form>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="login.xhtml">Log in</a>
+                    </c:otherwise>
+                </c:choose>
+            </p>
+        </nav>
+    </header>
+</ui:composition>
+</body>
+
+</html>

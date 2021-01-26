@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Ecom</title>
+        <meta name="author" content="Volodymyr Zakhovaiko, Illia Hrebenko" />
+        <meta name="designer" content="Volodymyr Zakhovaiko" />
+        <meta name="description" content="Main page of ecom website" />
+        <meta name="keywords" content="shop,e-commerce" />
+        <meta name="title" content="Ecom - Strona główna" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="main.css"/>
+    </h:head>
+    <h:body>
+        <header class="header">
+            <nav class="d-flex">
+                <a class="header__sitename" href="index.xhtml">Ecom</a>
+                <ul class="header__nav list-style-none">
+                    <li><a href="product_list.xhtml">Products</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+                <p class="header__user">Hi, <a href="order.xhtml" onclick="pinCode();">John Doe</a></p>
+                <p><h:outputLink value="basket.xhtml">Koszyk(#{selectionsBean.numberOfSelections})</h:outputLink></p>
+            </nav>
+        </header>
+
+        <main class="d-flex">
+            <!-- Leftside navigation panel -->
+            <aside class="aside">
+                <h4 class="aside__title">Categories</h4>
+                <ul class="aside__nav list-style-none" style="position: relative">
+                    <li>
+                        <a href="#">Subcategory</a>
+                        <ul class="list-style-none nested">
+                            <li><a href="#">Subcat 1</a></li>
+                            <li>
+                                <a href="#">Subcats</a>
+                                <ul class="list-style-none nested">
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                    <li>
+                                        <a href="#">Subcats</a>
+                                        <ul class="list-style-none nested">
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                            <li><a href="#">Subcat 3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Subcat 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Subcat 1</a></li>
+                            <li><a href="#">Subcat 1</a></li>
+                            <li><a href="#">Subcat 1</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Personal Care</a></li>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Cosmetics</a></li>
+                    <li><a href="#">Tablets</a></li>
+                </ul>
+            </aside>
+
+            <!-- Rightside content part -->
+            <div class="content content-main">
+
+                <!-- List of products -->
+                <article class="content-main__products products">
+                    <h2>List of products</h2>
+                    <h3>Make a Selection and Press Add to basket</h3>
+                    <h:form>
+                        <h:selectOneRadio id="topicSelectOneRadio" required="true" requiredMessage="Please choose a topic, then press Submit"
+                                          value="#{selectionsBean.selection}">
+                            <f:selectItem itemValue='mibend' itemLabel='Mi Bend 3'/>
+                            <f:selectItem itemValue='lenovo' itemLabel='Lenovo 320s'/>
+                            <f:selectItem itemValue='samsung' itemLabel='Samsung M51'/>
+                            <f:selectItem itemValue='huavei' itemLabel='Huavei X65'/>
+                            </h:selectOneRadio>
+                    <p><h:commandButton value="Add to basket"/></p>
+                    </h:form>
+                    <div id="resent-products" class="d-flex">
+                        <ui:repeat value="#{products.recentProducts}" var="product">
+                            <article class="product">
+                                <a href="#">
+                                    <img class="product__img" src="#{product[2]}" alt="#{product[1]}" />
+                                </a>
+                                <div>
+                                    <a class="product__title" onclick="changePrice(this);" href="#">#{product[1]}</a>
+                                    <h3 class="product__price">#{products.randomProductPrice}</h3>
+                                </div>
+                            </article>
+                        </ui:repeat>
+                    </div>
+                </article>
+                <p id="its"/>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <ul class="footer__nav list-style-none text-center">
+                <li><a href="tel:+496170961709">Contacts</a></li>
+                <li><a href="about.xhtml">Abouts Us</a></li>
+                <li><a href="#">Terms</a></li>
+            </ul>
+        </footer>
+    </h:body>
+</html>
+

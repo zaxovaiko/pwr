@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+
+    <ui:composition template="templates/layout.xhtml">
+        <ui:define name="content">
+            <div class="content content-main">
+                <h1>Cart</h1>
+                <ui:repeat value="#{selectionsBean.selections}" var="item">
+                    <div class="item" style="padding: 10px; border: solid 1px #ddd; margin-bottom: 10px;">
+                        <h5>#{item[0]}</h5> - <small>#{item[1]} sztuk</small>
+                    </div>
+                </ui:repeat>
+
+                <p style="margin: 15px 0">
+                    <h:outputLink value="product_list.xhtml">
+                        Click here to choose others products
+                    </h:outputLink>
+                </p>
+
+                <div class="order-form">
+                    <h:form id="order-form">
+                        <div class="form-group">
+                            <label for="formDelivery">Form of delivery</label>
+                            <h:selectOneMenu value="#{selectionsBean.formDelivery}" styleClass="form-input"
+                                             id="formDelivery"
+                                             requiredMessage="Choose form of delivery">
+                                <f:selectItem itemValue="courier" itemLabel="Courier"/>
+                                <f:selectItem itemValue="postoffice" itemLabel="Post Office"/>
+                                <f:selectItem itemValue="pickup" itemLabel="Pickup in person"/>
+                                <f:validateRequired/>
+                            </h:selectOneMenu>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="paymentMethod">Form of delivery</label>
+                            <h:selectOneMenu value="#{selectionsBean.paymentMethod}" styleClass="form-input"
+                                             id="paymentMethod"
+                                             requiredMessage="Choose payment method">
+                                <f:selectItem itemValue="card" itemLabel="Card"/>
+                                <f:selectItem itemValue="transfer" itemLabel="Transfer"/>
+                                <f:validateRequired/>
+                            </h:selectOneMenu>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button class="btn" type="reset" style="margin-right: 10px">Reset</button>
+                            <h:commandButton value="Buy" styleClass="btn" action="order_confirmation"/>
+                        </div>
+                    </h:form>
+
+                    <!-- Suggested products panel -->
+                    <article>
+                        <h3 class="order-form__suggested-products__title">Suggested Products</h3>
+                        <div id="resent-products" class="products d-flex">
+                            <ui:repeat value="#{products.recentProducts}" var="product">
+                                <article class="product">
+                                    <a href="#">
+                                        <img class="product__img" src="#{product[2]}" alt="#{product[1]}"/>
+                                    </a>
+                                    <div>
+                                        <a class="product__title" href="#">#{product[1]}</a>
+                                        <h3 class="product__price">#{products.randomProductPrice}</h3>
+                                    </div>
+                                </article>
+                            </ui:repeat>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:body>
+
+    <ui:composition template="templates/layout.xhtml">
+        <ui:define name="content">
+            <div class="content content-main">
+
+                <h2>Form submit results:</h2>
+                #{user.validationResult} <br/>
+                Name: #{user.number} <br/>
+                Address: #{user.address} <br/>
+                Comment: #{user.comment} <br/>
+                Color: #{user.color} <br/>
+                Item count: #{user.number}
+                <p><h:outputLink value="index.xhtml">
+                    Click here to go back
+                </h:outputLink></p>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+</html>

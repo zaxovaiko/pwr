@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+
+    <ui:composition template="templates/layout.xhtml">
+        <ui:define name="content">
+            <!-- Rightside content part -->
+            <div class="content content-main">
+
+                <!-- List of products -->
+                <article class="content-main__products products">
+                    <h2>List of products</h2>
+                    <h3>Make a Selection and Press Add to basket</h3>
+
+                    <h:form>
+                        <h:selectOneRadio styleClass="mb-15" id="topicSelectOneRadio" required="true"
+                                          requiredMessage="Please choose a category, then press the button"
+                                          value="#{categories.category}">
+                            <f:selectItems value="#{categories.categories}" var="category" itemLabel="#{category}"
+                                           itemValue="#{category}"/>
+                        </h:selectOneRadio>
+                        <h:commandButton action="#{categories.setFiltering}" value="Show products in this category"
+                                         styleClass="mb-15 btn">
+                            <f:ajax execute="@form" render="products"/>
+                        </h:commandButton>
+                    </h:form>
+
+                    <h:panelGroup id="products" style="background: none;" styleClass="d-flex">
+                        <ui:repeat value="#{categories.isFiltering ? categories.showFilteredProducts : products.products}"
+                                   var="product">
+                            <article class="product">
+                                <a href="#">
+                                    <img class="product__img" src="#{product.images}" alt="#{product.title}"/>
+                                </a>
+                                <div>
+                                    <a class="product__title" href="#">#{product.title}</a>
+                                    <h3 class="product__price mb-15">#{product.price} zł</h3>
+                                    <h:form>
+                                        <h:inputHidden value="#{product.id}" id="id"/>
+                                        <h:commandButton action="#{selectionsBean.setSelection(product.id)}"
+                                                         styleClass="btn" value="Add to cart"/>
+                                    </h:form>
+                                </div>
+                            </article>
+                        </ui:repeat>
+                    </h:panelGroup>
+
+                </article>
+                <p id="its"/>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+</html>
