@@ -24,3 +24,9 @@ All labs from Wroclaw University of Science and Technologies.
     - [Projektowanie Baz Danych](https://github.com/zaxoavoki/mern-e-com)
     - [Aplikacje Mobilne na platformie IOS](https://github.com/zaxoavoki/react-native-dating-app)
     - [Projekt końcowy z Języków Skryptowych](https://github.com/zaxoavoki/pypad)
+
+ - 6 semestr
+    - Rozproszone systemy informatyczne
+    - Zaawansowane Technologie Webowe
+    - Sztuczna Inteligencja i Inżynieria Wiedzy
+    - Hurtownie Danych

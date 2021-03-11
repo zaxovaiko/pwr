@@ -1,0 +1,57 @@
+.cpf2_card {
+    padding: 15px;
+    border: solid 1px #ddd;
+    display: flex;
+    align-items: center;
+    background: #f6f6f6;
+    border-radius: 10px;
+}
+
+.cpf2_card_body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cpf2_card_body h6 {
+    margin: 0 !important;
+}
+
+.cpf2_card_body div:nth-child(2) h6 {
+    text-align: right;
+}
+
+.cpf2_table, .cpf2_table th, .cpf2_table td {
+    border: solid 1px #000;
+}
+
+.cpf2_table th {
+    padding: 5px 10px;
+}
+
+.cpf2_table td, 
+.cpf2_table tr {
+    padding: 10px;
+}
+
+.wrap form {
+    margin-top: 25px;
+}
+
+.wrap form * {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.wrap form button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background: #ddd;
+}
+
+.wrap form button:hover {
+    color: white;
+    background: #000;
+}

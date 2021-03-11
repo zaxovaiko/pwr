@@ -1,0 +1,14 @@
+.naph_marker {
+    display: none;
+    color: white;
+    margin-left: 10px;
+    background-color: red;
+    padding: 1px 10px;
+    border-radius: 5px;
+    font-size: 0.5em;
+    font-style: italic;
+}
+
+article .naph_marker {
+    display: inline;
+}
