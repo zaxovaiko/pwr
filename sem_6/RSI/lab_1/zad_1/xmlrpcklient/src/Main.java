@@ -4,10 +4,8 @@ import java.util.Vector;
 
 public class Main {
     public static void main(String[] args) {
-        int port = 10000;
 	    try {
-
-            XmlRpcClient srv = new XmlRpcClient("http://localhost:" + port);
+            XmlRpcClient srv = new XmlRpcClient("http://156.17.235.81:8080");
             Vector<Integer> params = new Vector<>();
             params.addElement(13);
             params.addElement(21);

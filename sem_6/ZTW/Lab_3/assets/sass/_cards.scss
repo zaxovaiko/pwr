@@ -1,0 +1,25 @@
+@use 'variables';
+
+.card {
+    width: 33%;
+    border-radius: 10px;
+    padding: 15px;
+
+    &-title {
+        margin: 0;
+        padding: 15px;
+        background-color: $soft;
+        border: solid 1px #ddd;
+        border-bottom: 0;
+        font-weight: 600;
+    }
+
+    &-body {
+        padding: 15px;
+        border: solid 1px #ddd;
+    }
+}
+
+.grid {
+    display: flex;
+}

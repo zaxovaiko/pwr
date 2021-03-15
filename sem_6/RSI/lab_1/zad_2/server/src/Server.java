@@ -1,14 +1,13 @@
-import java.util.ArrayList;
-
 import org.apache.xmlrpc.WebServer;
 
-public class serwerRPC {
+public class Server {
+    public static final int PORT = 8080;
+
     public static void main(String[] args) {
-        int PORT = 10000;
         try {
             WebServer server = new WebServer(PORT);
 
-            server.addHandler("MojSerwer", new serwerRPC());
+            server.addHandler("server", new Server());
             server.start();
 
             System.out.println("Server listening on port " + PORT);
@@ -61,26 +60,13 @@ public class serwerRPC {
      * Returns array with methods. Each element of array represents each public method of server.
      * Third element of subarray allows you to parse types of passed params.
      * 
-     * @return Array with methods (name, description, params)
+     * @return Array with methods (name, description, params types, return type)
      */
-    public ArrayList<ArrayList<String>> show() {
-        ArrayList<ArrayList<String>> methods = new ArrayList<>();
-
-        ArrayList<String> pow = new ArrayList<>();
-        pow.add("pow");
-        pow.add("Returns number in power rounded or not defined with flag");
-        pow.add("int, int, boolean");
-
-        ArrayList<String> repeat = new ArrayList<>();
-        repeat.add("repeat");
-        repeat.add("Returns string repeated N times");
-        repeat.add("string, int");
-
-        ArrayList<String> show = new ArrayList<>();
-        show.add("show");
-        show.add("Returns array with description of all server methods.");
-        show.add("");
-
-        return methods;
+    public String[][] show() {
+        return new String[][]{
+            { "pow", "Returns number in power rounded or not defined with flag", "int,int,boolean", "double" },
+            { "repeat", "Returns string repeated N times", "string,int", "string" },
+            { "show", "Returns array with description of all server methods", "", "string[][]" }
+        };
     }
 }

@@ -1,0 +1,21 @@
+@use 'variables';
+
+.navbar {
+    list-style: none;
+    display: flex;
+    margin: 0;
+
+    &-nav {
+        display: flex;
+        align-items: center;
+        background: $primary;
+    }
+
+    & > .nav-item {
+        & > .nav-link {
+            display: block;
+            padding: 15px;
+            background-color: #ddd;
+        }
+    }
+}

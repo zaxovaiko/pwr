@@ -1,0 +1,30 @@
+// Colors
+$primary: #9381FF !default;
+$secondary: #B8B8FF !default;
+$warning: #FFD8BE !default;
+$soft: #FFEEDD !default;
+$dark: #050311 !default;
+$light: #F8F7FF !default;
+
+// Font
+$font-size: 15;
+$font-family: 'Noto Sans', sans-serif;
+
+// Borders
+$border-radius: .3rem !default;
+
+// Buttons
+//
+
+// Body
+$body-background: $soft !default;
+$body-color: $dark !default;
+
+// Grid
+$grid-breakpoints: (
+    xs: 0,
+    sm: 600px,
+    md: 800px,
+    lg: 1000px,
+    xl: 1200px
+) !default;
