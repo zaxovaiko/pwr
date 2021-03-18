@@ -1,0 +1,39 @@
+html, body {
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: $font-family;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0 0 1rem 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+input, button {
+    outline: none;
+}
+
+hr {
+    margin: 2rem 0;
+    border: 0;
+    height: 1px;
+    background: $hr-background-color;
+}

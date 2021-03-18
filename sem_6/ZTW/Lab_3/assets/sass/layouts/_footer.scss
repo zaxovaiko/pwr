@@ -1,0 +1,19 @@
+.footer {
+    background: lighten($color: map-get($map: $colors, $key: 'raisin-black'), $amount: 10);
+    width: 100%;
+
+    & > .footer_list {
+        text-align: center;
+        padding: 20px;
+
+        & > li {
+            display: inline;
+            
+            & > a {
+                list-style: none;
+                color: #fff;
+                padding: 10px;
+            }
+        }
+    }
+}

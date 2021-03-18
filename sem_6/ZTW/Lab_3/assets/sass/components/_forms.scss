@@ -1,0 +1,30 @@
+.form-control {
+    width: 100%;
+    padding: $input-padding;
+    border-radius: $input-border-radius;
+    font-size: $input-font-size;
+    border: $input-border-width $input-border-color;
+}
+
+form {
+    & > .form-control {
+        @extend .form-control;
+    }
+
+    & > .form-group {
+        width: 100%;
+        display: inline-flex;
+
+        & > .form-group-control {
+            @extend .form-control;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        & > .form-group-button {
+            @include button($color: $primary);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}

@@ -1,73 +1,151 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-.btn {
-  display: block;
-  padding: 15px;
-  background-color: #9381FF;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  outline: none; }
-  .btn:hover {
-    background: #a090ff; }
-
-@use 'variables';
-.navbar {
-  list-style: none;
-  display: flex;
-  margin: 0; }
-  .navbar-nav {
-    display: flex;
-    align-items: center;
-    background: #9381FF; }
-  .navbar > .nav-item > .nav-link {
-    display: block;
-    padding: 15px;
-    background-color: #ddd; }
-
-.container {
-  width: 1000px;
-  margin: 0 auto; }
-
-@media screen and (min-width: 700px) {
-  .container {
-    width: 500px; } }
-
-@media screen and (min-width: 900px) {
-  .container {
-    width: 700px; } }
-
-@media screen and (min-width: 1200px) {
-  .container {
-    width: 1000px; } }
-
-@use 'variables';
-.card {
-  width: 33%;
-  border-radius: 10px;
-  padding: 15px; }
-  .card-title {
-    margin: 0;
-    padding: 15px;
-    background-color: #FFEEDD;
-    border: solid 1px #ddd;
-    border-bottom: 0;
-    font-weight: 600; }
-  .card-body {
-    padding: 15px;
-    border: solid 1px #ddd; }
-
-.grid {
-  display: flex; }
-
 html, body {
   margin: 0; }
 
-body {
-  background-color: #F8F7FF;
-  font-family: "Noto Sans", sans-serif; }
+html {
+  height: 100%; }
 
-p {
-  margin: 0; }
+body {
+  font-family: "Noto Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; }
+
+a {
+  text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0 0 1rem 0; }
 
 ul {
-  margin: 0; }
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+input, button {
+  outline: none; }
+
+hr {
+  margin: 2rem 0;
+  border: 0;
+  height: 1px;
+  background: #ddd; }
+
+.form-control, form > .form-control, form > .form-group > .form-group-control {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  border: 0 #bfb48f; }
+
+form > .form-group {
+  width: 100%;
+  display: inline-flex; }
+  form > .form-group > .form-group-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
+  form > .form-group > .form-group-button {
+    cursor: pointer;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    border: 0 #bfb48f;
+    background: #3276db;
+    color: white;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
+    form > .form-group > .form-group-button:hover {
+      background: #2469cf;
+      color: #e0eaf9; }
+
+.card-list {
+  display: flex; }
+  .card-list > .card, .card-list > .card-primary {
+    margin-right: 1rem; }
+
+.card, .card-primary {
+  width: calc(100% / 8);
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: solid 1px #ddd;
+  margin-bottom: 0.8rem; }
+  .card > .card-image, .card-primary > .card-image {
+    padding: 1.5rem;
+    margin-bottom: 1rem; }
+    .card > .card-image > *, .card-primary > .card-image > * {
+      width: 100%; }
+  .card > .card-body, .card-primary > .card-body {
+    color: #a3a6a8;
+    margin-bottom: .5rem; }
+  .card > .card-title, .card-primary > .card-title {
+    margin-bottom: 0;
+    font-size: 24px; }
+  .card-primary {
+    background: #b4cdf2;
+    border: solid 1px #3276db; }
+    .card-primary > .card-body {
+      color: #19488e; }
+
+.container {
+  display: flex;
+  padding: 0.8rem;
+  box-sizing: border-box; }
+
+.header-nav {
+  background: #252627;
+  width: 100%;
+  color: #fff;
+  align-items: center; }
+  .header-nav .brand {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem; }
+    .header-nav .brand-image {
+      max-height: 50px; }
+    .header-nav .brand-name {
+      color: #fff; }
+  .header-nav .search-form {
+    flex-grow: 1; }
+  .header-nav .icons {
+    margin-left: 2rem; }
+    .header-nav .icons > svg {
+      cursor: pointer;
+      margin-left: 0.5rem;
+      padding: 0.7rem;
+      border-radius: 0.3rem;
+      transition: cubic-bezier(0.95, 0.05, 0.795, 0.035); }
+      .header-nav .icons > svg:hover {
+        background: #313334; }
+
+main {
+  padding: 0.8rem; }
+
+.footer {
+  background: #3e4041;
+  width: 100%; }
+  .footer > .footer_list {
+    text-align: center;
+    padding: 20px; }
+    .footer > .footer_list > li {
+      display: inline; }
+      .footer > .footer_list > li > a {
+        list-style: none;
+        color: #fff;
+        padding: 10px; }
+
+.content {
+  display: flex;
+  flex-grow: 1; }
+  .content > .aside {
+    min-width: 250px;
+    background: #ddd;
+    padding: 15px;
+    background: #f2efe9; }
+    .content > .aside ul > li {
+      padding: 10px; }
+      .content > .aside ul > li > a {
+        color: #252627;
+        margin-left: 10px;
+        text-decoration: none; }
+  .content > main {
+    flex-grow: 1; }

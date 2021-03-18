@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-// Config
-@import 'variables';
+// helpers
+@import './helpers/variables';
+@import './helpers/mixins';
 
-// Components
-@import 'buttons';
-@import 'navbars';
-@import 'grid';
-@import 'cards';
+// base
+@import './base/_reset';
 
-// Clear default
-@import 'clear';
+// components
+@import './components/forms';
+@import './components/buttons';
+@import './components/cards';
 
+// layouts
+@import './layouts/grid';
+@import './layouts/header';
+@import './layouts/main';
+@import './layouts/footer';
+
+// pages
+@import './pages/home';

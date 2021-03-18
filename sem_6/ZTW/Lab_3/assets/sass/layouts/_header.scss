@@ -1,0 +1,40 @@
+.header-nav {
+    background: map-get($map: $colors, $key: 'raisin-black');
+    width: 100%;
+    color: #fff;
+    align-items: center;
+
+    .brand {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+
+        &-image {
+            max-height: 50px;
+        }
+
+        &-name {
+            color: #fff;
+        }
+    }
+
+    .search-form {
+        flex-grow: 1;
+    }
+    
+    .icons {
+        margin-left: 2rem;
+
+        & > svg {
+            cursor: pointer;
+            margin-left: 0.5rem;
+            padding: 0.7rem;
+            border-radius: $border-radius;
+            transition: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+
+            &:hover {
+                background: lighten($color: map-get($map: $colors, $key: 'raisin-black'), $amount: 5);
+            }
+        }
+    }
+}

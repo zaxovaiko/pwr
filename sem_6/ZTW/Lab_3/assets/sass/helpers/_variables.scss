@@ -1,0 +1,42 @@
+// Fonts
+$font-family: 'Noto Sans', sans-serif;
+$font-size: 14px;
+
+// Colors
+$primary: #3276db;
+$colors: (
+    "ecru": #bfb48f,
+    "liver": #564e58,
+    "cordovan": #904e55,
+    "isabelline": #f2efe9,
+    "raisin-black": #252627,
+) !default;
+
+// Grid and containers
+$container-padding: 0.8rem;
+
+// Other stuff
+$border-radius: 0.3rem !default;
+$hr-background-color: #ddd;
+
+// Forms
+$input-padding: 1rem 1.5rem;
+$input-border-radius: .4rem;
+$input-font-size: 1rem;
+$input-border-width: 0;
+$input-border-color: map-get($map: $colors, $key: 'ecru');
+
+// Buttons
+$btn-padding: 0.8rem 1.2rem;
+$btn-border-radius: $border-radius;
+$btn-font-size: 1rem;
+$btn-border-width: 0;
+$btn-border-color: map-get($map: $colors, $key: 'ecru');
+
+// Cards
+$card-padding: 1rem;
+$card-border-radius: $border-radius;
+$card-border-width: 1px;
+$card-border-color: #ddd;
+$card-primary-border-color: $primary !default;
+$card-primary-border-width: 1px !default;

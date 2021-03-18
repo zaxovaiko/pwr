@@ -10,9 +10,9 @@
     "node-sass": "^5.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "gulp sass:watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "Volodymyr Zakhovaiko",
   "license": "ISC"
 }

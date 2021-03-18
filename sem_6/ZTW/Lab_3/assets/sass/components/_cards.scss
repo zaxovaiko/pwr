@@ -1,0 +1,45 @@
+.card-list {
+    display: flex;
+
+    & > .card {
+        margin-right: 1rem;
+    }
+}
+
+.card {
+    width: calc(100% / 8);
+    padding: $card-padding;
+    border-radius: $card-border-radius;
+    border: solid $card-border-width $card-border-color;
+    margin-bottom: 0.8rem;
+
+    & > .card-image {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+
+        & > * {
+            width: 100%;
+        }
+    }
+
+    & > .card-body {
+        color: lighten($color: map-get($map: $colors, $key: 'raisin-black'), $amount: 50);
+        margin-bottom: .5rem;
+    }
+
+    & > .card-title {
+        margin-bottom: 0;
+        font-size: $font-size + 10;
+    }
+
+    &-primary {
+        @extend .card;
+        background: lighten($color: $primary, $amount: 30);
+        border: solid $card-primary-border-width $card-primary-border-color;
+        
+        & > .card-body {
+            color: darken($color: $primary, $amount: 20);
+        }
+    }
+}
+
