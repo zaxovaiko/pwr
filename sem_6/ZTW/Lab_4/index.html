@@ -2,45 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <metaд name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-    <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-    />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-    />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <!-- Custom styles -->
+    <title>Travel</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!--Main Navigation-->
     <header>
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav class="navbar navbar-expand-lg bg-secondary navbar-dark" style="width: 100%">
         <!-- Container wrapper -->
         <div class="container-fluid">
           <!-- Navbar brand -->
-          <a class="navbar-brand" href="#">Brand</a>
+          <a class="navbar-brand font-weight-bold" href="#">TripAdvisor</a>
 
           <!-- Toggle button -->
           <button
@@ -56,16 +34,11 @@
           </button>
 
           <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left links -->
+          <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <!-- Navbar dropdown -->
+              <!-- Link -->
+              <li class="nav-item"><a class="nav-link" href="#">Prices</a></li>
+              <!-- Dropdown -->
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -75,177 +48,353 @@
                   data-mdb-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  More info
                 </a>
-                <!-- Dropdown menu -->
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Islands</a></li>
+                  <li><a class="dropdown-item" href="#">Places</a></li>
                   <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
+                  <li><a class="dropdown-item" href="#">Airports</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link disabled"
-                  href="#"
-                  tabindex="-1"
-                  aria-disabled="true"
-                  >Disabled</a
-                >
-              </li>
             </ul>
-            <!-- Left links -->
 
-            <!-- Search form -->
-            <form class="d-flex input-group w-auto">
-              <input
-                type="search"
-                class="form-control"
-                placeholder="Type query"
-                aria-label="Search"
-              />
-              <button
-                class="btn btn-primary"
-                type="button"
-                data-mdb-ripple-color="dark"
-              >
-                Search
-              </button>
+            <!-- Search -->
+            <form class="ml-auto d-flex">
+              <input type="search" class="form-control" placeholder="Find something to visit" aria-label="Search" />
+              <button class="btn btn-secondary">Search</button>
             </form>
           </div>
-          <!-- Collapsible wrapper -->
         </div>
         <!-- Container wrapper -->
       </nav>
-      <!-- Navbar -->
-    </header>
 
-    <!--Mask-->
-    <div id="intro" class="view">
-      <div class="bg-image">
-        <img
-          src="https://mdbootstrap.com/img/new/standard/city/053.jpg"
-          class="w-100"
-        />
-        <div
-          class="mask"
-          style="background-color: rgba(0, 0, 0, 0.6)"
-        >
-          <div
-            class="container-fluid d-flex align-items-center justify-contentcenter h-100"
-          >
-            <div class="row d-flex justify-content-center mx-auto text-center">
-              <div class="col-md-10">
-                <!-- Heading -->
-                <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">
-                  Podróżowanie
-                </h2>
-                <!-- Divider -->
-                <hr class="hr-light" />
-                <!-- Description -->
-                <h4 class="white-text my4">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Deleniti consequuntu r.
-                </h4>
-                <button type="button" class="btn btn-outlinewhite">
-                  Dowiedz się więcej<i class="fas fa-book ml-2"></i>
-                </button>
-              </div>
-            </div>
+
+      <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong" style="margin-top: 0px">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.75);">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">Travel around the world</h1>
+            <h5 class="mb-4">Feel free to get ready with us</h5>
+            <a class="btn btn-outline-light btn-lg m-2" href="#" role="button"
+              rel="nofollow" target="_blank">Take survey</a>
+            <a class="btn btn-outline-light btn-lg m-2" href="#" target="_blank"
+              role="button">Choose country</a>
           </div>
         </div>
       </div>
     </div>
-    <!--/.Mask-->
+    <!-- Background image -->
+      <!-- Navbar -->
+    </header>
 
-    <!--Main Navigation-->
-    <!--Main layout-->
-    <main class="mt-5">
-      <div class="container">
-        <!--Section: LastTravels-->
-         <!--Section: LastTravels-->
- <section id="lastTravels" class="text-center">
-  <!--Grid row-->
-  <div class="row">
-  <!--Grid column-->
-  <div class="col-lg-4 col-md-12 mb-4">
-  </div>
-  <!--Grid column-->
-  <!--Grid column-->
-  <div class="col-lg-4 col-md-6 mb-4">
-  </div>
-  <!--Grid column-->
-  <!--Grid column-->
-  <div class="col-lg-4 col-md-6 mb-4">
-  </div>
-  <!--Grid column-->
-  </div>
-  <!--Grid row-->
-  <!--Grid row-->
-  <div class="row">
-  <!--Grid column-->
-  <div class="col-lg-4 col-md-12 mb-4">
-  </div>
-  <!--Grid column-->
-  <!--Grid column-->
- <div class="col-lg-4 col-md-6 mb-4">
-</div>
-<!--Grid column-->
-<!--Grid column-->
-<div class="col-lg-4 col-md-6 mb-4">
-</div>
-<!--Grid column-->
-</div>
-<!--Grid row-->
-</section>
-<!--Section: LastTravels-->
-        <!--Section: LastTravels-->
+    <main>
+      <!-- Product carousel -->
+      <section class="my-5">
+        <!-- Carousel wrapper -->
+        <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+          <!-- Controls -->
+          <div class="d-flex justify-content-center mb-4">
+            <button
+              class="carousel-control-prev position-relative"
+              type="button"
+              data-mdb-target="#carouselMultiItemExample"
+              data-mdb-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next position-relative"
+              type="button"
+              data-mdb-target="#carouselMultiItemExample"
+              data-mdb-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- Inner -->
+          <div class="carousel-inner py-4">
+            <!-- Single item -->
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="fake-row row"></div>
+              </div>
+            </div>
+
+            <!-- Single item -->
+            <div class="carousel-item">
+              <div class="container">
+                <div class="fake-row row"></div>
+              </div>
+            </div>
+
+            <!-- Single item -->
+            <div class="carousel-item">
+              <div class="container">
+                <div class="fake-row row"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Inner -->
+        </div>
+        <!-- Carousel wrapper -->
+      </section>
+
+      <!-- Quote -->
+      <section class="my-5 bg-warning">
+        <div class="container">
+          <div class="row justify-content-center my-5 py-5">
+            <div class="streak grey lighten-3 col-md-6">
+              <div class="flex-center">
+                <ul class="mb-0 list-unstyled">
+                  <li>
+                    <h2 class="h2-responsive"><i class="fas fa-quote-left" aria-hidden="true"></i> The people who are
+                      crazy enough to think they can change the world are the ones who do. <i class="fas fa-quote-right"
+                        aria-hidden="true"></i></h2>
+                  </li>
+                  <li class="mb-0">
+                    <h5 class="text-center font-italic mb-0">~ Steve Jobs</h5>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chart -->
+      <section class="container my-5 w-50">
+        <canvas id="chart-mixed-example"></canvas>
+      </section>
+
+      <!-- Map -->
+      <section class="py-5">
+        <!--Google map-->
+        <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">
+          <iframe
+            src="https://maps.google.com/maps?q=wroclaw&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0"
+            style="border: 0; width: 100%; height: 500px"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <!--Google Maps-->
+      </section>
+
+      <!-- Submit form -->
+      <section class="container my-5">
+        <h3 class="font-weight-bold my-4 text-center">Feedback form</h3>
+        <div class="row justify-content-center">
+          <form class="col-md-4">
+            <!-- Name input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form4Example1" class="form-control" />
+              <label class="form-label" for="form4Example1">Name</label>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form4Example2" class="form-control" />
+              <label class="form-label" for="form4Example2">Email address</label>
+            </div>
+
+            <!-- Message input -->
+            <div class="form-outline mb-4">
+              <textarea class="form-control" id="form4Example3" rows="2"></textarea>
+              <label class="form-label" for="form4Example3">Message</label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check mb-4">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form4Example4" checked />
+              <label class="form-check-label" for="form4Example4"> Send me a copy of this message </label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="container">
         <hr class="my-5" />
-        <!--Section: Gallery-->
-        <section id="gallery"></section>
-        <!--Section: Gallery-->
-        <hr class="my-5" />
-        <!--Section: Contact-->
-        <section id="contact"></section>
-        <!--Section: Contact-->
-      </div>
+        <h3 class="text-center">FAQ</h3>
+        <div class="row justify-content-center my-5">
+          <div class="col-md-6 accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  How to get started with traveling?
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-mdb-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
+                  put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
+                  labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#flush-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseTwo"
+                >
+                  How to buy your first ticket?
+                </button>
+              </h2>
+              <div
+                id="flush-collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwo"
+                data-mdb-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
+                  put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
+                  labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#flush-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseThree"
+                >
+                  Where do you want to live?
+                </button>
+              </h2>
+              <div
+                id="flush-collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingThree"
+                data-mdb-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
+                  put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
+                  labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <!--Main layout-->
-    <!--Footer-->
-    <footer></footer>
-    <!--Footer-->
 
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Bootstrap -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript">
-      var a = document.getElementById("disc-50");
-      a.onclick = function () {
-        Clipboard_CopyTo("T9TTVSQB");
-        var div = document.getElementById("code-success");
-        div.style.display = "block";
-        setTimeout(function () {
-          document.getElementById("code-success").style.display = "none";
-        }, 900);
+    <footer class="bg-warning text-lg-start">
+      <div class="text-center py-4 align-items-center">
+        <p>Follow our travel blog on social media</p>
+        <a href="#" class="btn btn-dark m-1" role="button" rel="nofollow" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="#" class="btn btn-dark m-1" role="button" rel="nofollow" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="btn btn-dark m-1" role="button" rel="nofollow" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="btn btn-dark m-1" role="button" rel="nofollow" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="text-center p-3 bg-secondary text-white">
+        © 2021
+        <a class="text-white" href="https://mdbootstrap.com/">Politechnika Wroclawska</a>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script>
+      // Data
+      const dataMixedChartExample = {
+        type: "bar",
+        data: {
+          labels: ["London", "Moscow", "Kyiv", "Sidney", "New York", "Warsaw", "Wroclaw"],
+          datasets: [
+            // First dataset (bar)
+            {
+              label: "Visits",
+              data: [2112, 2343, 2545, 3423, 2365, 1985, 987],
+              order: 2,
+            },
+            // Second dataset (line)
+            {
+              label: "Visits (absolute top) %",
+              data: [211, 2543, 2745, 3123, 2765, 1485, 587],
+              type: "line",
+              order: 1,
+              backgroundColor: "rgba(66, 133, 244, 0.0)",
+              borderColor: "#94DFD7",
+              borderWidth: 2,
+              pointBorderColor: "#94DFD7",
+              pointBackgroundColor: "#94DFD7",
+              lineTension: 0.0,
+            },
+          ],
+        },
       };
 
-      function Clipboard_CopyTo(value) {
-        var tempInput = document.createElement("input");
-        tempInput.value = value;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempInput);
-      }
+      new Chart(document.getElementById("chart-mixed-example"), dataMixedChartExample);
+    </script>
+    <script>
+      const rows = document.querySelectorAll(".fake-row").forEach((e) => {
+        let out = "";
+
+        for (let i = 0; i < 3; i++) {
+          out += `<div class="col-lg-4">
+                    <div class="card">
+                      <img src="${faker.image.image()}" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">${faker.name.findName()}</h5>
+                        <p class="card-text">
+                          ${faker.lorem.sentences(2)}
+                        </p>
+                        <a href="#!" class="btn btn-primary">Read more</a>
+                      </div>
+                    </div>
+                  </div>`;
+        }
+        e.innerHTML = out;
+      });
     </script>
   </body>
 </html>

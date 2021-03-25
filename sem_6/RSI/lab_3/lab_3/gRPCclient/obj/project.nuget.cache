@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "9emlwfixr5siyc/qHnNFUM7QCi7MU+ROcWmm+S8FbbWcB7cyX527QjE4OYBwD4qgeNbDAk4gcIbpxWxt55NksA==",
+  "success": true,
+  "projectFilePath": "E:\\pwr\\sem_6\\RSI\\lab_3\\lab_3\\gRPCclient\\gRPCclient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zaxov\\.nuget\\packages\\google.protobuf\\3.15.6\\google.protobuf.3.15.6.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\grpc\\2.36.4\\grpc.2.36.4.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\grpc.core\\2.36.4\\grpc.core.2.36.4.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\grpc.core.api\\2.36.4\\grpc.core.api.2.36.4.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\grpc.net.client\\2.36.0\\grpc.net.client.2.36.0.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\grpc.net.common\\2.36.0\\grpc.net.common.2.36.0.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\grpc.tools\\2.36.4\\grpc.tools.2.36.4.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}

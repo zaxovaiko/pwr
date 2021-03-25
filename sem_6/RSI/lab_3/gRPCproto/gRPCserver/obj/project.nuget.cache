@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "DZymZ4YoDjjExeC4/SXqDhpm6vvyd4+7X4P4FGMnS8Hm4O5XxYX6XOzk8e+WbLq9RFMCdiirRahBdRFSW5WIJg==",
+  "success": true,
+  "projectFilePath": "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCserver\\gRPCserver.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zaxov\\.nuget\\packages\\google.protobuf\\3.15.6\\google.protobuf.3.15.6.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\grpc\\2.36.4\\grpc.2.36.4.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\grpc.core\\2.36.4\\grpc.core.2.36.4.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\grpc.core.api\\2.36.4\\grpc.core.api.2.36.4.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\zaxov\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}

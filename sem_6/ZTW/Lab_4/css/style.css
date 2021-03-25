@@ -1,12 +1,19 @@
-html,
-body,
-#intro {
-  height: 100%;
+body {
+  overflow-x: hidden;
 }
+
 #intro {
-  background: url("../img/bg.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-image: url("http://wallpaperheart.com/wp-content/uploads/2018/04/sea-water-best-nature-wallpaper.jpg");
+  height: 100vh;
+}
+
+/* Height for devices larger than 576px */
+@media (min-width: 992px) {
+  #intro {
+    margin-top: -58.59px;
+  }
+}
+
+.navbar .nav-link {
+  color: #fff !important;
 }

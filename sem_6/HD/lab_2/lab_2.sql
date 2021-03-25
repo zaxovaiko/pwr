@@ -1,5 +1,5 @@
--- 1.1
-SELECT DISTINCT YEAR(OrderDate) FROM Sales.SalesOrderHeader;
+ -- 1.1
+SELECT DISTINCT YEAR(OrderDate) AS "Year" FROM Sales.SalesOrderHeader;
 
 -- 1.2
 SELECT SalesOrderID, YEAR(OrderDate) as "Year", TotalDue 
@@ -9,18 +9,18 @@ SELECT SalesOrderID, YEAR(OrderDate) as "Year", TotalDue
 	);
 
 -- 1.3
-SELECT YEAR(OrderDate) as "Year", MONTH(OrderDate) as "Month", SalesOrderID, TotalDue
+SELECT YEAR(OrderDate) AS "Year", MONTH(OrderDate) AS "Month", SalesOrderID, TotalDue
 	FROM Sales.SalesOrderHeader 
 	WHERE MONTH(OrderDate) = 5; 
 
 -- 2.1 without CTE
-SELECT CustomerID as "klientId", 
-	LastName + ', ' + FirstName as "Nazwisko, imie", 
-	COUNT(SalesOrderID) as "Liczba zamowien"
-FROM Sales.SalesOrderHeader 
-JOIN Person.Person ON Sales.SalesOrderHeader.CustomerID = Person.BusinessEntityID
-GROUP By CustomerID, LastName, FirstName
-HAVING COUNT(SalesOrderID) > 25;
+SELECT CustomerID AS "klientId", 
+	LastName + ', ' + FirstName AS "Nazwisko, imie", 
+	COUNT(SalesOrderID) AS "Liczba zamowien"
+	FROM Sales.SalesOrderHeader 
+	JOIN Person.Person ON Sales.SalesOrderHeader.CustomerID = Person.BusinessEntityID
+	GROUP By CustomerID, LastName, FirstName
+	HAVING COUNT(SalesOrderID) > 25;
 
 -- 2.1 with CTE
 WITH clientsCTE ( klientId, "Nazwisko, imie", "Liczba zamowien") 
@@ -56,12 +56,6 @@ PIVOT (
 ) AS P;
 
 -- Dynamic
-DECLARE @year VARCHAR (1000) = (
-SELECT STRING_AGG (CONCAT(CONVERT(VARCHAR(1),'['), [Year],CONVERT(VARCHAR(1),'[')), ',')
-FROM (SELECT DISTINCT [Year] = YEAR (OrderDate) 
-   FROM Sales.SalesOrderHeader) Y)
-SELECT @year
-
 DECLARE @year VARCHAR (1000) = (
 	SELECT STRING_AGG(CONCAT(CONVERT(VARCHAR(1), '['), CONVERT(VARCHAR(4), [Year]), CONVERT(VARCHAR(1), ']')), ',')
 	FROM (SELECT DISTINCT [Year] = YEAR (OrderDate) 
@@ -102,6 +96,6 @@ SELECT CustomerID,
 	AVG(CASE WHEN YEAR(OrderDate) = 2012 THEN [TotalDue] END) "2012",
 	AVG(CASE WHEN YEAR(OrderDate) = 2013 THEN [TotalDue] END) "2013",
 	AVG(CASE WHEN YEAR(OrderDate) = 2014 THEN [TotalDue] END) "2014"
-   FROM Sales.SalesOrderHeader
-   GROUP BY CustomerID
+	FROM Sales.SalesOrderHeader
+	GROUP BY CustomerID
 	ORDER BY CustomerID;

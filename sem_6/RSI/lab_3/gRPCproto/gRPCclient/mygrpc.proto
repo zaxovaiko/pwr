@@ -1,0 +1,37 @@
+﻿syntax = "proto3";
+package mygrpcproto;
+
+// Service defition
+service MyGrpcSrv {
+  rpc addInt(AddIntRequest) returns (AddIntReply) {}
+}
+
+// The request message
+message AddIntRequest {
+  int32 num1 = 1;
+  int32 num2 = 2;
+}
+
+// The response message
+message AddIntReply {
+  int32 result = 1;
+  string comment = 2;
+}syntax = "proto3";
+package mygrpcproto;
+
+// Service defition
+service MyGrpcSrv {
+  rpc addInt(AddIntRequest) returns (AddIntReply) {}
+}
+
+// The request message
+message AddIntRequest {
+  int32 num1 = 1;
+  int32 num2 = 2;
+}
+
+// The response message
+message AddIntReply {
+  int32 result = 1;
+  string comment = 2;
+}

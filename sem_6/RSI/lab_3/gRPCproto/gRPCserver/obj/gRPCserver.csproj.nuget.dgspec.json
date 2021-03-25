@@ -1,0 +1,136 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCserver\\gRPCserver.csproj": {}
+  },
+  "projects": {
+    "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCproto\\gRPCproto.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCproto\\gRPCproto.csproj",
+        "projectName": "gRPCproto",
+        "projectPath": "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCproto\\gRPCproto.csproj",
+        "packagesPath": "C:\\Users\\zaxov\\.nuget\\packages\\",
+        "outputPath": "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCproto\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zaxov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.15.6, )"
+            },
+            "Grpc": {
+              "target": "Package",
+              "version": "[2.36.4, )"
+            },
+            "Grpc.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.36.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCserver\\gRPCserver.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCserver\\gRPCserver.csproj",
+        "projectName": "gRPCserver",
+        "projectPath": "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCserver\\gRPCserver.csproj",
+        "packagesPath": "C:\\Users\\zaxov\\.nuget\\packages\\",
+        "outputPath": "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCserver\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zaxov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCproto\\gRPCproto.csproj": {
+                "projectPath": "E:\\pwr\\sem_6\\RSI\\lab_3\\gRPCproto\\gRPCproto\\gRPCproto.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
