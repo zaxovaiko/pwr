@@ -1,27 +1,25 @@
 package pl.edu.pwr.ztw.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.edu.pwr.ztw.services.IAuthorService;
 import pl.edu.pwr.ztw.validators.AuthorValidator;
-import pl.edu.pwr.ztw.validators.BookValidator;
 
 @RestController
+//TODO: @RequestMapping(value = "/author")
 public class AuthorController {
-    @Autowired
     IAuthorService authorService;
+    public AuthorController(IAuthorService authorService) {
+        this.authorService = authorService;
+    }
 
     @RequestMapping(value = "/authors", method = RequestMethod.GET)
     public ResponseEntity<Object> getAuthors(){
         return new ResponseEntity<>(authorService.getAuthors(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/authors/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "/authors/{id}")
     public ResponseEntity<Object> getAuthor(@PathVariable("id") int id){
         return new ResponseEntity<>(authorService.getAuthor(id), HttpStatus.OK);
     }

@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Task implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -18,6 +19,24 @@ public class Task implements Serializable {
             res.value = (String) this.str.repeat(this.times);
         }
 
+        return res;
+    }
+
+    public ReturnType computeAnother(int param) throws InterruptedException {
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(11);
+        arr.add(22);
+        arr.add(33);
+        arr.add(44);
+
+        ReturnType res = new ReturnType();
+        try {
+            res.description = "Elemnent of array";
+            res.value = arr.get(param);
+        } catch (Exception e) {
+            res.description = "Out of range";
+            res.value = null;
+        }
         return res;
     }
 }

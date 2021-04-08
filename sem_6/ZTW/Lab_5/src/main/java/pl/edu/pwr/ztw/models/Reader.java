@@ -1,29 +1,17 @@
 package pl.edu.pwr.ztw.models;
 
-import pl.edu.pwr.ztw.models.Book;
-
 import java.util.List;
 
-public class Author {
+public class Reader {
     private int id;
     private String firstName;
     private String lastName;
-    private int age;
     private List<Book> books;
 
-    public Author(int id, String firstName, String lastName, int age, List<Book> books) {
+    public Reader(int id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = age;
-        this.books = books;
-    }
-
-    public Author(int id, String firstName, String lastName, int age) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
     }
 
     public int getId() {
@@ -50,14 +38,6 @@ public class Author {
         this.lastName = lastName;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public List<Book> getBooks() {
         return books;
     }
@@ -70,7 +50,7 @@ public class Author {
         this.books.add(book);
     }
 
-    public void deleteBook(Book book) {
+    public void removeBook(Book book) {
         this.books.remove(book);
     }
 }

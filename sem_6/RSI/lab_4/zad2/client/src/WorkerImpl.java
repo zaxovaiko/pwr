@@ -17,4 +17,20 @@ public class WorkerImpl extends UnicastRemoteObject implements Worker {
             return null;
         }
     }
+
+    @Override
+    public ReturnType[] computeAnother(Task param) throws RemoteException {
+        try {
+            ReturnType[] rt = new ReturnType[param.times];
+            for (int i = 0; i < param.times; i++) {
+                param.times = (int) (Math.random() * 5 + 1);
+                System.out.println("Wait (secs): " + param.times);
+                rt[i] = param.compute();
+            }
+            return rt;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
