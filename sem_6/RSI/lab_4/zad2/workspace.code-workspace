@@ -1,11 +1,30 @@
 {
-	"folders": [
-		{
-			"path": "client"
-		},
-		{
-			"path": "server"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "client"
+    },
+    {
+      "path": "server"
+    }
+  ],
+  "settings": {},
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Launch CLIENT",
+        "request": "launch",
+        "mainClass": "Client",
+        "args": "//localhost/test //localhost/test"
+      },
+      {
+        "type": "java",
+        "name": "Launch SERVER",
+        "request": "launch",
+        "mainClass": "Server",
+        "args": "//localhost/test"
+      }
+    ]
+  }
 }

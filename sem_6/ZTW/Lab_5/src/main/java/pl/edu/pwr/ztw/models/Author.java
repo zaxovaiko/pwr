@@ -1,7 +1,5 @@
 package pl.edu.pwr.ztw.models;
 
-import pl.edu.pwr.ztw.models.Book;
-
 import java.util.List;
 
 public class Author {

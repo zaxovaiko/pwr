@@ -1,19 +1,19 @@
 package pl.edu.pwr.ztw.models;
 
 public class Book {
-    private int id;
+    private Integer id;
     private String title;
-    private int authorId;
-    int pages;
+    private Integer authorId;
+    private Integer pages;
 
-    public Book(int id, String title, int pages, int authorId) {
+    public Book(Integer id, String title, Integer pages, Integer authorId) {
         this.id = id;
         this.title = title;
         this.authorId = authorId;
         this.pages = pages;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -25,19 +25,19 @@ public class Book {
         this.title = title;
     }
 
-    public int getAuthor() {
+    public Integer getAuthor() {
         return authorId;
     }
 
-    public void setAuthor(int author) {
+    public void setAuthor(Integer author) {
         this.authorId = author;
     }
 
-    public int getPages() {
+    public Integer getPages() {
         return pages;
     }
 
-    public void setPages(int pages) {
+    public void setPages(Integer pages) {
         this.pages = pages;
     }
 }

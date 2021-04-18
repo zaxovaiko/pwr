@@ -7,25 +7,29 @@ import pl.edu.pwr.ztw.services.IAuthorService;
 import pl.edu.pwr.ztw.validators.AuthorValidator;
 
 @RestController
-//TODO: @RequestMapping(value = "/author")
+// TODO: @RequestMapping(value = "/author")
 public class AuthorController {
     IAuthorService authorService;
+
     public AuthorController(IAuthorService authorService) {
         this.authorService = authorService;
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @RequestMapping(value = "/authors", method = RequestMethod.GET)
-    public ResponseEntity<Object> getAuthors(){
+    public ResponseEntity<Object> getAuthors() {
         return new ResponseEntity<>(authorService.getAuthors(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/authors/{id}")
-    public ResponseEntity<Object> getAuthor(@PathVariable("id") int id){
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @RequestMapping(value = "/authors/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Object> getAuthor(@PathVariable("id") int id) {
         return new ResponseEntity<>(authorService.getAuthor(id), HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @RequestMapping(value = "/authors/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Object> updateAuthor(@PathVariable("id") int id, String firstName, String lastName, int age){
+    public ResponseEntity<Object> updateAuthor(@PathVariable("id") int id, String firstName, String lastName, int age) {
         firstName = firstName.strip();
         lastName = lastName.strip();
         if (AuthorValidator.isValidAuthor(firstName, lastName, age)) {
@@ -34,13 +38,15 @@ public class AuthorController {
         return new ResponseEntity<>(authorService.updateAuthor(id, firstName, lastName, age), HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @RequestMapping(value = "/authors/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Object> deleteAuthor(@PathVariable("id") int id){
+    public ResponseEntity<Object> deleteAuthor(@PathVariable("id") int id) {
         return new ResponseEntity<>(authorService.deleteAuthor(id), HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @RequestMapping(value = "/authors", method = RequestMethod.POST)
-    public ResponseEntity<Object> addAuthor(String firstName, String lastName, int age){
+    public ResponseEntity<Object> addAuthor(String firstName, String lastName, int age) {
         firstName = firstName.strip();
         lastName = lastName.strip();
         if (AuthorValidator.isValidAuthor(firstName, lastName, age)) {
