@@ -1,3 +1,4 @@
+import java.io.FileOutputStream;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -9,28 +10,30 @@ public class WorkerImpl extends UnicastRemoteObject implements Worker {
     }
 
     @Override
-    public ReturnType compute(Task param) throws RemoteException {
+    public Object wCompute(Task task, Object[] params) throws RemoteException {
+        return task.compute(params);
+    }
+
+    @Override
+    public boolean hasClassCode(String className) {
         try {
-            return param.compute();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            return null;
+            Class.forName(className);
+            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 
     @Override
-    public ReturnType[] computeAnother(Task param) throws RemoteException {
+    public void storeClassCode(String className, byte[] classByteCode) throws RemoteException {
+        FileOutputStream out;
         try {
-            ReturnType[] rt = new ReturnType[param.times];
-            for (int i = 0; i < param.times; i++) {
-                param.times = (int) (Math.random() * 5 + 1);
-                System.out.println("Wait (secs): " + param.times);
-                rt[i] = param.compute();
-            }
-            return rt;
-        } catch (InterruptedException e) {
+            out = new FileOutputStream(className + ".class");
+            out.write(classByteCode);
+            out.close();
+        } catch (Exception e) {
+            System.out.println("Error writing class code");
             e.printStackTrace();
-            return null;
         }
     }
 }

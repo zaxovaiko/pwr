@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10000/ComplexCalc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/contract" />
+  <xs:element name="addCNum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/contract" minOccurs="0" name="n1" nillable="true" type="q1:ComplexNum" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/contract" minOccurs="0" name="n2" nillable="true" type="q2:ComplexNum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addCNumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/contract" minOccurs="0" name="addCNumResult" nillable="true" type="q3:ComplexNum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

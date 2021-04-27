@@ -1,4 +1,9 @@
 import java.io.Serializable;
+<<<<<<< HEAD
+
+public interface Task extends Serializable {
+    public Object compute(Object[] params);
+=======
 import java.util.ArrayList;
 
 public class Task implements Serializable {
@@ -39,4 +44,5 @@ public class Task implements Serializable {
         }
         return res;
     }
+>>>>>>> 421db498c9e2ff88b7ea9b823040fa35eaf83a9a
 }

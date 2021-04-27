@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6daac802-c0df-469f-9010-1aaeeb6ab89c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:10000/AsyncTask" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AsyncTask.xsd" MetadataType="Schema" ID="82277764-20a4-4d63-932b-e89149ab86c5" SourceId="1" SourceUrl="http://localhost:10000/AsyncTask?xsd=xsd2" />
+    <MetadataFile FileName="ServiceTask.wsdl" MetadataType="Wsdl" ID="ad2e5ff3-bd9e-42db-aee4-0af268160bc3" SourceId="1" SourceUrl="http://localhost:10000/AsyncTask?wsdl" />
+    <MetadataFile FileName="AsyncTask.disco" MetadataType="Disco" ID="708e9149-349f-403f-aa2f-40cf4d3a3c58" SourceId="1" SourceUrl="http://localhost:10000/AsyncTask?disco" />
+    <MetadataFile FileName="AsyncTask1.xsd" MetadataType="Schema" ID="2976659f-f9be-4c76-ba21-47d29e0628d5" SourceId="1" SourceUrl="http://localhost:10000/AsyncTask?xsd=xsd0" />
+    <MetadataFile FileName="AsyncTask2.xsd" MetadataType="Schema" ID="cbb56edc-c597-43b4-80ee-a9c7c1d19401" SourceId="1" SourceUrl="http://localhost:10000/AsyncTask?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

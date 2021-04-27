@@ -2,6 +2,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface Worker extends Remote {
-    public ReturnType compute(Task param) throws RemoteException;
-    public ReturnType[] computeAnother(Task param) throws RemoteException;
+    public Object wCompute(Task task, Object[] params) throws RemoteException;
+    public boolean hasClassCode(String className) throws RemoteException;
+    public void storeClassCode(String className, byte[] t) throws RemoteException;
 }

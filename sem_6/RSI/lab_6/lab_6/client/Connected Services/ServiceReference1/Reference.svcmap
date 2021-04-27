@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="129565a0-19bc-431d-b920-aa34ee268599" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:10000/ComplexCalc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ComplexCalc.xsd" MetadataType="Schema" ID="658cd21b-6bd6-4df7-921c-81fd9ce202a1" SourceId="1" SourceUrl="http://localhost:10000/ComplexCalc?xsd=xsd2" />
+    <MetadataFile FileName="ComplexCalc1.xsd" MetadataType="Schema" ID="ce75c924-5385-430e-a472-39907f0b6774" SourceId="1" SourceUrl="http://localhost:10000/ComplexCalc?xsd=xsd0" />
+    <MetadataFile FileName="MyComplexCalc.wsdl" MetadataType="Wsdl" ID="667c4189-b728-4648-9b3a-b276770cec5b" SourceId="1" SourceUrl="http://localhost:10000/ComplexCalc?wsdl" />
+    <MetadataFile FileName="ComplexCalc.disco" MetadataType="Disco" ID="7bc80e2a-f743-4045-bdf0-6af21a70cae5" SourceId="1" SourceUrl="http://localhost:10000/ComplexCalc?disco" />
+    <MetadataFile FileName="ComplexCalc2.xsd" MetadataType="Schema" ID="cc466e1f-259f-4985-b321-dbcbb76b350a" SourceId="1" SourceUrl="http://localhost:10000/ComplexCalc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
