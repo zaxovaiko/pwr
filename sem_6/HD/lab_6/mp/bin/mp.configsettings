@@ -5,16 +5,37 @@
         <ID>Adventure Works DW2019</ID>
         <ConnectionString>Provider=SQLNCLI11.1;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=AdventureWorksDW2019</ConnectionString>
         <ImpersonationInfo>
-          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateServiceAccount</ImpersonationMode>
           <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>
     </DataSources>
     <Dimensions>
       <Dimension>
-        <ID>Klient</ID>
+        <ID>Dim Customer</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Product</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Date</ID>
       </Dimension>
     </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>Klient</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Internet Sales</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Internet Sales</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
     <DataSourceImpersonationInfo>
       <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
       <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>

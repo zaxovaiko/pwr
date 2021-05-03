@@ -45,7 +45,7 @@ class CSP:
 
 
     def ac3_helper(self, x, y):
-        revised = False
+        r = False
         cons = [con for con in self.constraints if con[0] == x and con[1] == y]
 
         for x_value in self.doms[x]:
@@ -56,9 +56,9 @@ class CSP:
                     if constraint_func(self.doms): satisfies = True
             if not satisfies:
                 self.doms[x].remove(x_value)
-                revised = True
+                r = True
 
-        return revised
+        return r
 
 
     def solve_ac3(self):
@@ -74,6 +74,7 @@ class CSP:
         self.ac3()
         print('Time execution: ', time.time() - t0)
         print('Counter: ', self.counter)
+
 
 
     def ac3(self):
@@ -107,14 +108,17 @@ class CSP:
         
         for dom in self.vars:
             self.doms[self.key[v]] = [dom]
-            
-            # for con in list(filter(lambda x: self.key[v] in x.vars and self.key[v + 1] in x.vars, self.cons)):
-            #     for i in self.doms[self.key[v + 1]]:
-            #         if not con.isValid(self.doms):
-            #             self.doms[self.key[v + 1]].remove(i)
 
-            if dom in self.doms[self.key[v + 1]]:
-                self.doms[self.key[v + 1]].remove(dom)
+            # ['1', '2'], lambda
+            # ['1', '3'], lambda
+            # ['3', '2'], lambda
+            for con in list(filter(lambda x: self.key[v] in x.vars and self.key[v + 1] in x.vars, self.cons)):
+                for i in self.doms[self.key[v + 1]]:
+                    if not con.isValid(self.doms):
+                        self.doms[self.key[v + 1]].remove(i)
+
+            # if dom in self.doms[self.key[v + 1]]:
+            #     self.doms[self.key[v + 1]].remove(dom)
 
             if v < len(self.doms.keys()) - 1 and len(self.doms[self.key[v + 1]]) == 0:
                 self.doms[self.key[v + 1]] = list(self.vars)
@@ -178,3 +182,5 @@ class CSP:
 
             self.rbt(v + 1)
             self.doms[self.key[v]] = list(self.vars)
+
+        ''

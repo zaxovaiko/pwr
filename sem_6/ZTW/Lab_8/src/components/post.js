@@ -1,12 +1,17 @@
 import { graphql } from "gatsby"
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage, getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Disqus } from "gatsby-plugin-disqus"
 
 import Layout from "../layouts/index"
 
 export default function Post({ data }) {
   const post = data.markdownRemark
+
+  if (!post) {
+    return 'Loading';
+  }
+
   return (
     <Layout>
       <div className="col-12">
@@ -16,6 +21,7 @@ export default function Post({ data }) {
           {post.frontmatter.author}{" "}
           <span className="small float-end fs-5">{post.frontmatter.date}</span>
         </h4>
+        <StaticImage src={post.frontmatter.timage} alt={post.frontmatter.title} />
         <div className="mt-5" dangerouslySetInnerHTML={{ __html: post.html }} />
         <Disqus
           config={{
@@ -37,6 +43,7 @@ export const query = graphql`
         title
         author
         date
+        timage
       }
     }
   }

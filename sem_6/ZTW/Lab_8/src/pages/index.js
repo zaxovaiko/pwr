@@ -1,12 +1,46 @@
-import * as React from "react"
+import React, { useState } from 'react'
 import { Link, graphql } from "gatsby"
 import Layout from "../layouts"
 
+
 const IndexPage = ({ data }) => {
+
+  const [state, setState] = useState({
+    filteredPosts: [],
+    query: "",
+  });
+
+  const allPosts = data.allMarkdownRemark.edges;
+
+  const handleInputChange = event => {
+    const query = event.target.value;
+    const filteredPosts = allPosts.filter(post => {
+      const { title } = post.node.frontmatter;
+      return (
+        title.toLowerCase().includes(query.toLowerCase()) 
+      );
+    });
+    setState({
+      query,
+      filteredPosts,
+    });
+  };
+
+  const posts = state.query ? state.filteredPosts : allPosts;
+
   return (
     <Layout>
+       <input
+        type="text"
+        aria-label="Search"
+        placeholder="Search posts"
+        value={state.query}
+        onChange={handleInputChange}
+
+        style={{marginBottom: '20px', width: '400px'}}
+      />
       <div className="row g-3">
-        {data.allMarkdownRemark.edges.map(({ node }, i) => (
+        {posts.map(({ node }, i) => (
           <div key={i} className="col-6">
             <div className="card">
               <div className="card-body">

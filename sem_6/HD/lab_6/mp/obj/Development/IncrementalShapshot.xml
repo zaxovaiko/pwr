@@ -1,6 +1,6 @@
 ﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
   <Target>
-    <Database>MultidimensionalProject1</Database>
+    <Database>mp</Database>
     <Server>localhost</Server>
     <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
   </Target>
@@ -19,21 +19,42 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>VWhya06Jrt0MNcLoE5cSqDDHZzo=22.04.2021 14:06:2422.04.2021 13:33:16</TimeStamp>
+        <TimeStamp>mVoMkwpyf8WocKp6g3zB2+/lPcg=29.04.2021 00:41:5829.04.2021 00:41:58</TimeStamp>
         <ID>
           <String>Adventure Works DW2019</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>fO0dRxtIo1neQWkiEOQpvnLdGKM=22.04.2021 13:58:1422.04.2021 13:37:50</TimeStamp>
+        <TimeStamp>/py1FIiUTtr/zfi3EPT785OB1lc=29.04.2021 15:42:5629.04.2021 00:48:36</TimeStamp>
         <ID>
-          <String>Sprzedaz Internetowa</String>
+          <String>Klient</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>xptSOA2Z1mWMbQ5FXweVHwGnZV0=22.04.2021 14:45:0922.04.2021 13:58:14</TimeStamp>
+        <TimeStamp>K6RJIMjLwblbLXnCft2I4BtCGgc=29.04.2021 15:32:4029.04.2021 15:21:30</TimeStamp>
+        <ID>
+          <String>Dim Customer</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>UdWpH3DJUdkOC/wDtDRamneTWvQ=29.04.2021 16:20:0029.04.2021 15:41:26</TimeStamp>
+        <ID>
+          <String>Dim Product</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>GZ1ej9gf3PIIXuh9mBs2OcVh0KQ=29.04.2021 16:14:2129.04.2021 16:13:32</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>jUwRftYUfbNo/qIo6r1k6SNuTSA=29.04.2021 16:20:0029.04.2021 15:55:41UhDM3BxZTzdEMUcuponsoyr8uVs=29.04.2021 16:12:1429.04.2021 15:55:41</TimeStamp>
         <ID>
           <String>Klient</String>
         </ID>
@@ -41,14 +62,14 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>QZJnIvpSumgmSf6ay/xh80OPj/M=22.04.2021 13:18:0822.04.2021 13:18:08</TimeStamp>
+      <TimeStamp>ew8oLcCvp2i/ljNUqnzt3w+gOBE=28.04.2021 21:18:2428.04.2021 21:18:24</TimeStamp>
       <ID>
-        <String>MultidimensionalProject1</String>
+        <String>mp</String>
       </ID>
     </DatabaseSnapshot>
     <Granularity>Coarse</Granularity>
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2021-04-25T05:31:27.093333Z</LastDeployed>
+  <LastDeployed>2021-04-29T14:20:45.1Z</LastDeployed>
 </DeploymentSnapshot>

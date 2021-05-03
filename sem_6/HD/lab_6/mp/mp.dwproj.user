@@ -4,7 +4,7 @@
       <Name>Development</Name>
       <Options>
         <TargetServer>localhost</TargetServer>
-        <TargetDatabase>MultidimensionalProject1</TargetDatabase>
+        <TargetDatabase>mp</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>
           <ObjectType>Current</ObjectType>

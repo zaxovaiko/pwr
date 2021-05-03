@@ -3,6 +3,7 @@ slug: "/first-post"
 title: "What is Markdown"
 date: "2020-08-01"
 author: "John Gruber"
+timage: post.jpg
 ---
 
 ## What is Markdown

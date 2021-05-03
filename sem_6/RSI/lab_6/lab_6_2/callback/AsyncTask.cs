@@ -24,6 +24,7 @@ namespace callback
             Console.WriteLine("Repeat string '{0}' {1} times", task.text, task.times);
             Thread.Sleep(task.times * 1000);
             callback.RepeatResult(new string('+', task.times).Replace("+", task.text));
+            //hello 4 hellohellohellohello...
         }
     }
 }
