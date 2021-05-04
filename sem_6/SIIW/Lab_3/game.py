@@ -11,34 +11,73 @@ init(autoreset=True)
 CALC_DEPTH = 5
 BOT_ALG = 'minimax'
 PLAYER_A = 'bot'
-PLAYER_B = 'bot'
+PLAYER_B = 'user'
 STATE = State()
 
 
 def print_field():
-    # os.system('cls')
-    print()
-    print()
+    os.system('cls')
     print(STATE.players[0])
     print(STATE.players[1])
 
 
-def minimax(current_depth=0, node=0, expecting_max=True, incoming_state=None, target_depth=CALC_DEPTH):
+def minimax_with_pruning(alpha, beta, current_depth=0, expecting_max=True, incoming_state=None, target_depth=CALC_DEPTH):
     state = copy.deepcopy(incoming_state)
     player = state.players[state.turn]
 
     if current_depth == target_depth - 1:
-        return player.field[6], node
+        return [player.field[6], None]
 
     # options which each of players can choose
     options = [i for i in range(len(player.field) - 1) if player.field[i]]
     if len(options) == 0:
-        return player.field[6], node
+        return [player.field[6], None]
 
-    states = [(i, compute_move(state, i)) for i in options]
+    states = [[i, compute_move(state, i)] for i in options]
+    max_item = [0, None]
+    min_item = [float('inf'), None]
+
     if expecting_max:
-        return max([minimax(current_depth + 1, i, False, s, target_depth) for i, s in states], key=lambda x: x[0])
-    return min([minimax(current_depth + 1, i, True, s, target_depth) for i, s in states], key=lambda x: x[0])
+        for i, s in states:
+            value, index = minimax_with_pruning(alpha, beta, current_depth + 1, not expecting_max, s, target_depth)
+            if max_item[0] < value: 
+                max_item = [value, i]
+            alpha = max(alpha, max_item[0])
+            if beta <= alpha:
+                break
+        return max_item
+
+    for i, s in states:
+        value, index = minimax_with_pruning(alpha, beta, current_depth + 1, not expecting_max, s, target_depth)
+        if min_item[0] > value: 
+            min_item = [value, i]
+        beta = min(beta, min_item[0])
+        if beta <= alpha:
+            break
+    return min_item
+
+
+def minimax(current_depth=0, expecting_max=True, incoming_state=None, target_depth=CALC_DEPTH):
+    state = copy.deepcopy(incoming_state)
+    player = state.players[state.turn]
+
+    if current_depth == target_depth - 1:
+        return [player.field[6], None]
+
+    # options which each of players can choose
+    options = [i for i in range(len(player.field) - 1) if player.field[i]]
+    if len(options) == 0:
+        return [player.field[6], None]
+
+    states = [[i, compute_move(state, i)] for i in options]
+    max_item = [0, None]
+    min_item = [float('inf'), None]
+
+    for i, s in states:
+        value, index = minimax(current_depth + 1, not expecting_max, s, target_depth)
+        if expecting_max and max_item[0] < value: max_item = [value, i]
+        if not expecting_max and min_item[0] > value: min_item = [value, i]
+    return max_item if expecting_max else min_item
 
 
 def compute_move(state, cell):
@@ -110,22 +149,21 @@ while True:
     player = STATE.players[STATE.turn]
     print('\n', player.get_name() + ' turn')
 
-    if STATE.turn == 1:
+    if STATE.turn == 0:
         if PLAYER_A == 'bot': 
             if BOT_ALG == 'minimax':
-                _, idx = minimax(incoming_state=STATE, target_depth=7)
+                _, idx = minimax_with_pruning(float('-inf'), float('inf'), incoming_state=STATE, target_depth=10)
             else:
                 idx = choose_random_cell(player)
         if PLAYER_A == 'user': idx = ask_for_user_input(player)
         
-    if STATE.turn == 0:
+    if STATE.turn == 1:
         if PLAYER_B == 'bot': 
             if BOT_ALG == 'minimax':
-                _, idx = minimax(incoming_state=STATE, target_depth=5)
+                _, idx = minimax(incoming_state=STATE, target_depth=7)
             else:
                 idx = choose_random_cell(player)
         if PLAYER_B == 'user': idx = ask_for_user_input(player)
     
     print(idx)
-    # time.sleep(0.25)
     STATE = compute_move(STATE, idx)
