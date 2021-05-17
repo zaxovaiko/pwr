@@ -32,6 +32,13 @@
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>NRC7aI3WDr3v5AM11i/qS30MUAQ=06.05.2021 15:46:0806.05.2021 14:35:01</TimeStamp>
+        <ID>
+          <String>Reseller</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
         <TimeStamp>K6RJIMjLwblbLXnCft2I4BtCGgc=29.04.2021 15:32:4029.04.2021 15:21:30</TimeStamp>
         <ID>
@@ -53,10 +60,66 @@
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>51tRf3KqTgiOjYGazjzV2XV5S/Q=06.05.2021 14:45:2606.05.2021 14:36:47</TimeStamp>
+        <ID>
+          <String>Dim Reseller</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>bcpObj4RTGl8VDd/GrwdMldhqJc=06.05.2021 14:45:1206.05.2021 14:38:25</TimeStamp>
+        <ID>
+          <String>Dim Sales Territory</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>eZlWUZko9tYAOKGBzO5uj8Wjih4=06.05.2021 14:55:3806.05.2021 14:45:43</TimeStamp>
+        <ID>
+          <String>Resales Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>cpvMwL0dpH1eb3GocyjBQx1nmfQ=06.05.2021 14:51:3306.05.2021 14:46:05</TimeStamp>
+        <ID>
+          <String>Resales Dim Product</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>JeuvcQMgCcgCMX1ZPLRtXKSvbfY=06.05.2021 14:47:4106.05.2021 14:46:44</TimeStamp>
+        <ID>
+          <String>Resales Dim Employee</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>myyR3ViqCoOwIdn/3l4skTYvhcM=06.05.2021 15:47:3406.05.2021 15:47:27</TimeStamp>
+        <ID>
+          <String>Resales Dim Product Category</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>thXWZT0EG9xcPQPpnbnS1WxSCpA=06.05.2021 15:48:0506.05.2021 15:47:55</TimeStamp>
+        <ID>
+          <String>Resales Dim Product Subcategory</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
         <TimeStamp>jUwRftYUfbNo/qIo6r1k6SNuTSA=29.04.2021 16:20:0029.04.2021 15:55:41UhDM3BxZTzdEMUcuponsoyr8uVs=29.04.2021 16:12:1429.04.2021 15:55:41</TimeStamp>
         <ID>
           <String>Klient</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>QG5eKT7aX37ONp++IktxMA370C0=06.05.2021 15:47:2706.05.2021 14:53:21ie9rkov/UW5nS2LpYOKn3vtGcOw=06.05.2021 15:47:2706.05.2021 14:53:21</TimeStamp>
+        <ID>
+          <String>Reseller</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
@@ -71,5 +134,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2021-04-29T14:20:45.1Z</LastDeployed>
+  <LastDeployed>2021-05-06T13:48:07.816667Z</LastDeployed>
 </DeploymentSnapshot>

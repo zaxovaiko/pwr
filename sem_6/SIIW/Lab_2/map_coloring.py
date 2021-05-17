@@ -51,7 +51,7 @@ def run_map_coloring():
         if str(s) in grouped: grouped[str(s)].append(ends)
 
     # Initiate constraints and variables for map coloring problem
-    VAR = ['red', 'blue', 'green', 'black']
+    VAR = ['red', 'blue', 'green', 'black', 'orange', 'yellow']
     CONSTRAINTS = []
     for x1 in grouped.keys():
         for x2 in grouped[x1]:
@@ -63,16 +63,16 @@ def run_map_coloring():
     
     # Solve csp problem
     csp = CSP(list(VAR), { str(i): list(VAR) for i in grouped.keys() }, CONSTRAINTS)
-    # csp.solve_backtracking()
+    csp.solve_backtracking()
     # csp.solve_forward_checking()
-    csp.solve_ac3()
+    # csp.solve_ac3()
     
     if len(csp.sols) == 0:
         print('Solution does not exists')
         # gui.draw_color_points(coords, [x[0] for x in csp.doms.values()])
     else:
-        # gui.draw_color_points(coords, [x[0] for x in csp.sols[0].values()])
-        pass
+        gui.draw_color_points(coords, [x[0] for x in csp.sols[0].values()])
+        # pass
 
     gui.root.mainloop()
 

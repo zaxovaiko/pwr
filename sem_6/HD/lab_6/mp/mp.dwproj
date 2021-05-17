@@ -17,6 +17,26 @@
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Reseller.cube</Name>
+      <FullPath>Reseller.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Reseller.partitions</Name>
+          <FullPath>Reseller.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Reseller 1.cube</Name>
+      <FullPath>Reseller 1.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Reseller 1.partitions</Name>
+          <FullPath>Reseller 1.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
@@ -31,6 +51,34 @@
       <Name>Dim Date.dim</Name>
       <FullPath>Dim Date.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Resales Dim Reseller.dim</Name>
+      <FullPath>Resales Dim Reseller.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Resales Dim Sales Territory.dim</Name>
+      <FullPath>Resales Dim Sales Territory.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Resales Dim Date.dim</Name>
+      <FullPath>Resales Dim Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Resales Dim Product.dim</Name>
+      <FullPath>Resales Dim Product.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Resales Dim Employee.dim</Name>
+      <FullPath>Resales Dim Employee.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Resales Dim Product Category.dim</Name>
+      <FullPath>Resales Dim Product Category.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Resales Dim Product Subcategory.dim</Name>
+      <FullPath>Resales Dim Product Subcategory.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
@@ -42,6 +90,10 @@
     <ProjectItem>
       <Name>Klient.dsv</Name>
       <FullPath>Klient.dsv</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Reseller.dsv</Name>
+      <FullPath>Reseller.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <Configurations>

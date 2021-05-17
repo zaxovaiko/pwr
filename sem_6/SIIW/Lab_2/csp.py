@@ -182,5 +182,3 @@ class CSP:
 
             self.rbt(v + 1)
             self.doms[self.key[v]] = list(self.vars)
-
-        ''

@@ -20,6 +20,27 @@
       <Dimension>
         <ID>Dim Date</ID>
       </Dimension>
+      <Dimension>
+        <ID>Dim Reseller</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Sales Territory</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Resales Dim Date</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Resales Dim Product</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Resales Dim Employee</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Resales Dim Product Category</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Resales Dim Product Subcategory</ID>
+      </Dimension>
     </Dimensions>
     <Cubes>
       <Cube>
@@ -30,6 +51,19 @@
             <Partitions>
               <Partition>
                 <ID>Fact Internet Sales</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Reseller</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Reseller Sales</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Reseller Sales</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>
