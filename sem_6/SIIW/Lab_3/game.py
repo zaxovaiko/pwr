@@ -2,6 +2,7 @@ import os
 import time
 import copy
 import random
+import matplotlib.pyplot as plt
 from state import State
 from colorama import init
 
@@ -13,6 +14,7 @@ BOT_ALG = 'minimax'
 PLAYER_A = 'bot'
 PLAYER_B = 'bot'
 STATE = State()
+COUNTER = 0
 
 
 def print_field():
@@ -28,6 +30,8 @@ def score_simple_heuristic(player):
 def minimax_with_pruning(alpha, beta, current_depth=0, expecting_max=True, incoming_state=None, target_depth=CALC_DEPTH, moving=0):
     state = copy.deepcopy(incoming_state)
     player = state.players[state.turn]
+    global COUNTER
+    COUNTER += 1
 
     if current_depth == target_depth - 1:
         return [score_simple_heuristic(player), None]
@@ -43,8 +47,9 @@ def minimax_with_pruning(alpha, beta, current_depth=0, expecting_max=True, incom
 
     if expecting_max:
         for i, s in states:
-            value, index = minimax_with_pruning(alpha, beta, current_depth + 1, s.turn == moving, s, target_depth, moving)
-            if max_item[0] < value: 
+            value, index = minimax_with_pruning(
+                alpha, beta, current_depth + 1, s.turn == moving, s, target_depth, moving)
+            if max_item[0] < value:
                 max_item = [value, i]
             alpha = max(alpha, max_item[0])
             if beta <= alpha:
@@ -52,8 +57,9 @@ def minimax_with_pruning(alpha, beta, current_depth=0, expecting_max=True, incom
         return max_item
 
     for i, s in states:
-        value, index = minimax_with_pruning(alpha, beta, current_depth + 1, s.turn == moving, s, target_depth, moving)
-        if min_item[0] > value: 
+        value, index = minimax_with_pruning(
+            alpha, beta, current_depth + 1, s.turn == moving, s, target_depth, moving)
+        if min_item[0] > value:
             min_item = [value, i]
         beta = min(beta, min_item[0])
         if beta <= alpha:
@@ -64,6 +70,9 @@ def minimax_with_pruning(alpha, beta, current_depth=0, expecting_max=True, incom
 def minimax(current_depth=0, expect_max=True, incoming_state=None, target_depth=CALC_DEPTH, moving=0):
     state = copy.deepcopy(incoming_state)
     player = state.players[state.turn]
+
+    global COUNTER
+    COUNTER += 1
 
     if current_depth == target_depth - 1:
         return [score_simple_heuristic(player), None]
@@ -78,9 +87,12 @@ def minimax(current_depth=0, expect_max=True, incoming_state=None, target_depth=
     min_item = [float('inf'), None]
 
     for i, s in states:
-        value, index = minimax(current_depth + 1, s.turn == moving, s, target_depth, moving)
-        if expect_max and max_item[0] < value: max_item = [value, i]
-        if not expect_max and min_item[0] > value: min_item = [value, i]
+        value, index = minimax(current_depth + 1, s.turn ==
+                               moving, s, target_depth, moving)
+        if expect_max and max_item[0] < value:
+            max_item = [value, i]
+        if not expect_max and min_item[0] > value:
+            min_item = [value, i]
     return max_item if state.turn == moving else min_item
 
 
@@ -96,15 +108,16 @@ def compute_move(state, cell):
         field_index = (cell + i + 1) % 7
 
         state.players[player_index].field[field_index] += 1
-        if field_index != 6 and i == length - 1 and state.players[player_index].field[field_index] == 1 and state.players[player_index ^ 1].field[5 - field_index] != 0 and turn != player_index ^ 1: 
-            state.players[player_index].field[6] += state.players[player_index ^ 1].field[5 - field_index] + 1
+        if field_index != 6 and i == length - 1 and state.players[player_index].field[field_index] == 1 and state.players[player_index ^ 1].field[5 - field_index] != 0 and turn != player_index ^ 1:
+            state.players[player_index].field[6] += state.players[player_index ^
+                                                                  1].field[5 - field_index] + 1
             state.players[player_index].field[field_index] = 0
             state.players[player_index ^ 1].field[5 - field_index] = 0
-    
-        if i == length - 1 and field_index == 6: 
+
+        if i == length - 1 and field_index == 6:
             is_moving_again = True
 
-    if not is_moving_again: 
+    if not is_moving_again:
         state.turn ^= 1
     return state
 
@@ -126,54 +139,102 @@ def check_win(state):
 def ask_for_user_input(player):
     while True:
         inp = input('Enter index [1-6]: ')
-        if inp == 'exit': exit(0)
+        if inp == 'exit':
+            exit(0)
         try:
             idx = int(inp) - 1
-            if idx != 7 and player.field[idx] != 0: 
+            if idx != 7 and player.field[idx] != 0:
                 return idx
             print('Cell is empty, enter another number')
-        except: pass
+        except:
+            pass
 
 
 def choose_random_cell(player):
-    idx = random.choice([i for i in range(len(player.field) - 1) if player.field[i]])
+    idx = random.choice(
+        [i for i in range(len(player.field) - 1) if player.field[i]])
     print('Choosen idx: ', idx)
     return idx
 
-# counter = 0
+
+counters = {
+    'mm': [],
+    'ab': []
+}
+times = {
+    'mm': [],
+    'ab': []
+}
+
+
+def recommend_move(turn, depth):
+    global COUNTER
+    COUNTER = 0
+
+    t0 = time.time()
+    _, idx = minimax_with_pruning(float(
+        '-inf'), float('inf'), incoming_state=STATE, target_depth=depth, moving=turn)
+    counters['ab'].append(COUNTER)
+    times['ab'].append(time.time() - t0)
+
+    # t1 = time.time()
+    # COUNTER = 0
+    # _, idx2 = minimax(incoming_state=STATE, target_depth=depth, moving=turn)
+    # counters['mm'].append(COUNTER)
+    # times['mm'].append(time.time() - t1)
+    return idx
+
 
 while True:
     won, player = check_win(STATE)
     print_field()
 
     if won:
-        if player not in [0, 1]: print('Draw!')
-        else: print(STATE.players[player].get_name() + ' won!')
+        if player not in [0, 1]:
+            print('Draw!')
+        else:
+            print(STATE.players[player].get_name() + ' won!')
         break
 
     player = STATE.players[STATE.turn]
     print('\n', player.get_name() + ' turn')
 
     if STATE.turn == 0:
-        if PLAYER_A == 'bot': 
+        if PLAYER_A == 'bot':
             if BOT_ALG == 'minimax':
-                t0 = time.time()
-                _, idx = minimax_with_pruning(float('-inf'), float('inf'), incoming_state=STATE, target_depth=6, moving=0)
-                print(time.time() - t0)
-                t1 = time.time()
-                _, idx2 = minimax(incoming_state=STATE, target_depth=6, moving=0)
-                print(time.time() - t1)
+                idx = recommend_move(0, 11)
             else:
                 idx = choose_random_cell(player)
-        if PLAYER_A == 'user': idx = ask_for_user_input(player)
-        
+        if PLAYER_A == 'user':
+            idx = ask_for_user_input(player)
+
     if STATE.turn == 1:
-        if PLAYER_B == 'bot': 
+        if PLAYER_B == 'bot':
             if BOT_ALG == 'minimax':
-                # _, idx = minimax_with_pruning(float('-inf'), float('inf'), incoming_state=STATE, target_depth=8, moving=1)
-                _, idx = minimax(incoming_state=STATE, target_depth=6, moving=1)
+                idx = recommend_move(1, 11)
             else:
                 idx = choose_random_cell(player)
-        if PLAYER_B == 'user': idx = ask_for_user_input(player)
-    
+        if PLAYER_B == 'user':
+            idx = ask_for_user_input(player)
+
     STATE = compute_move(STATE, idx)
+
+
+print('czas mm - ', sum(times['mm']))
+print('czas ab - ', sum(times['ab']))
+
+print('stan mm - ', sum(counters['mm']))
+print('stan ab - ', sum(counters['ab']))
+
+# plt.plot(range(len(counters['mm'])),
+#          counters['mm'], color='red', label='Minimax')
+# plt.plot(range(len(counters['ab'])), counters['ab'],
+#          color='green', label='Alpha-Beta')
+# plt.legend(loc="upper left")
+# plt.show()
+
+# plt.plot(range(len(times['mm'])), times['mm'], color='red', label='Minimax')
+# plt.plot(range(len(times['ab'])), times['ab'],
+#          color='green', label='Alpha-Beta')
+# plt.legend(loc="upper left")
+# plt.show()
