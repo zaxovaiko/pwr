@@ -29,6 +29,7 @@ export default function AddForm({ edit, setCountries, setEditing }) {
   function editCountry() {
     updateCountry(country.Id, country)
       .then(() => {
+        // TODO: Add validation
         setCountries((p) => p.map(e => e.Id === country.Id ? country : e));
         setCountry(defaultCountry);
       })
@@ -46,6 +47,7 @@ export default function AddForm({ edit, setCountries, setEditing }) {
               setCountry((p) => ({ ...p, Name: e.target.value }))
             }
             type="text"
+            required={true}
             className="form-control"
           />
           <input
@@ -54,6 +56,7 @@ export default function AddForm({ edit, setCountries, setEditing }) {
               setCountry((p) => ({ ...p, GDP: parseInt(e.target.value) }))
             }
             type="number"
+            required={true}
             className="form-control"
           />
           <button

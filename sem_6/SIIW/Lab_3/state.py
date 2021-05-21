@@ -1,9 +1,10 @@
-from colorama import Fore, Back
+from colorama import Fore
 from player import Player
 
 
 class State:
     def __init__(self):
+        self.against = False
         self.turn = 0
         self.players = [
             Player(inverted=True, name='A', color=Fore.GREEN), 

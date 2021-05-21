@@ -1,0 +1,467 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a9338ac4-4183-41b6-b713-88440390f704" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>New cube</ID>
+  <Name>Homicides</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="24" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="2536" scrolltop="2279" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="99" x="24215" y="17590" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dimDate" left="15072" top="7113" logicalid="12" controlid="1" masterid="0" hint1="0" hint2="0" width="5556" height="6176" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b415000020180000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dimDate" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dimAgency" left="3477" top="8279" logicalid="13" controlid="2" masterid="0" hint1="0" hint2="0" width="3493" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000a50d00006b0a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dimAgency" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dimPerson" left="9222" top="2492" logicalid="14" controlid="3" masterid="0" hint1="0" hint2="0" width="3450" height="3027" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00007a0d0000d30b0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dimPerson" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dimHomicide" left="12179" top="14513" logicalid="15" controlid="4" masterid="0" hint1="0" hint2="0" width="3725" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00008d0e00006b0a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dimHomicide" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dimLocation" left="6138" top="14513" logicalid="16" controlid="5" masterid="0" hint1="0" hint2="0" width="3641" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000390e000003090000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dimLocation" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactHomicide" left="9370" top="7919" logicalid="17" controlid="6" masterid="0" hint1="0" hint2="0" width="3302" height="3387" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000e60c00003b0d0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="FactHomicide" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="12372" top="9252" logicalid="18" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FactHomicide-dimDate]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="6" sourceattachpoint="26" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="15072" y="9651" />
+              <point x="13872" y="9651" />
+              <point x="13872" y="9612" />
+              <point x="12672" y="9612" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="6670" top="9213" logicalid="19" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FactHomicide-dimAgency]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="6" sourceattachpoint="15" destattachpoint="14" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="6970" y="9612" />
+              <point x="9370" y="9612" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="10548" top="5020" logicalid="20" controlid="9" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FactHomicide-dimPerson]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="6" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="10947" y="5519" />
+              <point x="10947" y="6719" />
+              <point x="11021" y="6719" />
+              <point x="11021" y="7919" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="11271" top="11006" logicalid="21" controlid="10" masterid="0" hint1="0" hint2="0" width="3170" height="4007" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FactHomicide-dimHomicide]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="6" sourceattachpoint="6" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="14041" y="14513" />
+              <point x="14041" y="12910" />
+              <point x="11571" y="12910" />
+              <point x="11571" y="11306" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7559" top="11006" logicalid="22" controlid="11" masterid="0" hint1="0" hint2="0" width="2662" height="4007" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FactHomicide-dimLocation]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="6" sourceattachpoint="6" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7958" y="14513" />
+              <point x="7958" y="12910" />
+              <point x="9921" y="12910" />
+              <point x="9921" y="11306" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>2536</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>2279</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>3477</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>2492</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>99</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="72e3f800-cba9-44f7-b2eb-31f0623140fa">
+      <ID>Time</ID>
+      <Name>dimDate</Name>
+      <DimensionID>Time</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ee00d997-ccdc-4ce5-8666-7b8829d78242">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="14fbaa1e-7f7c-4c51-88a3-00ea1183666b">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e886f6f7-5bb7-4ae1-836b-664541ba7e63">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dac94e86-f26c-410d-ae9c-9b1e3f6b14ce">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6267dee8-db37-44e0-b325-2e4bb5121c46">
+          <AttributeID>Month Of Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d8749a43-f8a3-4906-83ef-ae173fc8b915">
+          <AttributeID>Month Of Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1aedc3b4-60dc-48f7-a664-53356e41b26d">
+          <AttributeID>Quarter Of Year</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="b2160643-93dc-452c-9838-fa36eb2eb3a3">
+          <HierarchyID>Year -  Quarter -  Month -  Date</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="ffc30e1a-43fd-40d9-ac2a-3badbd0aa7a0">
+      <ID>dimHomicide</ID>
+      <Name>dimHomicide</Name>
+      <DimensionID>dimHomicide</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="eac3d3b6-ea29-4698-81d8-3416fe50b211">
+          <AttributeID>dimHomicide</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0f69c7b1-f5a5-4090-9aa3-153c7f5e8b1a">
+          <AttributeID>Relationship</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="818439e9-f52d-4ad1-90eb-2c79df4fb2e1">
+          <AttributeID>RecordSource</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f2618bad-c4af-492d-aeb8-cba598fed323">
+          <AttributeID>Weapon</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="91cb1053-883f-4402-bb56-366bb561095a">
+      <ID>dimLocation</ID>
+      <Name>dimLocation</Name>
+      <DimensionID>dimLocation</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="0a9a33ed-70a4-48e0-bbc1-a072e9fd4155">
+          <AttributeID>dimLocation</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ea4510d7-0eaf-42d7-9e5a-22dffe05f723">
+          <AttributeID>State</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c6a07e03-3858-42fc-901a-5c3ba08b222e">
+          <AttributeID>City</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="646617cd-f089-48a4-bfb7-cb3ed6304056">
+      <ID>dimAgency</ID>
+      <Name>dimAgency</Name>
+      <DimensionID>dimAgency</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="baa6e932-5504-4f2a-b1f1-9ea4d1a5b0c0">
+          <AttributeID>dimAgency</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="57e112e3-2f13-41c2-9be1-a7c82c7cc590">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9be7aa30-f05e-46f3-b9b4-b9a6ef53a9db">
+          <AttributeID>Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d5d90ada-5be9-4778-9089-fe5e061497eb">
+          <AttributeID>Code</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="ba0f557c-9e13-4e95-b4e3-6f6953b2e20f">
+      <ID>dimPerson</ID>
+      <Name>dimPerson</Name>
+      <DimensionID>dimPerson</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="873a01e5-0af6-4429-8283-0a38a5caeae4">
+          <AttributeID>dimPerson</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0abcadfb-5bc1-429c-889a-2f53e523753f">
+          <AttributeID>Sex</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="53a0a08c-b7e3-4e78-a050-1df3500b014e">
+          <AttributeID>Age</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2c6bd4b4-dbf9-4aeb-bc73-d29eeb75cf72">
+          <AttributeID>Race</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ed304bcd-bbf0-4e1d-9dff-c2129c35fdea">
+          <AttributeID>Ethnicity</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="e9e228f3-f088-456a-80e9-33933ce9a79b">
+      <ID>FactHomicide</ID>
+      <Name>FactHomicide</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="15e26879-9846-47cd-ba35-757f5f76824e">
+          <ID>Victims</ID>
+          <Name>Victims</Name>
+          <Source dwd:design-time-name="d3918903-14c4-4b7d-8ae3-8b1fef15e8fb">
+            <DataType>UnsignedInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2c78c2a4-429d-469a-bec9-906dc53d6deb">
+              <TableID>FactHomicide</TableID>
+              <ColumnID>Victims</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c0be2475-ba5d-48ae-bd1b-8d6caf036763">
+          <ID>Perpetrators</ID>
+          <Name>Perpetrators</Name>
+          <Source dwd:design-time-name="ad60a160-226e-4e9c-bea3-36e4b96abef6">
+            <DataType>UnsignedInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bb92536a-5d0e-4752-8c05-026ff079827a">
+              <TableID>FactHomicide</TableID>
+              <ColumnID>Perpetrators</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0a13fd66-a188-441b-bd87-79d3e8e28374">
+          <CubeDimensionID>Time</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6c9eae4a-0ec6-4c60-9408-ad1de480e222">
+              <AttributeID>Date</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="5243ce24-11f5-4e88-b96f-425856c38d1d">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="48c6bb5c-4c5d-4a8b-b7cd-b043ec262cb2">
+                    <TableID>FactHomicide</TableID>
+                    <ColumnID>FK_dimDate</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2fc90429-a47a-431b-b155-2b432438358a">
+          <CubeDimensionID>dimHomicide</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="36f6e5f9-065c-49fc-aa3f-9cf41b134364">
+              <AttributeID>dimHomicide</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1a1105bf-3d0d-4428-b0b3-5910ffa0a4cc">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ecffec1b-e0d8-43e0-8c96-fbba99d31809">
+                    <TableID>FactHomicide</TableID>
+                    <ColumnID>FK_dimHomicide</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="25f5f6e8-b341-4571-adfe-ba6c30361178">
+          <CubeDimensionID>dimLocation</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="359fa6b6-11bf-4ba3-93b6-b941802c4945">
+              <AttributeID>dimLocation</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="ab39d4d3-5f39-4e60-8a4b-da8278acfd10">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ae768913-d3f1-44aa-931c-92462f7827e4">
+                    <TableID>FactHomicide</TableID>
+                    <ColumnID>FK_dimLocation</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0bb9a1d9-f7e5-4fe1-9a2c-8f0b1d547dff">
+          <CubeDimensionID>dimAgency</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="9541eba0-f8f2-478c-9d8f-f70ea256da8d">
+              <AttributeID>dimAgency</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="006a9c50-e22f-4cfe-9004-31f1a0d62d0e">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3e588b75-4c31-49eb-8212-7a74af3bfa13">
+                    <TableID>FactHomicide</TableID>
+                    <ColumnID>FK_dimAgency</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5c612c85-44a7-4fc6-b134-0058e997e879">
+          <CubeDimensionID>dimPerson</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="49999be9-ccfe-42e3-921b-3d58e6bd1b55">
+              <AttributeID>dimPerson</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="20069c9e-ab2d-4a02-833d-530aa2c9858e">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="389fe5d7-b8b4-429f-b64a-e6d9c1718aca">
+                    <TableID>FactHomicide</TableID>
+                    <ColumnID>FK_dimPerson</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="f4f2914f-d56b-4fdd-a5c5-96ecf21eb48e">
+    <DataSourceViewID>Homicides</DataSourceViewID>
+  </Source>
+</Cube>
