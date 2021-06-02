@@ -1,0 +1,6 @@
+CustomerID,FirstName,LastName,Address
+1,Brian,Knight,123 Main Street
+2,Brian,Night,123 Main Sreet
+3,Bryan,Knight,123 Main Street
+4,Brain,Knight,123 Main Street
+5,Denny,Lee,124 Main street

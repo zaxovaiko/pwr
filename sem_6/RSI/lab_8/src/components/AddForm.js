@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { addCountry as addCountryApi, updateCountry } from "../api";
-import { defaultEditing } from "../App";
+import { defaultEditing } from "../pages/Home";
 
 const defaultCountry = {
   Name: "",

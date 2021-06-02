@@ -54,6 +54,18 @@ namespace service
         [OperationContract]
         [WebInvoke(UriTemplate = "/json/countries/{id}", Method = "DELETE", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         string DeleteJson(string Id);
+
+        [OperationContract]
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "/json/unions", Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string AddCountryUnionJson(string countryAId, string countryBId);
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/json/unions/{id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        List<Country> GetCountryUnionsJson(string Id);
+
+        [OperationContract]
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "/json/unions", Method = "DELETE", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string RemoveCountryUnionJson(string countryAId, string countryBId);
     }
 
 

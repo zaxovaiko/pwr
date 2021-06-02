@@ -20,8 +20,18 @@ namespace service
         private static List<Country> countries = new List<Country>()
         {
             new Country { GDP = 12.2, Name = "Poland", Id = 1},
-            new Country { GDP = 23.2, Name = "Spain", Id = 2},
+            new Country { GDP = 23.7, Name = "Spain", Id = 2},
             new Country { GDP = 10.3, Name = "Ukraine", Id = 3},
+            new Country { GDP = 120.3, Name = "USA", Id = 4},
+            new Country { GDP = 101, Name = "Australia", Id = 5},
+        };
+
+        private static List<List<Country>> unions = new List<List<Country>>()
+        {
+            new List<Country> { countries[0], countries[1] },
+            new List<Country> { countries[1], countries[2] },
+            new List<Country> { countries[0], countries[3] },
+            new List<Country> { countries[3], countries[2] },
         };
 
         public string AddXml(Country country)
@@ -71,6 +81,7 @@ namespace service
                 throw new WebFaultException<string>("404: Not found", HttpStatusCode.NotFound);
             }
             countries.Remove(country);
+            unions.RemoveAll(e => e.FindAll(r => r.Id == int.Parse(Id)).Count != 0);
             return "Removed country = " + country.Name;
         }
 
@@ -107,6 +118,65 @@ namespace service
         public Country GetByIdJson(string Id)
         {
             return GetByIdXml(Id);
+        }
+
+        public string AddCountryUnionJson(string countryAId, string countryBId)
+        {
+            var countryA = countries.Find(e => e.Id == int.Parse(countryAId));
+            var countryB = countries.Find(e => e.Id == int.Parse(countryBId));
+            if (countryA == null || countryB == null)
+            {
+                throw new WebFaultException<string>("404: Not found", HttpStatusCode.NotFound);
+            }
+            foreach (var item in unions)
+            {
+                if (item.Find(e => e.Id == int.Parse(countryAId)) != null && item.Find(e => e.Id == int.Parse(countryBId)) != null)
+                {
+                    throw new WebFaultException<string>("409: Conflict", HttpStatusCode.Conflict);
+                }
+            }
+            unions.Add(new List<Country>()
+            {
+                countryA, countryB
+            });
+            return "Added countries";
+        }
+
+        public List<Country> GetCountryUnionsJson(string Id)
+        {
+            var country = countries.Find(e => e.Id == int.Parse(Id));
+            if (country == null)
+            {
+                throw new WebFaultException<string>("404: Not found", HttpStatusCode.NotFound);
+            }
+            List<Country> cs = new List<Country>();
+            foreach (var item in unions)
+            {
+                var c = item.FindIndex(e => e.Id == int.Parse(Id));
+                if (c != -1)
+                {
+                    cs.Add(item[c ^ 1]);
+                }
+            }
+            return cs;
+        }
+
+        public string RemoveCountryUnionJson(string countryAId, string countryBId)
+        {
+            var countryA = countries.Find(e => e.Id == int.Parse(countryAId));
+            var countryB = countries.Find(e => e.Id == int.Parse(countryBId));
+            if (countryA == null || countryB == null)
+            {
+                throw new WebFaultException<string>("404: Not found", HttpStatusCode.NotFound);
+            }
+            for (int i = 0; i < unions.Count; i++)
+            {
+                if (unions.ElementAt(i).Contains(countryA) && unions.ElementAt(i).Contains(countryB))
+                {
+                    unions.RemoveAt(i);
+                }
+            }
+            return "Deleted union";
         }
     }
 }
