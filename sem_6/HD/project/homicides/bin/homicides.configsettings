@@ -12,30 +12,30 @@
     </DataSources>
     <Dimensions>
       <Dimension>
-        <ID>Time</ID>
+        <ID>Dim Agency</ID>
       </Dimension>
       <Dimension>
-        <ID>dimHomicide</ID>
+        <ID>Dim Location</ID>
       </Dimension>
       <Dimension>
-        <ID>dimLocation</ID>
+        <ID>Dim Person</ID>
       </Dimension>
       <Dimension>
-        <ID>dimAgency</ID>
+        <ID>Dim Homicide</ID>
       </Dimension>
       <Dimension>
-        <ID>dimPerson</ID>
+        <ID>Dim Date</ID>
       </Dimension>
     </Dimensions>
     <Cubes>
       <Cube>
-        <ID>New cube</ID>
+        <ID>Homicides</ID>
         <MeasureGroups>
           <MeasureGroup>
-            <ID>FactHomicide</ID>
+            <ID>Fact Homicide</ID>
             <Partitions>
               <Partition>
-                <ID>FactHomicide</ID>
+                <ID>Fact Homicide</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>

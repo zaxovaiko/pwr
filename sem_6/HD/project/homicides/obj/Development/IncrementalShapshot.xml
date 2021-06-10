@@ -26,51 +26,51 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>X0fc3GtlkI4qzbIGFXNkY8Vhdao=19.05.2021 00:16:1919.05.2021 00:16:18</TimeStamp>
+        <TimeStamp>5LRUXgqCVAG3AQTDqgmo2/yPgUE=07.06.2021 22:09:0107.06.2021 18:27:26</TimeStamp>
         <ID>
           <String>Homicides</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>lTlgmX6C+vDVzwsaRe0WjK3B6sQ=19.05.2021 00:16:4719.05.2021 00:12:08</TimeStamp>
+        <TimeStamp>DfLunhJJ0VjNvfZX3plj7VpCO+s=07.06.2021 18:28:5907.06.2021 18:28:59</TimeStamp>
         <ID>
-          <String>Time</String>
+          <String>Dim Agency</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>TsHxWkzgU8kgjptLbfVd272j4DE=19.05.2021 00:16:4719.05.2021 00:12:08</TimeStamp>
+        <TimeStamp>cD+m/H5I2PcJD+EENG0FNfxQvwk=07.06.2021 18:29:2807.06.2021 18:29:28</TimeStamp>
         <ID>
-          <String>dimHomicide</String>
+          <String>Dim Location</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>+aTNTEa0ic0qbgLHLC4ygcg0aJU=19.05.2021 00:16:4719.05.2021 00:12:08</TimeStamp>
+        <TimeStamp>JHVBkYSFjc8aFS8PPc1XJNhu214=07.06.2021 18:30:0207.06.2021 18:30:02</TimeStamp>
         <ID>
-          <String>dimLocation</String>
+          <String>Dim Person</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>dj62CViZc2djLjj62P6VrSm0vxQ=19.05.2021 00:16:4719.05.2021 00:12:08</TimeStamp>
+        <TimeStamp>mBDiy6erNnlo0m/OI+zWRGqWJz0=07.06.2021 18:30:3507.06.2021 18:30:35</TimeStamp>
         <ID>
-          <String>dimAgency</String>
+          <String>Dim Homicide</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>bc44EINUZyQ2q40JYO9eEhj4jVk=19.05.2021 00:16:4719.05.2021 00:12:08</TimeStamp>
+        <TimeStamp>+CLr3Vo5zsJUXppIllmo1AHmRX0=08.06.2021 11:19:2907.06.2021 18:55:47</TimeStamp>
         <ID>
-          <String>dimPerson</String>
+          <String>Dim Date</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>ogNeLrEM7LuDVSIfz9uksIZxfo0=20.05.2021 15:15:5019.05.2021 00:12:08qBixMONWyO5mB+GWeuOHokJJVUE=19.05.2021 00:16:4719.05.2021 00:12:08</TimeStamp>
+        <TimeStamp>RbRkyEk6oesbKjrzsw1xIL134rc=08.06.2021 11:19:2907.06.2021 18:32:42VfLo/TxRtGqrzcYIaacajzKc6pg=07.06.2021 18:32:4207.06.2021 18:32:42</TimeStamp>
         <ID>
-          <String>New cube</String>
+          <String>Homicides</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
@@ -85,5 +85,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2021-05-20T13:22:55.446667Z</LastDeployed>
+  <LastDeployed>2021-06-10T12:45:31.61Z</LastDeployed>
 </DeploymentSnapshot>

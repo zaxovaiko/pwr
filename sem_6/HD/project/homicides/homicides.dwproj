@@ -20,24 +20,24 @@
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>dimDate.dim</Name>
-      <FullPath>dimDate.dim</FullPath>
+      <Name>Dim Agency.dim</Name>
+      <FullPath>Dim Agency.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>dimHomicide.dim</Name>
-      <FullPath>dimHomicide.dim</FullPath>
+      <Name>Dim Location.dim</Name>
+      <FullPath>Dim Location.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>dimLocation.dim</Name>
-      <FullPath>dimLocation.dim</FullPath>
+      <Name>Dim Person.dim</Name>
+      <FullPath>Dim Person.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>dimAgency.dim</Name>
-      <FullPath>dimAgency.dim</FullPath>
+      <Name>Dim Homicide.dim</Name>
+      <FullPath>Dim Homicide.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>dimPerson.dim</Name>
-      <FullPath>dimPerson.dim</FullPath>
+      <Name>Dim Date.dim</Name>
+      <FullPath>Dim Date.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
