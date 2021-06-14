@@ -1,0 +1,15 @@
+Male,Native American/Alaska Native,Unknown,14
+Male,White,Unknown,43
+Female,Native American/Alaska Native,Unknown,30
+Male,White,Unknown,43
+Female,Native American/Alaska Native,Unknown,3000
+Female,Native American/Alaska Native,Unknown,30
+Male,Unknown,Unknown,18
+Male,Unknown,Unknown,18
+Male,Unknown,Unknown,18
+Male,Native American/Alaska Native,Unknown,15
+Male,White,Unknown,42
+Unknown,Unknown,Unknown,0
+Male,White,Unknown,42
+Unknown,Unknown,Unknown,0
+Unknown,Unknown,Unknown,0

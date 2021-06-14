@@ -8,12 +8,12 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>Homicides.cube</Name>
-      <FullPath>Homicides.cube</FullPath>
+      <Name>Homicide.cube</Name>
+      <FullPath>Homicide.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>Homicides.partitions</Name>
-          <FullPath>Homicides.partitions</FullPath>
+          <Name>Homicide.partitions</Name>
+          <FullPath>Homicide.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
@@ -24,12 +24,12 @@
       <FullPath>Dim Agency.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dim Location.dim</Name>
-      <FullPath>Dim Location.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Dim Person.dim</Name>
       <FullPath>Dim Person.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Location.dim</Name>
+      <FullPath>Dim Location.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Dim Homicide.dim</Name>

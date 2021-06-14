@@ -15,10 +15,10 @@
         <ID>Dim Agency</ID>
       </Dimension>
       <Dimension>
-        <ID>Dim Location</ID>
+        <ID>Dim Person</ID>
       </Dimension>
       <Dimension>
-        <ID>Dim Person</ID>
+        <ID>Dim Location</ID>
       </Dimension>
       <Dimension>
         <ID>Dim Homicide</ID>

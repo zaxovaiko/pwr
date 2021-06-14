@@ -1,0 +1,12 @@
+Record ID,Agency Code,Agency Name,Agency Type,City,State,Year,Month,Incident,Crime Type,Crime Solved,Victim Sex,Victim Age,Victim Race,Victim Ethnicity,Perpetrator Sex,Perpetrator Age,Perpetrator Race,Perpetrator Ethnicity,Relationship,Weapon,Victim Count,Perpetrator Count,Record Source
+000001,AK00101,Anchorage,Municipal Police,Anchorage,Alaska,1980,January,1,Murder or Manslaughter,Yes,Male,14,Native American/Alaska Native,Unknown,Male,15,Native American/Alaska Native,Unknown,Acquaintance,Blunt Object,0,0,FBI
+000002,AK00101,Anchorage,Municipal Police,Anchorage,Alaska,1980,March,1,Murder or Manslaughter,Yes,Male,43,White,Unknown,Male,42,White,Unknown,Acquaintance,Strangulation,0,0,FBI
+000003,AK00101,Anchorage,Municipal Police,Anchorage,Alaska,1980,March,2,Murder or Manslaughter,No,Female,30,Native American/Alaska Native,Unknown,Unknown,0,Unknown,Unknown,Unknown,Unknown,0,0,FBI
+000004,AK00101,Anchorage,Municipal Police,Anchorage,Alaska,1980,April,1,Murder or Manslaughter,Yes,Male,43,White,Unknown,Male,42,White,Unknown,Acquaintance,Strangulation,0,0,FBI
+000005,AK00101,Anchorage,Municipal Police,Anchorage,Alaska,1980,April,2,Murder or Manslaughter,No,Female,3000,Native American/Alaska Native,Unknown,Unknown,0,Unknown,Unknown,Unknown,Unknown,0,1,FBI
+000006,AK00199,Anchorage,Municipal Police,Anchorage,Alaska,1980,April,2,Murder or Manslaughter,No,Female,30,Native American/Alaska Native,Unknown,Unknown,0,Unknown,Unknown,Unknown,Unknown,0,1,FBO
+000030,AQQQP01,Alaska State Police,State Police,Juneau,Alaska,1980,April,1,Murder or Manslaughter,Yes,Male,18,Unknown,Unknown,Male,70,Native American/Alaska Native,European,Brother,Shotgun,0,0,FBIO
+000031,AQQQP21,California State Police,State Police,Juneau,Alaska,2030,April,1,Murder or Manslaughter,Yes,Male,18,Unknown,Unknown,Male,70,Native American/Alaska Native,European,Brother,Shotgun,0,0,FBIO
+000030,AQQQP01,Alaska State Police,State Police,Juneau,Alaska,2080,April,1,Murder or Manslaughter,Yes,Male,18,Unknown,Unknown,Male,70,Native American/Alaska Native,European,Brother,Shotgun,0,0,FBIO
+000032,AQQQP33,Alaska State Police,State Police,Juneau,Alaska,2080,April,1,Murder or Manslaughter,Yes,Male,18,Native American,White,Male,70,Native American/Alaska Native,European,Brother,Shotgun,0,0,FBIO
+000033,AQQQP33,Alaska State Police,State Police,Juneau,Alaska,2001,April,1,Murder or Manslaughter,Yes,Male,18,Native American,White,Male,70,Native American/Alaska Native,European,Brother,Shotgun,0,0,FBIO

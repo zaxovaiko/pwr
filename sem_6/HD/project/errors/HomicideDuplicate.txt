@@ -1,0 +1,2 @@
+Blunt Object,Acquaintance,FBI,12999
+Strangulation,Acquaintance,FBI,13012

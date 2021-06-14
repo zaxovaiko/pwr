@@ -1,0 +1,7 @@
+1,Male,14,Native American/Alaska Native,Unknown
+2,Male,43,White,Unknown
+3,Female,30,Native American/Alaska Native,Unknown
+4,Male,43,White,Unknown
+5,Female,3000,Native American/Alaska Native,Unknown
+6,Female,30,Native American/Alaska Native,Unknown
+30,Male,18,Unknown,Unknown
