@@ -3,6 +3,7 @@ Debug/
 .vs/
 target/
 out/
+.DS_STORE
 
 # IDEs
 .idea/
