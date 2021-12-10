@@ -30,3 +30,6 @@ All labs from Wroclaw University of Science and Technologies.
     - Zaawansowane Technologie Webowe
     - Sztuczna Inteligencja i Inżynieria Wiedzy
     - Hurtownie Danych
+ 
+ - 7 semestr
+    - Danologia 
