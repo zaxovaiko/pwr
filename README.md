@@ -33,3 +33,5 @@ All labs from Wroclaw University of Science and Technologies.
  
  - 7 semestr
     - Danologia 
+
+Obliczenie średniej ważonej oceny za przebieg studiów: [tutaj](https://gist.github.com/zaxoavoki/7c508b3454ad4b4cd5a5e303576c298e)
